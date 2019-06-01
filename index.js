@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 //const multer = require('multer');
 //const upload = multer({ dest : '/uploads/'});
 const cors = require('cors');
-const path = require("path");
+
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/sbay' ,{ useNewUrlParser: true });
 mongoose.Promise = global.Promise;
@@ -62,6 +62,8 @@ app.use((req,res,next)=>{
     // }
     // next();
 })
+    
+
 
 //app.use(express.static('uploads'));
 // app.use(methodoverride,'_method');
@@ -75,14 +77,6 @@ app.use("/bugRequest", CustomerBugRequest);
 app.use("/sellers",   registerSeller );
 app.use("/products",productRoutes);
 // app.use("/forgot",ForgotPassword);
-
-app.use(express.static(path.join(__dirname, "client", "build")))
-
-// ...
-// Right before your app.listen(), add this:
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 
 
 
