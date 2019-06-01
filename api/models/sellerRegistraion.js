@@ -10,7 +10,7 @@ const sellerSchema = new Schema({
         type: String,
         required: [true, "name fields is required"]
     },
- 
+
     email: {
         type: String,
         required: [true, "name fields is required"]
@@ -20,7 +20,7 @@ const sellerSchema = new Schema({
         required: [true, "password fields is required"]
     },
     contact: {
-        type: Number ,
+        type: Number,
         required: [true, "contact fields is required"]
     },
     address: {
@@ -29,14 +29,14 @@ const sellerSchema = new Schema({
     },
     resetPasswordToken:
     {
-         type: String,
-        },
+        type: String,
+    },
     resetPasswordExpires: {
         type: Date,
     }
-    })
+})
 
-const Seller = mongoose.model('sellers' ,sellerSchema);
+const Seller = mongoose.model('sellers', sellerSchema);
 module.exports = Seller;
 
 

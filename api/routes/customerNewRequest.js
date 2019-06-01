@@ -22,18 +22,33 @@ router.post('/postnew',(req,res,next)=>{
 
 router.get('/getnew/:myid',(req,res,next)=>{
   let i=0;
-  CustomerNewRequest.find({}, function (err,
-    ) {
-    var requests = [];
-    request.forEach( function (requ) { 
-        if( requ.cusNewReqId.equals(req.params.myid)){
-          requests[i++] = requ
-        }
-    });
-    console.log(requests);
-    res.send(requests);
+  CustomerNewRequest.find({}, function (err,products) {
+      var productMap = [];
+      products.forEach( function (request) { 
+          if( request.cusNewReqId.equals(req.params.myid)){
+              productMap[i++] = request
+          }
+      });
+      console.log(productMap);
+      res.send(productMap);
   })
-  })
+  .catch(err => next(err));
+})
+
+// router.get('/getnew/:myid',(req,res,next)=>{
+//   let i=0;
+//   CustomerNewRequest.find({}, function (err,
+//     ) {
+//     var requests = [];
+//     request.forEach( function (requ) { 
+//         if( requ.cusNewReqId.equals(req.params.myid)){
+//           requests[i++] = requ
+//         }
+//     });
+//     console.log(requests);
+//     res.send(requests);
+//   })
+//   })
 
 router.get('/:id',(req,res,next)=>{
 

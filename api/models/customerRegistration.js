@@ -19,15 +19,22 @@ const customerSchema = new Schema({
         required: [true, "password fields is required"]
     },
     contact: {
-        type: String ,
+        type: String,
         required: [true, "contact fields is required"]
     },
     address: {
         type: String,
         required: [true, "address fields is required"]
     },
+    resetPasswordToken:
+    {
+        type: String,
+    },
+    resetPasswordExpires: {
+        type: Date,
+    }
 })
 
-const Customer = mongoose.model('customers',customerSchema);
+const Customer = mongoose.model('customers', customerSchema);
 module.exports = Customer;
 
