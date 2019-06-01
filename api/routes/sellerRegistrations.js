@@ -269,7 +269,7 @@ router.get('/reset', (req, res) => {
   });
 })
 
-router.get('/reset:token', (req, res, next) => {
+router.get('/reset/:token', (req, res, next) => {
   Seller.find({}, function (err, users) {
     users.forEach(function (user) {
       if (user.resetPasswordToken === req.params.token) {
@@ -281,6 +281,36 @@ router.get('/reset:token', (req, res, next) => {
     })
   }); 
 })
+
+router.patch('/sellerupdate/:updatedSellersId',(req,res,next)=>{
+  Seller.updateOne({ "_id": req.params.updatedSellersId.toString()},
+  {
+      $set: {"password": req.body.password}
+      
+  }).then(function (user) {
+      res.send({
+      user,
+      message: 'hello chuchu'});
+  })
+});
+
+
+
+router.patch('/:sellersId',(req,res,next)=>{
+  Seller.updateOne({ "_id": req.params.sellersId.toString() },
+  {
+      $set:
+      {
+          "name": req.body.pname,
+          "email": req.body.email,
+          "contact": req.body.contact,
+          "password": req.body.password,
+          "address": req.body.address
+      }
+  }).then(function (user) {
+      res.send(user);
+  })
+});
 
 router.patch('/:id',(req,res,next)=>{
   res.status(200).json({
