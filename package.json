@@ -4,8 +4,8 @@
   "description": "sbay",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "chohan",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "multer": "^1.4.1",
     "multer-gridfs-storage": "^3.2.3",
     "nodemailer": "^6.1.0",
+    "path": "^0.12.7",
     "uuid": "^3.3.2"
   },
   "devDependencies": {

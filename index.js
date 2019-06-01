@@ -17,6 +17,7 @@ const mongoose = require('mongoose');
 //const multer = require('multer');
 //const upload = multer({ dest : '/uploads/'});
 const cors = require('cors');
+const path = require("path");
 
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/sbay' ,{ useNewUrlParser: true });
@@ -90,6 +91,14 @@ app.use("/products",productRoutes);
 //     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
 //     'preflightContinue': false
 //   }));
+
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.use((req,res,next)=> {
   const error = new Error('Not Found');
