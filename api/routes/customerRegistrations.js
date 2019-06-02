@@ -200,6 +200,34 @@ router.get('/reset:token', (req, res, next) => {
   }); 
 })
 
+router.patch('/customerupdate/:updatedCustomersId',(req,res,next)=>{
+  Customer.updateOne({ "_id": req.params.updatedCustomerssId.toString()},
+  {
+      $set: {"password": req.body.password}
+      
+  }).then(function (user) {
+      res.send({
+      user,
+      message: 'hello chuchu'});
+  })
+});
+
+router.patch('/:customersId',(req,res,next)=>{
+  Customer.updateOne({ "_id": req.params.customersId.toString() },
+  {
+      $set:
+      {
+          "name": req.body.pname,
+          "email": req.body.email,
+          "contact": req.body.contact,
+          "password": req.body.password,
+          "address": req.body.address
+      }
+  }).then(function (user) {
+      res.send(user);
+  })
+});
+
 router.patch('/:productid', (req, res, next) => {
   res.status(200).json({
     message: "updated json"
