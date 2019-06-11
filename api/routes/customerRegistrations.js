@@ -109,7 +109,7 @@ router.get('/getcustomers', (req, res, next) => {
   Customer.find({}, function (err, users) {
     var userMap = [];
     users.forEach(function (user) {
-      userMap[i] = user;
+      userMap[i++] = user;
     });
     res.send(userMap);
   });
