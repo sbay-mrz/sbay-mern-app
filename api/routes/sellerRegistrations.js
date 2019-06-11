@@ -294,14 +294,32 @@ router.patch('/sellerupdate/:updatedSellersId',(req,res,next)=>{
   })
 });
 
-
+router.patch('/updateSeller',(req,res,next)=>{
+  Seller.updateOne({ "_id": req.query.sellersId },
+  {
+      $set:
+      {
+          "name": req.body.name,
+          "email": req.body.email,
+          "contact": req.body.contact,
+          "password": req.body.password,
+          "address": req.body.address
+      }
+  }).then(function (user) {
+      res.send( 
+        { user,
+          updateStatus: 'user updated' 
+        } 
+      );
+  })
+});
 
 router.patch('/:sellersId',(req,res,next)=>{
   Seller.updateOne({ "_id": req.params.sellersId.toString() },
   {
       $set:
       {
-          "name": req.body.pname,
+          "name": req.body.name,
           "email": req.body.email,
           "contact": req.body.contact,
           "password": req.body.password,

@@ -212,12 +212,32 @@ router.patch('/customerupdate/:updatedCustomersId',(req,res,next)=>{
   })
 });
 
+router.patch('/updateCustomer',(req,res,next)=>{
+  Customer.updateOne({ "_id": req.query.customersId },
+  {
+      $set:
+      {
+          "name": req.body.name,
+          "email": req.body.email,
+          "contact": req.body.contact,
+          "password": req.body.password,
+          "address": req.body.address
+      }
+  }).then(function (user) {
+      res.send(
+        { user,
+          updateStatus: 'user updated'
+        }
+      );
+  })
+});
+
 router.patch('/:customersId',(req,res,next)=>{
   Customer.updateOne({ "_id": req.params.customersId.toString() },
   {
       $set:
       {
-          "name": req.body.pname,
+          "name": req.body.name,
           "email": req.body.email,
           "contact": req.body.contact,
           "password": req.body.password,
