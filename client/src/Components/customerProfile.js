@@ -11,7 +11,12 @@ import '../App.css';
     constructor(){
         super();
         this.state = {
-            customerProfile: {}
+            customerProfile: {},
+            updateCustomer: false,
+            name: '',
+            email: '',
+            contact: '',
+            address: ''
         }
     }
 
@@ -24,12 +29,60 @@ import '../App.css';
         })
     }
 
+    updateCustomer(){
+        this.setState({ updateCustomer: !this.state.updateCustomer})
+    }
+
+    updateSeller(){
+        this.setState({ updateSeller: !this.state.updateSeller})
+    }
+    
+    getName(e){
+        this.setState({name: e.target.value});
+      }
+    
+      getAddress(e){
+        this.setState({address: e.target.value});
+      }
+    
+      getEmail(e){
+        this.setState({email: e.target.value});
+      }
+    
+      getContact(e){
+        this.setState({contact: e.target.value});
+      }
+    
+
+    updatePro(){
+        alert('hello');
+        const { id } = this.props.match.params;
+    
+          let userObject = {
+               name: this.state.name,
+              address: this.state.address,
+              contact: this.state.contact,
+              email: this.state.customerProfile.email,
+              password: this.state.customerProfile.password
+            }
+
+          axios.patch(`http://localhost:7000/customers/${id}`,userObject)
+          .then(res =>{
+              console.log(res.data);
+              const user = res.data;
+              console.log("users",user)
+          })  
+          this.setState({updateCustomer : !this.state.updateCustomer})
+          window.location.reload();
+      }
 render(){
     const {customerProfile} = this.state;
     return(
      <div className="cProfileParent">
      <Slider3/>
-     <div className="cProfileContainer">
+
+    {!this.state.updateCustomer &&
+         <div className="cProfileContainer">
      
          <div className="c-profile-div-one">
             <div className="c-profile-div-one-1">
@@ -56,6 +109,8 @@ render(){
               <p> {customerProfile.email} </p> 
                  <p> {customerProfile.contact} </p> 
                 <p> <Link to={`/Myrequests/${customerProfile._id}`}> my requests </Link> </p>
+                <Button onClick={this.updateCustomer.bind(this)}>  edit profile </Button>
+
             </div>
          </div>
          <br/>
@@ -64,6 +119,8 @@ render(){
              <Products/>
          </div>
      </div>
+    }
+
        {/* <slider3/>
        <Grid>
   <Row className="show-grid">
@@ -103,6 +160,52 @@ render(){
     </Col>
     </Row>
        </Grid>*/}
+
+
+
+
+{this.state.updateCustomer && 
+
+    <div>
+    <h2> Edit Seller </h2>
+  <form method="post" >
+  <Row> 
+
+<Col> 
+
+<div class="form-group">
+{/* <p>   <img src={this.state.sellerProducts[index].screenShot} width="80%" height="60%"/> </p>  */}
+
+<label for="name">Name:</label>
+<input type="name" class="form-control" id="name" value={this.state.name} onChange={this.getName.bind(this)}/>
+</div>
+
+<div class="form-group">
+<label for="exeUrl">Address:</label>
+<input type="text" class="form-control" id="address" value={this.state.address} onChange={this.getAddress.bind(this)}/>
+</div>
+
+<div class="form-group">
+<label for="demovideourl">Contact :</label>
+<input type="text" class="form-control" id="contact" value={this.state.contact} onChange={this.getContact.bind(this)}/>
+</div>
+</Col>
+
+
+
+  </Row>
+
+
+
+
+ <p> <Button onClick={this.updatePro.bind(this)}> update </Button> </p> 
+
+
+</form>
+</div>
+}
+
+
         </div> 
     )
 }

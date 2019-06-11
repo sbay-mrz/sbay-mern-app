@@ -16,7 +16,12 @@ import auth from './Auth';
         super();
         this.state = {
             sellerProfile: {},
-            image: ''
+            image: '',
+            updateSeller: false,
+            name: '',
+            email: '',
+            contact: '',
+            address: ''
         }
     }
 
@@ -80,10 +85,55 @@ logout(){
         this.props.history.push("/sellerLogin");
       });
 }
+
+updateSeller(){
+    this.setState({ updateSeller: !this.state.updateSeller})
+}
+
+getName(e){
+    this.setState({name: e.target.value});
+  }
+
+  getAddress(e){
+    this.setState({address: e.target.value});
+  }
+
+  getEmail(e){
+    this.setState({email: e.target.value});
+  }
+
+  getContact(e){
+    this.setState({contact: e.target.value});
+  }
+
+  updatePro(){
+    alert('hello');
+    const { id } = this.props.match.params;
+
+      let userObject = {
+           name: this.state.name,
+          address: this.state.address,
+          contact: this.state.contact,
+          email: this.state.sellerProfile.email,
+          password: this.state.sellerProfile.password
+        }
+      axios.patch(`http://localhost:7000/sellers/${id}`,userObject)
+      .then(res =>{
+          console.log(res.data);
+          const user = res.data;
+          console.log("users",user)
+      })  
+      this.setState({updateSeller : !this.state.updateSeller})
+      window.location.reload();
+
+  }
+
 render(){
     const {sellerProfile} = this.state;
     return(
         <div>
+         {!this.state.updateSeller &&
+               <div> 
             <Slider3/>
        <Grid>
   <Row>
@@ -100,8 +150,8 @@ render(){
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
             <p> Contact :   {sellerProfile.contact} </p> 
+            
             <Link to={`/sellerProducts/${sellerProfile._id}`}> my product </Link>
-
             </div>
         </CardContent>
       </CardActionArea>
@@ -118,6 +168,8 @@ render(){
             
             <Link to={`/postproduct/${sellerProfile._id}`}> Add post </Link> 
             <Button onClick={this.logout.bind(this)}>  logout </Button>
+            <Button onClick={this.updateSeller.bind(this)}>  edit profile </Button>
+            
             </div>
         </CardContent>
       </CardActionArea>
@@ -127,6 +179,55 @@ render(){
     </Col>
     </Row>
 </Grid>
+</div>
+
+         }
+
+
+
+
+
+{this.state.updateSeller && 
+
+    <div>
+    <h2> Edit Seller </h2>
+  <form method="post" >
+  <Row> 
+
+<Col> 
+
+<div class="form-group">
+{/* <p>   <img src={this.state.sellerProducts[index].screenShot} width="80%" height="60%"/> </p>  */}
+
+<label for="name">Name:</label>
+<input type="name" class="form-control" id="name" value={this.state.name} onChange={this.getName.bind(this)}/>
+</div>
+
+<div class="form-group">
+<label for="exeUrl">Address:</label>
+<input type="text" class="form-control" id="address" value={this.state.address} onChange={this.getAddress.bind(this)}/>
+</div>
+
+<div class="form-group">
+<label for="demovideourl">Contact :</label>
+<input type="text" class="form-control" id="contact" value={this.state.contact} onChange={this.getContact.bind(this)}/>
+</div>
+</Col>
+
+
+
+  </Row>
+
+
+
+
+ <p> <Button onClick={this.updatePro.bind(this)}> update </Button> </p> 
+
+
+</form>
+</div>
+}
+
         </div> 
     )
 }
