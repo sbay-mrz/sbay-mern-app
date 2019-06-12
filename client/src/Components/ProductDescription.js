@@ -11,7 +11,9 @@ export default class ProductDescription extends Component {
     constructor(){
         super();
         this.state = {
-            products: []
+            products: [],
+            sellerProfile: [],
+            showSeller: false
         }
     }
 
@@ -31,16 +33,22 @@ export default class ProductDescription extends Component {
           console.log(products);
           this.setState({ products });
         })
-//         fetch('http://localhost:7000/products/' + this.props.match.params.myid)
-//   .then(function(response) {
-//     return response;
-//   })
-//   .then(function(myJson) {
-//     console.log(JSON.stringify(myJson));
-//   })
     }
+
+    getSeller(){        
+      let sellerId = this.state.products.seller_id;
+      console.log("seller id",sellerId)
+      axios.get(`http://localhost:7000/sellers/${sellerId}`)
+      .then(res => {
+        const sellerProfile = res.data;
+        this.setState({ 
+          sellerProfile,
+        showSeller: !this.state.showSeller });
+      })
+    }
+
     render(){
-        const {products} = this.state;
+        const {products,sellerProfile} = this.state;
         return(
             <div>
                 <Slider3/>
@@ -70,7 +78,8 @@ export default class ProductDescription extends Component {
             <p> name    :   {products.pname} </p> 
             <p> category :   {products.category} </p> 
             <p> cost   :   {products.cost} </p> 
-            <p> demovideo   :   {products.demoVideoUrl}</p>            <p> exeurl   :   {products.exeUrl}</p>
+            <p> demovideo   :   {products.demoVideoUrl}</p>     
+            <p> exeurl   :   {products.exeUrl}</p>
             
             <div className="centerCart"> 
             <br/><br/>
@@ -83,19 +92,18 @@ export default class ProductDescription extends Component {
       </CardActions>
     </Card>
 
+ <Button onClick={this.getSeller.bind(this)}> seller info </Button>
 
         
-        <Card >
+{this.state.showSeller &&  
+      <Card >
       <CardActionArea>
         <CardContent >
               <div className="icons">
             <h2> Seller Profile</h2>
-            <p> name      :   </p> 
-            <p> category  :    </p> 
-            <p> cost      :    </p> 
-            <p> demovideo :   </p>
-            <p> exeurl    :  </p>
-            
+            <p> name      :  {sellerProfile.name} </p> 
+            <p> contact   :   {sellerProfile.contact} </p> 
+            <p> address   : {sellerProfile.address}  </p>
             <div className="centerCart"> 
             <br/><br/>
 
@@ -106,7 +114,8 @@ export default class ProductDescription extends Component {
       <CardActions> 
       </CardActions>
     </Card>
-    </Col>
+}
+</Col>
     </Row>
 </Grid>
 
