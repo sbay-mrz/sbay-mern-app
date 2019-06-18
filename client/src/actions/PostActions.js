@@ -12,7 +12,7 @@ export const fetchproducts = () => dispatch => {
 }
 
 export const sellerlogin = () => dispatch => {
-    fetch('http://localhost:7000/s/getproducts')
+    fetch('https://sbay-server.herokuapp.com/s/getproducts')
         .then(res => res.json())
         .then(posts => dispatch({
             type: FETCH_PRODUCTS,

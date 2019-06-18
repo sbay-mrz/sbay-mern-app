@@ -17,7 +17,7 @@ export default class InternetOfThings extends Component {
 
 componentDidMount(){
 
-axios.get(`http://localhost:7000/products/ai`)
+axios.get(`https://sbay-server.herokuapp.com/products/ai`)
 .then(res => {
   const ai = res.data;
   console.log(ai);
