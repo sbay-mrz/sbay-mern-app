@@ -28,7 +28,7 @@ import auth from './Auth';
     componentDidMount(){
         
         const { id } = this.props.match.params;
-        axios.get(`http://localhost:7000/sellers/${id}`)
+        axios.get(`https://sbay-server.herokuapp.com/sellers/${id}`)
         .then(res =>{
             console.log(res.data);
             const user = res.data;
@@ -44,7 +44,7 @@ import auth from './Auth';
                     address: this.state.sellerProfile.address,
                     // image: this.state.image
                   }
-                  axios.patch(`http://localhost:7000/sellers/${id}`,userObject)
+                  axios.patch(`https://sbay-server.herokuapp.com/sellers/${id}`,userObject)
                   .then(res =>{
                       console.log(res.data);
                       const user = res.data;
@@ -117,7 +117,7 @@ getName(e){
           email: this.state.sellerProfile.email,
           password: this.state.sellerProfile.password
         }
-      axios.patch(`http://localhost:7000/sellers/${id}`,userObject)
+      axios.patch(`https://sbay-server.herokuapp.com/sellers/${id}`,userObject)
       .then(res =>{
           console.log(res.data);
           const user = res.data;

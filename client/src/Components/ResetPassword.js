@@ -29,7 +29,7 @@ export default class ResetPassword extends Component {
   async componentDidMount() {
     console.log(this.props.match.params.token);
     await axios
-      .get(`http://localhost:7000/sellers/reset/${this.props.match.params.token}`)
+      .get(`https://sbay-server.herokuapp.com/sellers/reset/${this.props.match.params.token}`)
       .then((response) => {
         console.log("hello response ",response.data);
         console.log('msg',response.data.message)
@@ -62,7 +62,7 @@ export default class ResetPassword extends Component {
     e.preventDefault();
    
     axios
-      .patch(`http://localhost:7000/sellers/sellerupdate/${this.state.userId}`, {
+      .patch(`https://sbay-server.herokuapp.com/sellers/sellerupdate/${this.state.userId}`, {
         password: this.state.password
       })
       .then((response) => {

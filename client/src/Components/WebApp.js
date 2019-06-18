@@ -18,7 +18,7 @@ export default class WebApp extends Component {
 
 componentDidMount(){
 
-axios.get(`http://localhost:7000/products/webproducts`)
+axios.get(`https://sbay-server.herokuapp.com/products/webproducts`)
 .then(res => {
   const webproducts = res.data;
   console.log(webproducts);

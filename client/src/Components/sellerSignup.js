@@ -31,7 +31,7 @@ constructor(props){
 }
 
 componentWillMount() {
-    axios.get('http://localhost:7000/sellers/getsellers')
+    axios.get('https://sbay-server.herokuapp.com/sellers/getsellers')
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
@@ -50,7 +50,7 @@ componentWillMount() {
       image: this.state.image
     }
 
-    axios.post('http://localhost:7000/sellers/postseller', userObject)
+    axios.post('https://sbay-server.herokuapp.com/sellers/postseller', userObject)
       .then(res => {
         console.log(res.data);
       });

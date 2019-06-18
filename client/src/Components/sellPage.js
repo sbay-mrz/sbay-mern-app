@@ -68,7 +68,7 @@ class SellPage extends React.Component{
                     cost: this.state.cost
 
                 }
-axios.post(`http://localhost:7000/products/postproduct`, product)
+axios.post(`https://sbay-server.herokuapp.com/products/postproduct`, product)
 .then(res => {console.log(res);
 })
 }

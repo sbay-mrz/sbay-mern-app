@@ -17,7 +17,7 @@ export default class VrAr extends Component {
 
 componentDidMount(){
 
-axios.get(`http://localhost:7000/products/vrar`)
+axios.get(`https://sbay-server.herokuapp.com/products/vrar`)
 .then(res => {
   const vrar = res.data;
   console.log(vrar);
