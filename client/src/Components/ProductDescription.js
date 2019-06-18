@@ -27,7 +27,7 @@ export default class ProductDescription extends Component {
 // fetch(url, {param: this.props.match.params.myid}).then(res => res.json())
 // .then(response => console.log('Success:', JSON.stringify(response)))
 // .catch(error => console.error('Error:', error));
-        axios.get(`https://sbay-server.herokuapp.com/products/${this.props.match.params.myid}`)
+        axios.get(`https://sbay-mrz.herokuapp.com/products/${this.props.match.params.myid}`)
         .then(res => {
           const products = res.data;
           console.log(products);
@@ -38,7 +38,7 @@ export default class ProductDescription extends Component {
     getSeller(){        
       let sellerId = this.state.products.seller_id;
       console.log("seller id",sellerId)
-      axios.get(`https://sbay-server.herokuapp.com/sellers/${sellerId}`)
+      axios.get(`https://sbay-mrz.herokuapp.com/sellers/${sellerId}`)
       .then(res => {
         const sellerProfile = res.data;
         this.setState({ 

@@ -28,7 +28,7 @@ constructor(){
 
 componentDidMount() {
 
-    axios.get("https://sbay-server.herokuapp.com/sellers/getsellers")
+    axios.get("https://sbay-mrz.herokuapp.com/sellers/getsellers")
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
@@ -44,7 +44,7 @@ componentDidMount() {
     e.preventDefault();
     console.log("hello", this.state.email, this.state.password);
    
-    axios.get(`https://sbay-server.herokuapp.com/sellers/${this.state.email}&${this.state.password}`)
+    axios.get(`https://sbay-mrz.herokuapp.com/sellers/${this.state.email}&${this.state.password}`)
     .then(res => {
         console.log(res)
         if(res.data.userStatus === "exist"){

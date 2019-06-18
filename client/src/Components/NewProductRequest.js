@@ -37,7 +37,7 @@ var customerNewRequest = {
     category: this.state.category
 }
 
-    axios.post('https://sbay-server.herokuapp.com/newRequest/postnew',customerNewRequest)
+    axios.post('https://sbay-mrz.herokuapp.com/newRequest/postnew',customerNewRequest)
     .then(res => {
         console.log("new req",res.data);
       }).catch(console.log("errr"))

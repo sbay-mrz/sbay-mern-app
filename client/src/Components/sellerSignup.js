@@ -50,7 +50,7 @@ componentWillMount() {
       image: this.state.image
     }
 
-    axios.post('https://sbay-server.herokuapp.com/sellers/postseller', userObject)
+    axios.post('https://sbay-mrz.herokuapp.com/sellers/postseller', userObject)
       .then(res => {
         console.log(res.data);
       });

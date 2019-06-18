@@ -35,7 +35,7 @@ class ForgotPassword extends Component {
       });
     } else {
       axios
-        .post('https://sbay-server.herokuapp.com/sellers/forgotPassword', {
+        .post('https://sbay-mrz.herokuapp.com/sellers/forgotPassword', {
           email,
         })
         .then((response) => {

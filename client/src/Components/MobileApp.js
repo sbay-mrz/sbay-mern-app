@@ -17,7 +17,7 @@ export default class MobileApp extends Component {
 
 componentDidMount(){
 
-axios.get(`https://sbay-server.herokuapp.com/products/androidproducts`)
+axios.get(`https://sbay-mrz.herokuapp.com/products/androidproducts`)
 .then(res => {
   const androidproducts = res.data;
   console.log(androidproducts);

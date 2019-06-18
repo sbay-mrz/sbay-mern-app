@@ -119,7 +119,7 @@ getName(e){
 }
 
 deleteProduct(id){
-  axios.delete(`https://sbay-server.herokuapp.com/products/${id}`)
+  axios.delete(`https://sbay-mrz.herokuapp.com/products/${id}`)
   .then(res => {
       console.log("res",res)
   })

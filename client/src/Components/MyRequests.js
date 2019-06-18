@@ -18,7 +18,7 @@ class MyRequests extends Component {
     componentDidMount(){
         const { custReqid } = this.props.match.params;
 console.log("customer  ",custReqid)
-        axios(`https://sbay-server.herokuapp.com/newRequest/getnew/${custReqid}`)
+        axios(`https://sbay-mrz.herokuapp.com/newRequest/getnew/${custReqid}`)
         .then(res =>{
             const user = res.data;
             this.setState({ customerRequests: user });

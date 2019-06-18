@@ -28,7 +28,7 @@ constructor(){
 }
 
 componentWillMount() {
-    axios('https://sbay-server.herokuapp.com/customers/getcustomers')
+    axios('https://sbay-mrz.herokuapp.com/customers/getcustomers')
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
@@ -50,7 +50,7 @@ componentWillMount() {
       alert('fields missing')
   }
   else{
-    axios.post('https://sbay-server.herokuapp.com/customers/postcustomer', userObject)
+    axios.post('https://sbay-mrz.herokuapp.com/customers/postcustomer', userObject)
     .then(res => {
       console.log(res.data);
       this.props.history.push('/customerLogin');
