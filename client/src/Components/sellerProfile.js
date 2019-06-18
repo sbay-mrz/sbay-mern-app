@@ -117,7 +117,7 @@ getName(e){
           email: this.state.sellerProfile.email,
           password: this.state.sellerProfile.password
         }
-      axios.patch(`https://sbay-server.herokuapp.com/sellers/${id}`,userObject)
+      axios.patch(`https://sbay-mrz.herokuapp.com/sellers/${id}`,userObject)
       .then(res =>{
           console.log(res.data);
           const user = res.data;
