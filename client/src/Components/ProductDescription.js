@@ -75,12 +75,9 @@ export default class ProductDescription extends Component {
         <CardContent >
               <div className="icons">
             
+              <p> {products.cost} </p> 
             <p> name    :   {products.pname} </p> 
-            <p> category :   {products.category} </p> 
-            <p> cost   :   {products.cost} </p> 
-            <p> demovideo   :   {products.demoVideoUrl}</p>     
-            <p> exeurl   :   {products.exeUrl}</p>
-            
+            <p> category :   {products.category} </p>             
             <div className="centerCart"> 
             <br/><br/>
     

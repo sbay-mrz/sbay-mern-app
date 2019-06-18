@@ -18,7 +18,7 @@ import ExtraContent from './Components/ExtraContent';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="maindiv">
 
         <Slider3/>
         <Slider/> 

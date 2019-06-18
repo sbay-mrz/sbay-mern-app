@@ -25,6 +25,7 @@ import ResetPassword from './Components/ResetPassword';
 import ResetPasswordCustomer from './Components/ResetPasswordCustomer';
 import ForgotPassword from './Components/ForgotPassword';
 import ForgotPasswordCustomer from './Components/ForgotPasswordCustomer';
+import AccountVerification from './Components/AccountVerification';
 
 export default class RoutersComponent extends Component {
   render() {
@@ -52,17 +53,14 @@ export default class RoutersComponent extends Component {
         <Route path="/postproduct/:proid" component={PostProduct}/> 
         <Route path="/sellerProducts/:spid" component={SellerProducts}/> 
         <Route path="/Myrequests/:custReqid" component={MyRequests}/> 
-        
         <Route path="/newProductRequest/:cusNewReqId" component={NewProductRequest}/> 
         <Route path = "/forgotPassword" component={ForgotPassword}/>
         <Route path = "/reset/:token" component={ResetPassword}/>
-
         <Route path ="/sellerupdate/:updatedSellersId" component={ResetPassword}/>
-      <Route path = "/forgotPasswordCustomer" component={ForgotPasswordCustomer}/>
-<Route path = "/resetcustomer/:token" component={ResetPasswordCustomer}/>
-<Route path = "/customerupdate/:updatedCustomersId" component={ResetPasswordCustomer}/>
-
-        
+        <Route path = "/forgotPasswordCustomer" component={ForgotPasswordCustomer}/>
+        <Route path = "/resetcustomer/:token" component={ResetPasswordCustomer}/>
+        <Route path = "/customerupdate/:updatedCustomersId" component={ResetPasswordCustomer}/>
+        <Route path = "/accountverification/:token" component={AccountVerification}/>        
         </Switch>
         </BrowserRouter>
       </div>

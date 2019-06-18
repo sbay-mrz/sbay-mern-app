@@ -7,7 +7,7 @@ import profile from '../../src/assets/profile.jpg';
 import Header2 from './Header2';
 import Slider3 from './slider3';
 import auth from './Auth';
-
+import Products from './Products';
 
 
  class sellerProfile extends Component{
@@ -179,6 +179,11 @@ render(){
     </Col>
     </Row>
 </Grid>
+{/* 
+         <div>
+            <div><h1>Your Products</h1></div>
+             <Products/>
+         </div> */}
 </div>
 
          }
@@ -213,14 +218,7 @@ render(){
 <input type="text" class="form-control" id="contact" value={this.state.contact} onChange={this.getContact.bind(this)}/>
 </div>
 </Col>
-
-
-
   </Row>
-
-
-
-
  <p> <Button onClick={this.updatePro.bind(this)}> update </Button> </p> 
 
 

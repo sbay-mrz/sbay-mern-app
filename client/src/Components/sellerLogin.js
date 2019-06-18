@@ -5,11 +5,6 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 
-var header = {
-    'Content-Type': 'application/json',
-    dataType:'jsonp',
-    responseType:'application/json'
-}
 
 class Login extends Component {
 constructor(){

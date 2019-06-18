@@ -18,6 +18,8 @@ const mongoose = require('mongoose');
 //const upload = multer({ dest : '/uploads/'});
 const cors = require('cors');
 const path = require("path");
+// const stripe = require('stripe')('sk_test_qjSaCAS58mdBZAtgrPVXJoSV00W3kVOXiQ');
+
 
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/sbay' ,{ useNewUrlParser: true });

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { Button } from '@material-ui/core';
+import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography} from '@material-ui/core';
+
 
 class ForgotPasswordCustomer extends Component {
   constructor() {
@@ -70,7 +72,8 @@ class ForgotPasswordCustomer extends Component {
 } = this.state;
 
     return (
-      <div>
+      <div className="forgot-password-customer">
+        <Card>
         <form className="profile-form" onSubmit={this.sendEmail}>
           <TextField
             // style={inputStyle}
@@ -84,6 +87,7 @@ class ForgotPasswordCustomer extends Component {
             buttonStyle={forgotButton}
             buttonText="Send Password Reset Email"
           /> */}
+          <br/ >
           <Button type="submit"> send password reset email </Button>
         </form>
         {showNullError && (
@@ -105,6 +109,7 @@ class ForgotPasswordCustomer extends Component {
             <h3>Password Reset Email Successfully Sent!</h3>
           </div>
         )}
+        </Card>
       </div>
     );
   }
