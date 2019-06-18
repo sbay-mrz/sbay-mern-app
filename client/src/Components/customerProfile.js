@@ -22,7 +22,7 @@ import '../App.css';
 
     componentDidMount(){
         const { id } = this.props.match.params;
-        axios(`http://localhost:7000/customers/${id}`)
+        axios(`https://sbay-mrz.herokuapp.com/customers/${id}`)
         .then(res =>{
             const user = res.data;
             this.setState({ customerProfile: user });
@@ -66,7 +66,7 @@ import '../App.css';
               password: this.state.customerProfile.password
             }
 
-          axios.patch(`http://localhost:7000/customers/${id}`,userObject)
+          axios.patch(`https://sbay-mrz.herokuapp.com/customers/${id}`,userObject)
           .then(res =>{
               console.log(res.data);
               const user = res.data;

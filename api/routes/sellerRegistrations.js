@@ -334,14 +334,14 @@ router.patch('/updateSeller',(req,res,next)=>{
       $set:
       {
           "name": req.body.name,
-          "email": req.body.email,
+          //"email": req.body.email,
           "contact": req.body.contact,
-          "password": req.body.password,
+          //"password": req.body.password,
           "address": req.body.address
       }
   }).then(function (user) {
       res.send( 
-        { user,
+        { 
           updateStatus: 'user updated' 
         } 
       );

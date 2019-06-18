@@ -30,7 +30,7 @@ class customerLogin extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:7000/customers/getcustomers").then(res => {
+    axios.get("https://sbay-mrz.herokuapp.com/customers/getcustomers").then(res => {
       const users = res.data;
       console.log("users are : ", users);
       let array = Object.values(users);
@@ -42,7 +42,7 @@ class customerLogin extends Component {
     e.preventDefault();
     axios
       .get(
-        `http://localhost:7000/customers/${this.state.email}&${
+        `https://sbay-mrz.herokuapp.com/customers/${this.state.email}&${
           this.state.password
         }`
       )

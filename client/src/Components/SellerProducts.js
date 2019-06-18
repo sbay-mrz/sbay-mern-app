@@ -37,7 +37,7 @@ import Slider3 from './slider3';
       
         const { spid } = this.props.match.params;
       
-        axios.get(`http://localhost:7000/products/getSellerProducts/${spid}`)
+        axios.get(`https://sbay-server.herokuapp.com/products/getSellerProducts/${spid}`)
         .then(res =>{
       
             console.log(res.data);
@@ -70,7 +70,7 @@ updatePro(){
         screenShot: this.state.sellerProducts[0].screenShot,
         category: this.state.category
       }
-    axios.patch(`http://localhost:7000/products/${this.state.proid}`,userObject)
+    axios.patch(`https://sbay-server.herokuapp.com/products/${this.state.proid}`,userObject)
     .then(res =>{
         console.log(res.data);
         const user = res.data;
@@ -119,7 +119,7 @@ getName(e){
 }
 
 deleteProduct(id){
-  axios.delete(`http://localhost:7000/products/${id}`)
+  axios.delete(`https://sbay-mrz.herokuapp.com/products/${id}`)
   .then(res => {
       console.log("res",res)
   })

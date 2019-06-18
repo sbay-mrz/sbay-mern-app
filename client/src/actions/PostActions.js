@@ -3,7 +3,7 @@ import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from '.
 import axios from 'axios';
 
 export const fetchproducts = () => dispatch => {
-    fetch('https://sbay-server.herokuapp.com/products/getproducts')
+    fetch('https://sbay-mrz.herokuapp.com/products/getproducts')
         .then(res => res.json())
         .then(posts => dispatch({
             type: FETCH_PRODUCTS,
@@ -12,7 +12,7 @@ export const fetchproducts = () => dispatch => {
 }
 
 export const sellerlogin = () => dispatch => {
-    fetch('http://localhost:7000/s/getproducts')
+    fetch('https://sbay-mrz.herokuapp.com/s/getproducts')
         .then(res => res.json())
         .then(posts => dispatch({
             type: FETCH_PRODUCTS,

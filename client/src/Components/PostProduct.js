@@ -45,7 +45,7 @@ import Slider3 from './slider3';
         category: this.state.category,
       }
       
-      axios.post('http://localhost:7000/products/postproduct',userObject)
+      axios.post('https://sbay-mrz.herokuapp.com//products/postproduct',userObject)
       .then(res => {
         console.log("posted product",res.data);
       });
