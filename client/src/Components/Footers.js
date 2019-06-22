@@ -1,48 +1,44 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import '../App.css';
+import fb from '../../src/assets/fb.png';
+import whatsapp from '../../src/assets/whatsapp.png';
+import messenger from '../../src/assets/messenger.png';
+import pinterest from '../../src/assets/pinterest.png';
+import instagram from '../../src/assets/instagram.png';
+
+
 export default class Footers extends Component {
   render() {
     return (
-      <div>
-                <footer>
-                <div>
-                
-                    <Link to="#">technologies</Link>
-                    <Link to="#">office</Link>
-                    <Link to="#">tel</Link>
-                    <Link to="#">work</Link>
-                </div>
-                <div>
-                  
-                    <Link to="#">web Srvices</Link>
-                    <Link to="#">android apps</Link>
-                    <Link to="#">vr/ ar</Link>
-                    <Link to="#">tel</Link>
-                    <Link to="#">ecommerce apps </Link>
-                </div>
-                <div>
-                 
-                    <Link to="#">as a seller</Link>
-                    <Link to="#">as a developer</Link>
-                    <Link to="#">as a customer</Link>
-                    <Link to="#">work</Link>
-                </div>
-         </footer>
-  
-         <div class="eightSection">
-         <span><i class="fab fa-instagram"></i></span>
-         <span><i class="fab fa-twitter"></i></span>
-         <span><i class="fab fa-facebook-f"></i></span>
-         <span><i class="fab fa-snapchat-ghost"></i></span>
-        </div>
-        
-        <div class="ninthSection">
-            <div>© 2019	CSRD (CENTER FOR RESEARCH & DEVELOPMENT )</div>
-            <div >Made with <span class="size"><i class="fas fa-heart"></i></span> by The CSRD</div>
-        </div>
 
-      </div>
+      <div class="jumbotron">
+      <div class="container">
+  <div class="row">
+    <div class="col-2">
+      <img src={fb} width="50px"/>
+    </div>
+    <div class="col-2">
+    <img src={messenger} width="50px"/>
+    </div>
+    <div class="col-2">
+    <img src={instagram} width="50px"/>
+    </div>
+    <div class="col-2">
+    <img src={pinterest} width="50px"/>
+    </div>
+    <div class="col-2">
+    <img src={whatsapp}  width="50px"/>
+    </div>
+    <div class="col-2">
+    <img src={fb} width="50px"/>
+    </div>
+   
+  </div>
+ 
+</div>
+   </div>
+ 
     )
   }
 }

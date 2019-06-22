@@ -1,8 +1,8 @@
 body{
-  margin:0px;
+  /* margin:0px;
   color:black;
   font-family: 'serif';
- background-color: #FCFFFD;
+ background-color: #FCFFFD; */
   
 }
 
@@ -241,7 +241,6 @@ bg-img,.bg-img2{
   flex-wrap: wrap;
   padding-left: 1rem;
  
-
 }
 .card-style{
   width: 300px;
@@ -284,12 +283,11 @@ bg-img,.bg-img2{
   background-color: pink; */
  
 }
-/* .icons{
-  font-size: 1.65rem;
+.icons{
   font-family: Arial, Helvetica, sans-serif;
-  color: #282c34;
+  color: silver;
   text-align: center;
-} */
+}
 
 /* category-end */
 /* extra-one start */
@@ -565,7 +563,16 @@ margin: 1em;
     justify-content: center;
 }
 
-/* .maindiv{
-  background-image: url('./assets/bg.png');
-  background-size: 1500px 1500px;
-} */
+.circle-icon {
+  background: #ffc0c0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+  padding: 30px;
+}
+.icon-background {
+  color: rgb(0, 75, 99);
+}

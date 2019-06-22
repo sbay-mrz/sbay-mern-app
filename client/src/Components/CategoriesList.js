@@ -8,19 +8,21 @@ export default class CategoriesList extends Component {
   render() {
     return (
       <div className="main-category-head">
+
      
       <div className="card-heading"><h1> Product categories</h1></div>
      
        <Grid style={{paddingBottom: '1em'}}>
       
-  <Row className="show-grid">
+  <Row>
     
   
+
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     
     <Link to="/mobileapp"> 
-    <Card >
+    <Card>
       <CardActionArea>
         <CardMedia
         
@@ -28,10 +30,15 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent >
-            <div className="icons">
-            <i class="fas fa-mobile-alt"></i> 
-            <p> Mobile App</p> 
-            </div>
+        <div className="icons"> 
+
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fa fa-mobile-alt fa-stack-1x"></i>
+</span>
+<p> Mobile App </p>
+</div > 
+
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -54,12 +61,13 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-
-  <div className="icons">
-      <i class="fab fa-chrome"></i>
-      
-      <p> Web Apps </p> 
-      </div>
+<div className="icons"> 
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fab fa-chrome fa-stack-1x"></i>
+</span>
+<p> Web Apps</p>
+</div>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -81,11 +89,14 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-       
-        <div className="icons">
-        <i class="fas fa-vr-cardboard"></i>
-        <p> VR/AR </p> 
-        </div>
+        <div className="icons"> 
+
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-vr-cardboard fa-stack-1x"></i>
+</span>
+<p> Ar/Vr </p>
+</div>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -115,11 +126,14 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-       
-        <div className="icons">
-        <i class="fas fa-brain"></i>
-        <p> AI</p> 
-        </div>
+        <div className="icons"> 
+
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-brain fa-stack-1x"></i>
+</span>
+<p> AI</p>
+</div>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -140,12 +154,14 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-       
-        <div className="icons">
-        <i class="fas fa-cart-plus"></i>
-        <p> Ecommerce </p> 
-        </div>
+        <div className="icons"> 
 
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-cart-plus fa-stack-1x"></i>
+</span>
+<p> E-Commerce </p>
+</div>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -166,10 +182,15 @@ export default class CategoriesList extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-        <div className="icons">
-        <i class="fas fa-code-branch"></i>
-        <p> IOT </p> 
-        </div>
+        <div className="icons"> 
+
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-code-branch fa-stack-1x"></i>
+</span>
+<p> IOT </p>
+</div>
+
         </CardContent>
       </CardActionArea>
       <CardActions>

@@ -8,15 +8,6 @@ import TextField from '@material-ui/core/TextField';
 
  class Products extends Component {
   
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //         products: [],
-    //         productDescription: [],
-    //         cart: []
-    //     }
-    //     this.getDescription = this.getDescription.bind(this);
-    // }
 
        constructor(){
         super();
