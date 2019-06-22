@@ -285,7 +285,7 @@ bg-img,.bg-img2{
 }
 .icons{
   font-family: Arial, Helvetica, sans-serif;
-  color: silver;
+  color: black;
   text-align: center;
 }
 
@@ -574,5 +574,5 @@ margin: 1em;
   padding: 30px;
 }
 .icon-background {
-  color: rgb(0, 75, 99);
+  color: silver;
 }

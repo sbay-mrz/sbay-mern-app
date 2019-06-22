@@ -124,7 +124,7 @@ searchData(e){
 //           </div>
 
     <section>
-    <div className="card-heading"><h1> Product categories</h1></div>
+    <div className="card-heading"><h1> Ready To Sell Producst</h1></div>
     <div className="text-field">
   
     <TextField
