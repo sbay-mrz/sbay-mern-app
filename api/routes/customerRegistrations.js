@@ -117,16 +117,16 @@ router.post('/postcustomer', (req, res, next) => {
         } else {
           console.log('here is the res: ', response);
           console.log('here is the obj: ', userObject);
-          Customer.create(userObject).then(function (user) {
-            console.log(user)
-            res.send({
-              user,
-              userStatus: "account created"
-            })
-          }).catch(next)
           res.status(200).json( { resStatus:'recovery email sent' } );
          }
       });
+      Customer.create(userObject).then(function (user) {
+        console.log(user)
+        res.send({
+          user,
+          userStatus: "account created"
+        })
+      }).catch(next)
      }
   });
 
