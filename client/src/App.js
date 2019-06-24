@@ -15,14 +15,12 @@ import CardTwo from './Components/CardTwo';
 import ExtraContent from './Components/ExtraContent';
 
 
-
 class App extends Component {
-
-
   render() {
     return (
       <div className="maindiv">
-           <Slider3/>
+
+        <Slider3/>
         <Slider/> 
          <CategoriesList/>
          {/* <CardTwo/> */}

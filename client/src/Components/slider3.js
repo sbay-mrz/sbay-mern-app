@@ -4,7 +4,6 @@ import ned from './../assets/nedlogo.jpg';
 import cart from './../assets/cart.png';
 import {connect} from 'react-redux';
 
-
 import { removeFromCart,addToCart } from '../actions/PostActions';
 
  class Slider3 extends Component {
@@ -60,7 +59,7 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
         
         <Link to="/cart" className="link" > <span className="nav-icon"><i class="fas fa-shopping-cart"></i></span>{this.props.cartCounter}  </Link>
         <Link to="/sellerlogin" className="link"><span className="nav-icon"><i class="fas fa-user"></i></span></Link>
-
+        
     </div>
 
 </div>
