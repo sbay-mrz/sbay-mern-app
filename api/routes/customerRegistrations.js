@@ -91,12 +91,42 @@ router.post('/postcustomer', (req, res, next) => {
         address: req.body.address,
         password: req.body.password,
       }
-
-      Customer.create(userObject).then(function (user) {
-        console.log(user)
-       res.send({user,
-           userStatus: "account created"})
-   }).catch(next)
+      console.log("userobject maik",userObject)
+      const token = crypto.randomBytes(20).toString('hex');
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+          auth: {
+            user: 'muddabir22@gmail.com',
+            pass: 'neduniversity'
+          },
+      });
+      const mailOptions = {
+         from: 'muddabir22@gmail.com',
+         to: `${userObject.email}`,
+        subject: 'Link To verify account',
+        text:
+          'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n'
+          + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
+          + `http://localhost:3000/accountverification/${token}\n\n`
+          + 'If you did not request this, please ignore this email and your password will remain unchanged.\n',
+      };
+      console.log('sending mail');
+      transporter.sendMail(mailOptions, (err, response) => {
+        if (err) {
+          console.error('there was an error: ', err);
+        } else {
+          console.log('here is the res: ', response);
+          console.log('here is the obj: ', userObject);
+          Customer.create(userObject).then(function (user) {
+            console.log(user)
+            res.send({
+              user,
+              userStatus: "account created"
+            })
+          }).catch(next)
+          res.status(200).json( { resStatus:'recovery email sent' } );
+         }
+      });
      }
   });
 

@@ -6,7 +6,7 @@ import WebApp from './Components/WebApp';
 import VrAr from './Components/VrAr';
 import Ecommerce from './Components/Ecommerce';
 import InternetOfThings from './Components/InternetOfThings';
-import ArtificialIntelligence from './Components/ArtificialIntelligence';
+import ArtficialIntelligence from './Components/ArtificialIntelligence';
 import sellerLogin from './Components/sellerLogin';
 import sellerSignup from './Components/sellerSignup';
 import customerLogin from './Components/customerLogin';
@@ -39,7 +39,7 @@ export default class RoutersComponent extends Component {
         <Route  path="/vrar" component={VrAr}/>  
         <Route  path="/ecommerce" component={Ecommerce}/>  
         <Route  path="/internetofthings" component={InternetOfThings}/>  
-        <Route  path="/artificialintelligence" component={ArtificialIntelligence}/>  
+        <Route  path="/artificialintelligence" component={ArtficialIntelligence}/>  
         <Route path="/sellerLogin" component={sellerLogin}/> 
         <Route path="/sellerSighnup" component={sellerSignup}/> 
         <Route path="/customerSignup" component={customerSignup}/> 
