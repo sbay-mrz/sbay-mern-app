@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
+import Slider3 from './slider3';
 
 
 class Login extends Component {
@@ -64,6 +65,7 @@ componentDidMount() {
         console.log(this.state.users)
         return (
             <div >
+              <Slider3/>
             <div class="login-logo">
       <i class="fas fa-globe"></i>
       <p>sBay</p>

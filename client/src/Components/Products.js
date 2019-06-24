@@ -12,8 +12,6 @@ import TextField from '@material-ui/core/TextField';
        constructor(){
         super();
         this.state = {
-            
-
             search: '',
             mysearches: false,
             filteredItmes: []
@@ -146,19 +144,16 @@ return(
 
 <Card className="card-style">
 <CardActionArea>
-<CardContent>
+<img src={obj.screenShot} alt="profile" width="100%" height="200"/>
   <div>
-  <img src={obj.screenShot} alt="profile" width="100%" height="150"/>
-<p className="productFontsize">   {obj.pname} </p>
-
-
+<CardContent>
+<p>   {obj.pname} </p>
 <div className="card-button-style">
 <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> <span className="icons-size-cart"><i class="fas fa-cart-plus"></i></span> </Button> 
-
 <Link to={`/productDescription/${obj._id}`}>  Description </Link>
 </div>
-</div>
 </CardContent>
+</div>
 </CardActionArea>
 </Card>
 
