@@ -146,6 +146,8 @@ width: 50% !important;
 }
 }
 @media (max-width:48em){
+
+  
   .myNavbar.active .toggle{
       background-color: #057DB5;
       color: #FFFFFF;
@@ -243,9 +245,10 @@ bg-img,.bg-img2{
  
 }
 .card-style{
-  width: 300px;
+  width: 290px;
+  height: 350px;
   background-color: lightgray;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
  margin-left: 1rem;
    margin-top: 1rem;
    
@@ -575,4 +578,32 @@ margin: 1em;
 }
 .icon-background {
   color: silver;
+}
+
+
+
+
+.stage {
+  border-bottom: 3px solid #444;
+  display: flex;
+  height: 330px;
+  width: 100%;
+}
+.box {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+}
+.bounce-4 {
+  animation-name: bounce-4;
+  animation-timing-function: ease;
+}
+@keyframes bounce-4 {
+  0%   { transform: scale(1,1)    translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1) translateY(-100px); }
+  50%  { transform: scale(1,1)    translateY(0); }
+  100% { transform: scale(1,1)    translateY(0); }
 }

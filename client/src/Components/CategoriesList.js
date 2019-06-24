@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography,Button} from '@material-ui/core'
 import {Grid,Row,Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Particles from 'react-particles-js';
 
 
 export default class CategoriesList extends Component {
@@ -9,15 +10,13 @@ export default class CategoriesList extends Component {
     return (
       <div className="main-category-head">
 
-     
       <div className="card-heading"><h1> Product categories</h1></div>
      
        <Grid style={{paddingBottom: '1em'}}>
       
+ 
   <Row>
     
-  
-
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     
@@ -37,7 +36,7 @@ export default class CategoriesList extends Component {
   <i class="fa fa-mobile-alt fa-stack-1x"></i>
 </span>
 <p> Mobile App </p>
-</div > 
+</div> 
 
         </CardContent>
       </CardActionArea>
