@@ -28,7 +28,7 @@ class CustomerEmailVerification extends Component {
     render() {
         return (
             <div>
-                <h1> your email has been verified successfully, you can now login. </h1>
+                <h3> your email has been verified successfully, you can now login. </h3>
             </div>
         );
     }
