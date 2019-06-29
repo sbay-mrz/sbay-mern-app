@@ -105,7 +105,7 @@ router.post('/postcustomer',(req,res,next)=>{
 
           const mailOptions = {
              from: 'muddabir22@gmail.com',
-             to: `${userObject.email}`,
+             to: decodeURIComponent(`${userObject.email}`),
             subject: 'Link To verify account',
             text:
               'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
