@@ -9,12 +9,16 @@ class EmailVerification extends Component {
     componentDidMount() {
         const parsed = queryString.parse(this.props.location.search);
         let userObject = {
+             name:parsed.name,
             email: parsed.email,
             password: parsed.password,
+            contact: parsed.contact,
+            address: parsed.address,
+            
           }
 
         console.log(parsed.email)
-        axios.post(`https://sbay-mrz.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}`,userObject)
+        axios.post(`https://sbay-mrz.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}&name=${userObject.name}&address=${userObject.address}&contact=${userObject.contact}`,userObject)
           .then(res => {
             console.log("users are : ",res.data);
           })
