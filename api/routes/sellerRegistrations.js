@@ -177,16 +177,16 @@ router.post('/postseller',(req,res,next)=>{
                 },
         
             });
-      
+
             const mailOptions = {
                from: 'muddabir22@gmail.com',
                to: `${userObject.email}`,
               subject: 'Link To verify account',
               text:
-                'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n'
+                'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
                 + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
-                + `http://localhost:3000/sellerSighnup/${token}\n\n`
-                + 'If you did not request this, please ignore this email and your password will remain unchanged.\n',
+                + `http://localhost:3000/verificationSeller?name=${userObject.name}&email=${userObject.email}&password=${userObject.password}&contact=${userObject.contact}&address=${userObject.address}\n\n`
+                + 'If you did not request this, please ignore this email.\n',
             };
       
             console.log('sending mail');
@@ -194,17 +194,12 @@ router.post('/postseller',(req,res,next)=>{
             transporter.sendMail(mailOptions, (err, response) => {
               if (err) {
                 console.error('there was an error: ', err);
+                res.status(200).json( { userStatus:'verification email not sent' } );
               } else {
                 console.log('here is the res: ', response);
-                res.status(200).json( { resStatus:'recovery email sent' } );
+                res.status(200).json( { userStatus:'verification email sent' } );
               }
             });
-            Seller.create(userObject).then(function (user) {
-
-                 console.log(user)
-                res.send({user,
-                    userStatus: "account created"})
-            }).catch(next)
                 
         }
     
@@ -212,6 +207,22 @@ router.post('/postseller',(req,res,next)=>{
 
 })
 
+router.post('/emailVerification',(req,res,next)=>{
+
+  let userObject = {
+    name: req.query.name,
+    email: req.query.email,
+    contact: req.query.contact,
+    address: req.query.address,
+    password: req.query.password,
+  }
+   Seller.create(userObject).then(function (user) {
+
+                 console.log(user)
+                res.send({user,
+                    userStatus: "account created"})
+            }).catch(next)
+})
 
 router.get('/getsellers',(req,res,next)=>{
 let i=0;
