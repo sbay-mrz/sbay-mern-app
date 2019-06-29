@@ -57,10 +57,10 @@ export default class ProductDescription extends Component {
 
     <Col xs={4} sm ={12} md={4} lg={8}>
     <Card >
+    <img src={products.screenShot} alt="description" width="100%" />
       <CardActionArea>
         <CardContent>
             <div>
-<img src={products.screenShot} alt="description"/>
             </div>
         </CardContent>
       </CardActionArea>

@@ -2,6 +2,8 @@ export const FETCH_PRODUCTS= 'FETCH-PRODUCTS';
 export const GET_SINGLE_PRODUCT ='GET_SINGLE_PRODUCT';
 export const ADD_TO_CART= 'ADD_TO_CART';
 export const REMOVE_FROM_CART= 'REMOVE_FROM_CART';
+export const SET_USER_TOKEN = "SET_USER_TOKEN";
+export const RESET_USER_TOKEN = "RESET_USER_TOKEN";
 
 
 // export const NEW_POST= 'NEW-POST';

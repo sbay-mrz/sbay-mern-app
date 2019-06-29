@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART } from '../actions/types';
+import { FETCH_PRODUCTS,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART,SET_USER_TOKEN, RESET_USER_TOKEN } from '../actions/types';
 
 const initialState = {
 
@@ -13,7 +13,9 @@ const initialState = {
     cartPrices: [],
     cartCounter: 0,
     username: '',
-    password: ''
+    password: '',
+    userToken: undefined
+
 
 };
 
@@ -49,12 +51,27 @@ export default function (state = initialState, action) {
                             return elm;
                         }
                     });
+                    var cartCounter = state.cartCounter-1;
                     newCart = newCart.filter(elm=> elm !== undefined);
-                    
+                   
+
                     return {
                     ...state,
-                    cart: newCart
+                    cart: newCart,
+                    cartCounter
                 }}
+                
+                case SET_USER_TOKEN:
+                    return {
+                        ...state,
+                        userToken: action.userToken
+                    }
+        
+                case RESET_USER_TOKEN:
+                    return {
+                        ...state,
+                        userToken: undefined
+                    }
         //      {
         //         var newCart = state.cart.filter(item => item !== action.object),
         //         cartCounter =  state.cartCounter-1

@@ -145,10 +145,11 @@ return(
 <div key={obj._id}>
 
 <Card className="card-style">
+<img src={obj.screenShot} alt="profile" width="100%" height="150"/>
+
 <CardActionArea>
 <CardContent>
   <div>
-  <img src={obj.screenShot} alt="profile" width="100%" height="150"/>
 <p className="productFontsize">   {obj.pname} </p>
 
 

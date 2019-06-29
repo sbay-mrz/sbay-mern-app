@@ -256,8 +256,8 @@ this.state ={
 this.handleChange = this.handleChange.bind(this)
 }
 
+
   componentDidMount(){
-    this.props.removeFromCart();
     let cost=[];
     let sum=0;
     let costArray = this.props.cart.map((obj)=>{
