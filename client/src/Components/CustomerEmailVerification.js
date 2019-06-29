@@ -4,7 +4,7 @@ import queryString from 'query-string';
 
 
 
-class EmailVerification extends Component {
+class CustomerEmailVerification extends Component {
 
     componentDidMount() {
         const parsed = queryString.parse(this.props.location.search);
@@ -18,7 +18,7 @@ class EmailVerification extends Component {
           }
 
         console.log(parsed.email)
-        axios.post(`https://sbay-mrz.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}&name=${userObject.name}&address=${userObject.address}&contact=${userObject.contact}`,userObject)
+        axios.post(`https://sbay-mrz.herokuapp.com/customers/emailVerification?email=${userObject.email}&password=${userObject.password}&name=${userObject.name}&address=${userObject.address}&contact=${userObject.contact}`,userObject)
           .then(res => {
             console.log("users are : ",res.data);
           })
@@ -28,10 +28,10 @@ class EmailVerification extends Component {
     render() {
         return (
             <div>
-                <h1> your email has been verified successfully , now you may login to proceed </h1>
+                <h1> your email has been verified successfully, you can now login. </h1>
             </div>
         );
     }
 }
 
-export default EmailVerification;
+export default CustomerEmailVerification;
