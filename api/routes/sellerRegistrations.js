@@ -89,11 +89,11 @@ router.post('/postseller',(req,res,next)=>{
         });
         if(flg==false){
             let userObject = {
-                name: req.body.name,
-                email: req.body.email,
-                contact: req.body.contact,
-                address: req.body.address,
-                password: req.body.password,
+                name: encodeURIComponent(req.body.name),
+                email: encodeURIComponent(req.body.email),
+                contact: encodeURIComponent(req.body.contact),
+                address: encodeURIComponent(req.body.address),
+                password: encodeURIComponent(req.body.password),
             }
             const token = crypto.randomBytes(20).toString('hex');
 
@@ -109,7 +109,7 @@ router.post('/postseller',(req,res,next)=>{
 
             const mailOptions = {
                from: 'muddabir22@gmail.com',
-               to: `${userObject.email}`,
+               to: decodeURIComponent(`${userObject.email}`),
               subject: 'Link To verify account',
               text:
                 'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
@@ -139,11 +139,11 @@ router.post('/postseller',(req,res,next)=>{
 router.post('/emailVerification',(req,res,next)=>{
 
   let userObject = {
-    name: req.query.name,
-    email: req.query.email,
-    contact: req.query.contact,
-    address: req.query.address,
-    password: req.query.password,
+    name: decodeURIComponent(req.query.name),
+    email: decodeURIComponent(req.query.email),
+    contact: decodeURIComponent(req.query.contact),
+    address: decodeURIComponent(req.query.address),
+    password: decodeURIComponent(req.query.password),
   }
    Seller.create(userObject).then(function (user) {
 

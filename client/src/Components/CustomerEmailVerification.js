@@ -9,12 +9,11 @@ class CustomerEmailVerification extends Component {
     componentDidMount() {
         const parsed = queryString.parse(this.props.location.search);
         let userObject = {
-             name:parsed.name,
-            email: parsed.email,
-            password: parsed.password,
-            contact: parsed.contact,
-            address: parsed.address,
-            
+          name:encodeURIComponent(parsed.name),
+          email: encodeURIComponent(parsed.email),
+          password: encodeURIComponent(parsed.password),
+          contact: encodeURIComponent(parsed.contact),
+          address: encodeURIComponent(parsed.address),            
           }
 
         console.log(parsed.email)
