@@ -14,7 +14,7 @@ class EmailVerification extends Component {
           }
 
         console.log(parsed.email)
-        axios.post(`http://localhost:7000/sellers/verificationseller?email=${userObject.email}&password=${userObject.password}`,userObject)
+        axios.post(`https://sbay-mrz.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}`,userObject)
           .then(res => {
             console.log("users are : ",res.data);
           })

@@ -62,7 +62,7 @@ export default class RoutersComponent extends Component {
         <Route path = "/resetcustomer/:token" component={ResetPasswordCustomer}/>
         <Route path = "/customerupdate/:updatedCustomersId" component={ResetPasswordCustomer}/>
         <Route path = "/accountverification/:token" component={AccountVerification}/>        
-        <Route path = "/verificationseller" component={EmailVerification}/>        
+        <Route path = "/verificationSeller" component={EmailVerification}/>        
         </Switch>
         </BrowserRouter>
       </div>
