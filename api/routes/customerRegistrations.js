@@ -14,7 +14,7 @@ router.post('/forgotPassword', (req, res) => {
       console.log("agaya", user)
       if (user === null) {
         console.error('email not in database');
-        res.send( { resStatus:'email not in db'} );
+        res.send({ resStatus: 'email not in db' });
       } else {
         const token = crypto.randomBytes(20).toString('hex');
         var myquery = { resetPasswordToken: token, resetPasswordExpires: Date.now() + 360000, };
@@ -29,10 +29,7 @@ router.post('/forgotPassword', (req, res) => {
           if (err) throw err;
           console.log("1 document updated", res);
         });
-        // user.updateOne({
-        //   resetPasswordToken: token,
-        //   resetPasswordExpires: Date.now() + 360000,
-        // });
+
         console.log("user after", user)
 
         const transporter = nodemailer.createTransport({
@@ -48,12 +45,11 @@ router.post('/forgotPassword', (req, res) => {
         const mailOptions = {
           from: 'muddabir22@gmail.com',
           to: `${user.email}`,
-          // to: 'muddabir22@gmail.com',
           subject: 'Link To Reset Password',
           text:
             'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n'
             + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
-            + `http://localhost:3000/resetcustomer/${token}\n\n`
+            + `https://sbay-mrz.herokuapp.com/resetcustomer/${token}\n\n`
             + 'If you did not request this, please ignore this email and your password will remain unchanged.\n',
         };
 
@@ -64,89 +60,91 @@ router.post('/forgotPassword', (req, res) => {
             console.error('there was an error: ', err);
           } else {
             console.log('here is the res: ', response);
-            res.status(200).json( { resStatus:'recovery email sent' } );
+            res.status(200).json({ resStatus: 'recovery email sent' });
           }
         });
 
-        
+
       }
     });
 });
 
-router.post('/postcustomer',(req,res,next)=>{
+router.post('/postcustomer', (req, res, next) => {
 
   Customer.find({}, function (err, users) {
-      let flg = false;
-      users.forEach(function (user) {
-          if(user.email === req.body.email){
-              console.log(user)
-              res.send({userStatus: ' exist'})
-              flg =true;
-          }
-      });
-      if(flg==false){
-          let userObject = {
-              name: req.body.name,
-              email: req.body.email,
-              contact: req.body.contact,
-              address: req.body.address,
-              password: req.body.password,
-          }
-      
-          const transporter = nodemailer.createTransport({
-            service: 'gmail',
-         
-              auth: {
-                user: 'muddabir22@gmail.com',
-                pass: 'neduniversity'
-              },
-      
-          });
-
-          const mailOptions = {
-             from: 'muddabir22@gmail.com',
-             to: `${userObject.email}`,
-            subject: 'Link To verify account',
-            text:
-              'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
-              + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
-              + `http://localhost:3000/verificationCustomer?name=${userObject.name}&email=${userObject.email}&password=${userObject.password}&contact=${userObject.contact}&address=${userObject.address}\n\n`
-              + 'If you did not request this, please ignore this email.\n',
-          };
-    
-          console.log('sending mail');
-    
-          transporter.sendMail(mailOptions, (err, response) => {
-            if (err) {
-              console.error('there was an error: ', err);
-              res.status(200).json( { userStatus:'verification email not sent' } );
-            } else {
-              console.log('here is the res: ', response);
-              res.status(200).json( { userStatus:'verification email sent' } );
-            }
-          });
-              
+    let flg = false;
+    users.forEach(function (user) {
+      if (user.email === req.body.email) {
+        console.log(user)
+        res.send({ userStatus: ' exist' })
+        flg = true;
       }
-  
+    });
+    if (flg == false) {
+      let userObject = {
+        name: req.body.name,
+        email: req.body.email,
+        contact: req.body.contact,
+        address: req.body.address,
+        password: req.body.password,
+      }
+
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+
+        auth: {
+          user: 'muddabir22@gmail.com',
+          pass: 'neduniversity'
+        },
+
+      });
+
+      const mailOptions = {
+        from: 'muddabir22@gmail.com',
+        to: `${userObject.email}`,
+        subject: 'Link To verify account',
+        text:
+          'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
+          + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
+          + `https://sbay-mrz.herokuapp.com/verificationCustomer?name=${userObject.name}&email=${userObject.email}&password=${userObject.password}&contact=${userObject.contact}&address=${userObject.address}\n\n`
+          + 'If you did not request this, please ignore this email.\n',
+      };
+
+      console.log('sending mail');
+
+      transporter.sendMail(mailOptions, (err, response) => {
+        if (err) {
+          console.error('there was an error: ', err);
+          res.status(200).json({ userStatus: 'verification email not sent' });
+        } else {
+          console.log('here is the res: ', response);
+          res.status(200).json({ userStatus: 'verification email sent' });
+        }
+      });
+
+    }
+
   });
 
 })
 
-router.post('/emailVerification',(req,res,next)=>{
+router.post('/emailVerification', (req, res, next) => {
 
-let userObject = {
-  name: req.query.name,
-  email: req.query.email,
-  contact: req.query.contact,
-  address: req.query.address,
-  password: req.query.password,
-}
- Customer.create(userObject).then(function (user) {
+  let userObject = {
+    name: req.query.name,
+    email: req.query.email,
+    contact: req.query.contact,
+    address: req.query.address,
+    password: req.query.password,
+  }
+  Customer.create(userObject).then(function (user) {
 
-               console.log(user)
-              res.send({user,
-                  userStatus: "account created"})
-          }).catch(next)
+    console.log(user)
+    res.send({
+      user,
+      userStatus: "account created"
+    })
+  }).catch(next)
 })
 
 router.get('/getcustomers', (req, res, next) => {
@@ -242,55 +240,56 @@ router.get('/reset/:token', (req, res, next) => {
         })
       }
     })
-  }); 
+  });
 })
 
-router.patch('/customerupdate/:updatedCustomersId',(req,res,next)=>{
-  Customer.updateOne({ "_id": req.params.updatedCustomersId.toString()},
-  {
-      $set: {"password": req.body.password}
-      
-  }).then(function (user) {
+router.patch('/customerupdate/:updatedCustomersId', (req, res, next) => {
+  Customer.updateOne({ "_id": req.params.updatedCustomersId.toString() },
+    {
+      $set: { "password": req.body.password }
+
+    }).then(function (user) {
       res.send({
-      user,
-      message: 'hello chuchu'});
-  })
+        user,
+        message: 'hello chuchu'
+      });
+    })
 });
 
-router.patch('/updateCustomer',(req,res,next)=>{
+router.patch('/updateCustomer', (req, res, next) => {
   Customer.updateOne({ "_id": req.query.customersId },
-  {
+    {
       $set:
       {
-          "name": req.body.name,
-          //"email": req.body.email,
-          "contact": req.body.contact,
-          //"password": req.body.password,
-          "address": req.body.address
+        "name": req.body.name,
+        //"email": req.body.email,
+        "contact": req.body.contact,
+        //"password": req.body.password,
+        "address": req.body.address
       }
-  }).then(function (user) {
+    }).then(function (user) {
       res.send(
-        { 
+        {
           updateStatus: 'user updated'
         }
       );
-  })
+    })
 });
 
-router.patch('/:customersId',(req,res,next)=>{
+router.patch('/:customersId', (req, res, next) => {
   Customer.updateOne({ "_id": req.params.customersId.toString() },
-  {
+    {
       $set:
       {
-          "name": req.body.name,
-          "email": req.body.email,
-          "contact": req.body.contact,
-          "password": req.body.password,
-          "address": req.body.address
+        "name": req.body.name,
+        "email": req.body.email,
+        "contact": req.body.contact,
+        "password": req.body.password,
+        "address": req.body.address
       }
-  }).then(function (user) {
+    }).then(function (user) {
       res.send(user);
-  })
+    })
 });
 
 router.patch('/:productid', (req, res, next) => {
