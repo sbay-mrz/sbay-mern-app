@@ -53,7 +53,7 @@ router.post('/forgotPassword', (req, res) => {
           text:
             'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n'
             + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
-            + `http://localhost:3000/resetcustomer/${token}\n\n`
+            + `https://sbay-mrz.herokuapp.com/resetcustomer/${token}\n\n`
             + 'If you did not request this, please ignore this email and your password will remain unchanged.\n',
         };
 
@@ -110,7 +110,7 @@ router.post('/postcustomer',(req,res,next)=>{
             text:
               'You are receiving this because you (or someone else) have requested the verification of email for your account.\n\n'
               + 'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n'
-              + `http://localhost:3000/verificationCustomer?name=${userObject.name}&email=${userObject.email}&password=${userObject.password}&contact=${userObject.contact}&address=${userObject.address}\n\n`
+              + `https://sbay-mrz.herokuapp.com/verificationCustomer?name=${userObject.name}&email=${userObject.email}&password=${userObject.password}&contact=${userObject.contact}&address=${userObject.address}\n\n`
               + 'If you did not request this, please ignore this email.\n',
           };
     
