@@ -70,7 +70,7 @@ updatePro(){
         screenShot: this.state.sellerProducts[0].screenShot,
         category: this.state.category
       }
-    axios.patch(`https://sbay-server.herokuapp.com/products/${this.state.proid}`,userObject)
+    axios.patch(`https://sbay-mrz.herokuapp.com/products/${this.state.proid}`,userObject)
     .then(res =>{
         console.log(res.data);
         const user = res.data;
