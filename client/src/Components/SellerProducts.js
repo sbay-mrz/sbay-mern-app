@@ -37,7 +37,7 @@ import Slider3 from './slider3';
       
         const { spid } = this.props.match.params;
       
-        axios.get(`https://sbay-server.herokuapp.com/products/getSellerProducts/${spid}`)
+        axios.get(`https://sbay-mrz.herokuapp.com/products/getSellerProducts/${spid}`)
         .then(res =>{
       
             console.log(res.data);
