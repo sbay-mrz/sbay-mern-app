@@ -10,7 +10,7 @@ export default class CategoriesList extends Component {
       <div className="main-category-head">
 
      
-      <div className="card-heading"><h1> Product categories</h1></div>
+      <div className="card-heading"><h1> Product Categories</h1></div>
      
        <Grid style={{paddingBottom: '1em'}}>
       

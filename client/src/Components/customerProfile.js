@@ -89,7 +89,7 @@ render(){
                 {/* <img src="#" alt="#"/>*/}
                  <h3> {customerProfile.name} </h3> 
                  
-                 <Link to={`/newProductRequest/${customerProfile._id}`} > <button type="button" class="btn btn-primary btn-lg abc">Post Your Product Request</button> </Link>
+                 <Link to={`/newProductRequest/${customerProfile._id}`} > <button type="button" class="btn btn-primary btn-lg abc">Request For New Product </button> </Link>
             </div>
             <div className="c-profile-div-one-2">
                {/**/} <div>
@@ -167,7 +167,7 @@ render(){
 {this.state.updateCustomer && 
 
     <div>
-    <h2> Edit Seller </h2>
+    <h2> Edit customer </h2>
   <form method="post" >
   <Row> 
 

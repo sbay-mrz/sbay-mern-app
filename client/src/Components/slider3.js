@@ -33,7 +33,7 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
           
     <div className="left" style={{paddingTop: '10px'}}>
         <Link to="/" className="link">Home</Link>
-        <Link to="/customerLogin" className="link">New Product</Link>
+        <Link to="/customerLogin" className="link"><span ><i class="fas fa-user"></i></span>Customer</Link>
       
            
        

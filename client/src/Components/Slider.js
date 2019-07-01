@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import {Carousel,Grid,Row,Col} from 'react-bootstrap';
 import '../App.css';
 import firstSliderImg from '../assets/mainslide6.jpg';
-
 import secondSliderImg from '../assets/mainslide5.jpg';
 import thirdSliderImg from '../assets/mainsilde3.jpg';
-
+import masjidapp from '../assets/masjidapp.JPG';
 
 export default class Slider extends Component {
   render() {
@@ -18,7 +17,7 @@ export default class Slider extends Component {
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="sizeimg2" src={thirdSliderImg} alt="First slide"/>
+          <img class="sizeimg2" src={masjidapp} alt="First slide"/>
           <div class="carousel-caption d-none d-md-block">
           <h5>Find your Dream project</h5>
           <p>With SBay</p>

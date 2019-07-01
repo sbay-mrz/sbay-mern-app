@@ -175,33 +175,33 @@ getPic(){
                 <h2> Post Your product </h2>
               <form method="post" onSubmit={this.postProduct} className="formInPostProduct">
   <div class="form-group">
-    <label for="name">product name:</label>
+    <label for="name">Product Name:</label>
     <input type="name" class="form-control" id="name" onChange={this.getName.bind(this)}/>
   </div>
  
   <div class="form-group">
-    <label for="exeUrl">exeUrl:</label>
+    <label for="exeUrl">Exe Url:</label>
     <input type="text" class="form-control" id="exeUrl" onChange={this.getExeUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="demovideourl">demovideourl:</label>
+    <label for="demovideourl">Demo Video Url:</label>
     <input type="text" class="form-control" id="demovideourl" onChange={this.getDemoVideoUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="hostUrl">hostUrl:</label>
+    <label for="hostUrl">Host Url:</label>
     <input type="text" class="form-control" id="hostUrl" onChange={this.getHostUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="cost">cost:</label>
-    <input type="text" class="form-control" id="cost" onChange={this.getCost.bind(this)}/>
+    <label for="cost">Cost:</label>
+    <input type="number" class="form-control" id="cost" onChange={this.getCost.bind(this)}/>
   </div>
 
   <div class="form-group">
-    <label for="pdescription">pdescription:</label>
+    <label for="pdescription">Product Description:</label>
     <input type="text" class="form-control" id="pdescription"onChange={this.getDescription.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="screenShot">screenShot:</label>
+    <label for="screenShot">ScreenShot:</label>
     <input type="file" class="form-control"  onChange={this.getScreenShot.bind(this)}/>
 
     {/* <Button onClick={this.getPic.bind(this)}> get pic  </Button> */}

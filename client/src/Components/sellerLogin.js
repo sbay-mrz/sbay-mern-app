@@ -71,7 +71,7 @@ componentDidMount() {
     <div class="LogInParent ">
        <section  class="login-screen-section1">
         <h1>Good to see you again!</h1>
-        <p>Login to manage your bookings</p>
+        <p>Login to manage your Account</p>
        </section>
        <form  onSubmit={this.gotoLogin}>
          <section  class="login-screen-section2"> 
