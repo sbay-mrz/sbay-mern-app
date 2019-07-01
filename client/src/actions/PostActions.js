@@ -41,7 +41,8 @@ export const addToCart = (product,id) =>  ({
 
 export const removeFromCart = (productID) => ({  
         type: REMOVE_FROM_CART,
-        productID: productID
+        productID: productID,
+        
     })
 
 

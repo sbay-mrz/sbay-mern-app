@@ -46,19 +46,28 @@ export default function (state = initialState, action) {
                  case REMOVE_FROM_CART:
 
                  {
+                     console.log("addedids ",state.addedIds)
                     var newCart = state.cart.map(elm =>{
                         if(elm._id !== action.productID){
+                            return elm;
+                        }
+                    });
+                    var addedIds = state.addedIds.map(elm =>{
+                        console.log("action added",action.addedId)
+                        if(elm !== action.productID){
                             return elm;
                         }
                     });
                     var cartCounter = state.cartCounter-1;
                     newCart = newCart.filter(elm=> elm !== undefined);
                    
+                     addedIds = addedIds.filter(elm=>elm!==undefined )
 
                     return {
                     ...state,
                     cart: newCart,
-                    cartCounter
+                    cartCounter,
+                    addedIds
                 }}
                 
                 case SET_USER_TOKEN:
