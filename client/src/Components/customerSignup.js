@@ -130,7 +130,7 @@ componentWillMount() {
             </section>
             </form>
              <section class="SignUpThree">
-               <button onClick={this.Postdata} class="btn btn-primary btn-lg btn-block"> sighn </button>
+               <button onClick={this.Postdata} class="btn btn-primary btn-lg btn-block"> sighnUp </button>
              
               <Link to="/customerLogin"> <p class="secondpara">already have an account <span>login?</span> here</p>  </Link>
             
