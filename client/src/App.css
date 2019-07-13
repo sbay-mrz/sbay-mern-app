@@ -574,7 +574,11 @@ margin: 1em;
   padding: 30px;
 }
 .icon-background {
-  color: silver;
+  color: white;
+  
+}
+.cate-icon-color{
+  color: #057DB5;
 }
 
 .cate-box{
