@@ -37,17 +37,16 @@ axios.get(`https://sbay-mrz.herokuapp.com/products/iot`)
       
         {this.state.iot.map((obj)=>{
           return(
-        <Card style={{width: '300px', height: '200px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
-        <div> 
-        <img src={iot.screenShot} alt="iot" weight="300px" height="100px"/>
-
-              <p> {obj.pname} </p>
-              <p> {obj.category} </p>  
-              <p> {obj.cost} </p>   
-              <Link to={`/productDescription/${obj._id}`}>  Description </Link>  
-
-            </div>
-            </Card>
+            <Card style={{textAlign: 'center', width: '300px', height: '350px',marginLeft: '15px'}}>
+            <div> 
+           
+            <img src={obj.screenShot} alt="ai" width="100%" height="200px"/>
+                  <p> {obj.pname} </p>
+                  <p> {obj.category} </p>  
+                  <p> {obj.cost} </p>   
+                  <Link to={`/productDescription/${obj._id}`}>  Description </Link>  
+                </div>
+                </Card>
           )
         })}
       </div>

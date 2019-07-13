@@ -148,7 +148,7 @@ render(){
        {sellerProducts.map((obj,index)=>{
            return(
             <div className="icons">
-            <p>   <img src={obj.screenShot} width="80%" height="60%"/> </p> 
+            <p>   <img src={obj.screenShot} width="30%" height="10%"/> </p> 
             <p>     {obj.pname} </p> 
             <p>     {obj.cost} </p> 
             <p>     {obj.category} </p> 

@@ -66,9 +66,9 @@ console.log(CustomizeCustomizeRequest);
     render(){
         return(
             <div>
-             hello {this.props.customize}
 
              <div className="container"> 
+ <h3> Customize Product </h3>
  <Card>
                 <form onSubmit={this.CustomizeProductRequest} method="post">
   <div class="form-group form-elements">
@@ -83,10 +83,11 @@ console.log(CustomizeCustomizeRequest);
         />
   </div>
 <hr/>
-   <button class="btn btn-primary" type="submit"> submit </button>
 
 </form>
+
 </Card>
+<button class="btn btn-primary" type="submit"> submit </button>
 
 </div>
 

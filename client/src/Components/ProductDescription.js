@@ -67,17 +67,12 @@ customize(){
             <div>
                 <Slider3/>
                <Grid>
-  <Row>
+  <Row style={{marginTop: '2em'}}>
 
     <Col xs={4} sm ={12} md={4} lg={8}>
     <Card >
-    <img src={products.screenShot} alt="description" width="100%" />
-      <CardActionArea>
-        <CardContent>
-            <div>
-            </div>
-        </CardContent>
-      </CardActionArea>
+    <img src={products.screenShot} alt="description" width="800px" height="215px"/>
+ 
     </Card>
     </Col>
     
@@ -104,6 +99,7 @@ customize(){
     </Card>
 
  <Button onClick={this.getSeller.bind(this)}> seller info </Button>
+ <Button onClick={this.customize.bind(this)}> apply for customization </Button>
 
         
 {this.state.showSeller &&  
@@ -131,7 +127,6 @@ customize(){
 
 </Grid>
 
-<Button onClick={this.customize.bind(this)}> apply for customization </Button>
 
             </div> 
         )
