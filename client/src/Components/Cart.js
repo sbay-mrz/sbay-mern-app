@@ -325,7 +325,7 @@ this.handleChange = this.handleChange.bind(this)
        
        <tr>
         
-       <td><img  src= {obj.screenShot} width="200"/> </td> 
+       <td><img  src= {obj.screenShot} width="200" height="100px"/> </td> 
          <td> {obj.pname} </td> 
          <td> {obj.cost} </td>  
          <td> {obj.category} </td> 
