@@ -8,6 +8,8 @@ import Header2 from './Header2';
 import Slider3 from './slider3';
 import auth from './Auth';
 import Products from './Products';
+import {resetUserToken} from './../actions/PostActions';
+import {connect} from 'react-redux';
 
 
  class sellerProfile extends Component{
@@ -26,7 +28,13 @@ import Products from './Products';
     }
 
     componentDidMount(){
-        
+      var user= JSON.parse(localStorage.getItem('userProfile'));
+      // console.log(user._id);
+      if(!localStorage.getItem('userProfile')){
+        this.props.history.push('/sellerLogin')
+      }
+
+      
         const { id } = this.props.match.params;
         axios.get(`https://sbay-mrz.herokuapp.com/sellers/${id}`)
         .then(res =>{
@@ -34,6 +42,9 @@ import Products from './Products';
             const user = res.data;
             console.log("users",user)
             this.setState({ sellerProfile: user });
+
+
+
 
             if(this.state.image !== ''){
                 let userObject = {
@@ -82,7 +93,9 @@ import Products from './Products';
 
 logout(){
     auth.login(() => {
-        this.props.history.push("/sellerLogin");
+        this.props.history.push("/");
+localStorage.removeItem('userProfile');
+
       });
 }
 
@@ -232,4 +245,8 @@ render(){
 
 }
 
-export default sellerProfile
+const mapStateToProps = (state,dispatch) => ({
+status: state.posts.status
+})
+
+export default connect(mapStateToProps, {resetUserToken})(sellerProfile);

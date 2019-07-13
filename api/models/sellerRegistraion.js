@@ -33,7 +33,7 @@ const sellerSchema = new Schema({
     },
     resetPasswordExpires: {
         type: Date,
-    }
+    },
 })
 
 const Seller = mongoose.model('sellers', sellerSchema);

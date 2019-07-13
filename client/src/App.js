@@ -13,15 +13,17 @@ import Footers from './Components/Footers';
 import Categories2 from './Components/Categories2';
 import CardTwo from './Components/CardTwo';
 import ExtraContent from './Components/ExtraContent';
+import NewSlider from './Components/NewSlider';
 
 
 class App extends Component {
   render() {
     return (
       <div className="maindiv">
-
         <Slider3/>
-        <Slider/> 
+        <NewSlider/>
+
+        {/* <Slider/>  */}
          <CategoriesList/>
          {/* <CardTwo/> */}
          {/* {/* <Categories2/> */}

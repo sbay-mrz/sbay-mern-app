@@ -47,6 +47,20 @@ export default class ProductDescription extends Component {
       })
     }
 
+
+customize(){
+  
+  let userProfile = JSON.parse(localStorage.getItem('userProfile'));
+  // let id = userProfile._id;
+  if(userProfile){
+    this.props.history.push(`/productCustomize/${this.props.match.params.myid}`)
+  }
+  else{
+    alert("login as customer to contine")
+  }
+  
+}
+
     render(){
         const {products,sellerProfile} = this.state;
         return(
@@ -114,8 +128,10 @@ export default class ProductDescription extends Component {
 }
 </Col>
     </Row>
+
 </Grid>
 
+<Button onClick={this.customize.bind(this)}> apply for customization </Button>
 
             </div> 
         )

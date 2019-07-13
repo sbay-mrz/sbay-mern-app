@@ -5,16 +5,46 @@ import cart from './../assets/cart.png';
 import {connect} from 'react-redux';
 
 import { removeFromCart,addToCart } from '../actions/PostActions';
+import { Button } from '@material-ui/core';
 
  class Slider3 extends Component {
+   constructor(props){
+     super(props);
+     this.postproduct=this.postproduct.bind(this);
+   }
     componentDidMount(){
+  
+
             console.log(this.props.cartcounter);
         const one = document.querySelector('#one');
         one.addEventListener('click', (e)=>{
             one.parentElement.classList.toggle('active');
         })
     }
+
+
+    postproduct(){
+      var user= JSON.parse(localStorage.getItem('userProfile'));
+      console.log(user._id);
+      if(localStorage.getItem('userProfile')){
+        this.props.history.push("postproduct/"+user._id)
+      }
+    }
   render() {
+    let user = JSON.parse(localStorage.getItem('userProfile'));
+    let usertypecust = 'default';
+    let usertypeseller = 'default';
+    if(user){
+      if(user.type === 'seller'){
+         
+         usertypecust = user.type;
+      }
+      else if(user.type === 'customer'){
+        usertypeseller = user.type;
+     }
+    }
+   
+    // console.log(usertype)
     return (
       <div>
           <div className="myNavbar">
@@ -33,33 +63,19 @@ import { removeFromCart,addToCart } from '../actions/PostActions';
           
     <div className="left" style={{paddingTop: '10px'}}>
         <Link to="/" className="link">Home</Link>
-        <Link to="/customerLogin" className="link"><span ><i class="fas fa-user"></i></span>Customer</Link>
-      
-           
-       
-       
-        
-    {/* <Link to="" className="link">Pricing</Link>*/}
-       {/* <Link to="" className="link">Demo</Link>*/}
-       {/*
-       <Link to="/contactus" className="link">Contact</Link>
-      <Link to ="" className="nav-search">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-        <div class="input-group-append">
-         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span className="search-button"><i class="fas fa-search"></i></span></button>
-        </div>
-      </div>
-        </Link>*/}
+       {usertypecust === 'default' && <Link to="/customerLogin" className="link"><span ><i class="fas fa-user"></i></span>Customer</Link>
+       }
     </div>
 
     <div className="right" style={{paddingTop: '10px'}}>
     {/* <Link to="/cart" className="toggle"> <img src={cart} width="100px" height="50px" alt="cart"/></Link>  */}
-        <Link to="/sellerLogin" className="link"><span className="nav-icon"><i class="fas fa-camera"></i></span><span>SELL</span></Link>
-        
+     
+         
+         {/* <Button onClick={this.postproduct} className="link"><span>SELL</span></Button> */}
+     
         <Link to="/cart" className="link" > <span className="nav-icon"><i class="fas fa-shopping-cart"></i></span>{this.props.cartCounter}  </Link>
-        <Link to="/sellerlogin" className="link"><span className="nav-icon"><i class="fas fa-user"></i></span></Link>
-        
+        { usertypeseller === 'default' && <Link to="/sellerlogin" className="link"><span className="nav-icon"><i class="fas fa-user"></i></span></Link>
+       } 
     </div>
 
 </div>

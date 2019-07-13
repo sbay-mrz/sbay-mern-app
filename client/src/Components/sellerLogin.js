@@ -4,6 +4,8 @@ import Card from '@material-ui/core/Card';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
+import {setUserToken} from './../actions/PostActions';
+import {connect} from 'react-redux';
 
 
 class Login extends Component {
@@ -22,6 +24,10 @@ constructor(){
 }
 
 componentDidMount() {
+  var user= JSON.parse(localStorage.getItem('userProfile'));
+  if(localStorage.getItem('userProfile')){
+    this.props.history.push(`sellerProfile/${user._id}`)
+  }
 
     axios.get("https://sbay-mrz.herokuapp.com/sellers/getsellers")
       .then(res => {
@@ -43,6 +49,13 @@ componentDidMount() {
     .then(res => {
         console.log(res)
         if(res.data.userStatus === "exist"){
+          let userProfile = {
+            _id: res.data.user._id,
+            type: 'seller'
+          }
+          localStorage.setItem('userProfile',JSON.stringify(userProfile));
+          this.props.setUserToken(true);
+          console.log("user status",this.props.status)
         this.props.history.push(`/sellerProfile/${res.data.user._id}`);
         }
         else{
@@ -104,4 +117,8 @@ componentDidMount() {
     }
 }
 
-export default Login;
+const mapStateToProps = (state,dispatch) => ({
+status: state.posts.status
+})
+
+export default connect(mapStateToProps, {setUserToken})(Login);

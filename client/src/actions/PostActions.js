@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART} from './types';
+import {FETCH_PRODUCTS ,GET_SINGLE_PRODUCT,ADD_TO_CART,REMOVE_FROM_CART,SET_USER_TOKEN,RESET_USER_TOKEN} from './types';
 // import Posts from '../Components/Posts';
 import axios from 'axios';
 
@@ -43,6 +43,16 @@ export const removeFromCart = (productID) => ({
         type: REMOVE_FROM_CART,
         productID: productID,
         
+    })
+
+    export const setUserToken = (status) => ({  
+        type: SET_USER_TOKEN,
+        status 
+    })
+
+    export const resetUserToken = (status) => ({  
+        type: RESET_USER_TOKEN,
+        status 
     })
 
 

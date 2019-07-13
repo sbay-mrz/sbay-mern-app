@@ -20,16 +20,19 @@ router.post('/postcustom',(req,res,next)=>{
 })
 
 
-router.get('/getcustom',(req,res,next)=>{
-let i=0;
-customerCustomizationRequest.find({}, function (err, users) {
-        var userMap = [];
-        users.forEach(function (user) {
-            userMap[i] = user;
-        });
-        res.send(userMap);
-    });
-
+router.get('/getcustom/:myid',(req,res,next)=>{
+  let i=0;
+  customerCustomizationRequest.find({}, function (err,products) {
+      var productMap = [];
+      products.forEach( function (request) { 
+          if( request.cusCuzReqId.equals(req.params.myid)){
+              productMap[i++] = request
+          }
+      });
+      console.log(productMap);
+      res.send(productMap);
+  })
+  .catch(err => next(err));
 })
 
 router.get('/:id',(req,res,next)=>{

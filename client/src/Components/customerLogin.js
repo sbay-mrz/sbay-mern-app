@@ -30,6 +30,13 @@ class customerLogin extends Component {
   }
 
   componentDidMount() {
+
+    var user= JSON.parse(localStorage.getItem('userProfile'));
+    if(localStorage.getItem('userProfile')){
+      
+      this.props.history.push(`customerProfile/${user._id}`)
+    }
+
     axios.get("https://sbay-mrz.herokuapp.com/customers/getcustomers").then(res => {
       const users = res.data;
       console.log("users are : ", users);
@@ -49,6 +56,11 @@ class customerLogin extends Component {
 
       .then(res => {
         if (res.data.userStatus === "exist") {
+          let userProfile = {
+            _id: res.data.user._id,
+            type: 'customer'
+          }
+          localStorage.setItem('userProfile',JSON.stringify(userProfile));
           console.log(res.data.user._id);
           this.props.history.push(`/customerProfile/${res.data.user._id}`);
         } else {

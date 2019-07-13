@@ -322,6 +322,7 @@ this.handleChange = this.handleChange.bind(this)
    
    {this.props.cart.map((obj,index)=>{
      return(
+       
        <tr>
         
        <td><img  src= {obj.screenShot} width="200"/> </td> 

@@ -6,6 +6,9 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import Slider3 from './slider3';
 import Products from './Products';
 import '../App.css';
+import auth from './Auth';
+
+
  class customerProfile extends Component{
 
     constructor(){
@@ -21,6 +24,13 @@ import '../App.css';
     }
 
     componentDidMount(){
+
+      var user= JSON.parse(localStorage.getItem('userProfile'));
+      // console.log(user._id);
+      if(!localStorage.getItem('userProfile')){
+        this.props.history.push('/customerLogin')
+      }
+
         const { id } = this.props.match.params;
         axios(`https://sbay-mrz.herokuapp.com/customers/${id}`)
         .then(res =>{
@@ -53,6 +63,13 @@ import '../App.css';
         this.setState({contact: e.target.value});
       }
     
+      logout(){
+        auth.login(() => {
+            this.props.history.push("/");
+    localStorage.removeItem('userProfile');
+          });
+    }
+
 
     updatePro(){
         alert('hello');
@@ -74,6 +91,7 @@ import '../App.css';
           })  
           this.setState({updateCustomer : !this.state.updateCustomer})
           window.location.reload();
+
       }
 render(){
     const {customerProfile} = this.state;
@@ -110,6 +128,8 @@ render(){
                  <p> {customerProfile.contact} </p> 
                 <p> <Link to={`/Myrequests/${customerProfile._id}`}> my requests </Link> </p>
                 <Button onClick={this.updateCustomer.bind(this)}>  edit profile </Button>
+                
+                <Button onClick={this.logout.bind(this)}>  logout </Button>
 
             </div>
          </div>

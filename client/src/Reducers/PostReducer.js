@@ -14,8 +14,8 @@ const initialState = {
     cartCounter: 0,
     username: '',
     password: '',
-    userToken: undefined
-
+    userToken: undefined,
+    status: false
 
 };
 
@@ -73,13 +73,13 @@ export default function (state = initialState, action) {
                 case SET_USER_TOKEN:
                     return {
                         ...state,
-                        userToken: action.userToken
+                        status: !action.status
                     }
         
                 case RESET_USER_TOKEN:
                     return {
                         ...state,
-                        userToken: undefined
+                        status: !action.status
                     }
         //      {
         //         var newCart = state.cart.filter(item => item !== action.object),
