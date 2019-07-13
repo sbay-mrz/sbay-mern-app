@@ -156,7 +156,7 @@ return(
 <div className="card-button-style">
 <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> <span className="icons-size-cart"><i class="fas fa-cart-plus"></i></span> </Button> 
 
-<Link to={`/productDescription/${obj._id}`}>  Description </Link>
+<Link to={`/productDescription/${obj._id}`} className="product-des">  Description </Link>
 </div>
 </div>
 </CardContent>
