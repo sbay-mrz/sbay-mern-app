@@ -22,7 +22,7 @@ export default class CategoriesList extends Component {
     <Col xs={4} sm ={4} md={4} lg={4}>
     
     <Link to="/mobileapp"> 
-    <Card className="cate-box">
+    <Card>
       <CardActionArea>
         <CardMedia
         
@@ -33,15 +33,17 @@ export default class CategoriesList extends Component {
         <div className="icons"> 
 
         <span class="fa-stack fa-3x">
- 
-  <i class="fa fa-mobile-alt fa-stack-1x icon-color-cate"></i>
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fa fa-mobile-alt fa-stack-1x"></i>
 </span>
 <p> Mobile App </p>
 </div > 
 
         </CardContent>
       </CardActionArea>
-     
+      <CardActions>
+      
+      </CardActions>
     </Card>
     </Link>
 
@@ -51,7 +53,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="webapp"> 
-    <Card className="cate-box">
+    <Card>
       <CardActionArea>
         <CardMedia
         
@@ -61,14 +63,16 @@ export default class CategoriesList extends Component {
         <CardContent>
 <div className="icons"> 
         <span class="fa-stack fa-3x">
-  
-  <i class="fab fa-chrome fa-stack-1x icon-color-cate"></i>
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fab fa-chrome fa-stack-1x"></i>
 </span>
 <p> Web Apps</p>
 </div>
         </CardContent>
       </CardActionArea>
-      
+      <CardActions>
+   
+      </CardActions>
     </Card>
     </Link>
     </Col>
@@ -77,7 +81,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="vrar"> 
-    <Card className="cate-box">
+    <Card >
       <CardActionArea>
         <CardMedia
         
@@ -88,14 +92,16 @@ export default class CategoriesList extends Component {
         <div className="icons"> 
 
         <span class="fa-stack fa-3x">
- 
-  <i class="fas fa-vr-cardboard fa-stack-1x icon-color-cate"></i>
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-vr-cardboard fa-stack-1x"></i>
 </span>
 <p> Ar/Vr </p>
 </div>
         </CardContent>
       </CardActionArea>
-     
+      <CardActions>
+       
+      </CardActions>
     </Card>
     </Link>
     </Col>
@@ -112,7 +118,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="artificialintelligence"> 
-    <Card className="cate-box" >
+    <Card >
       <CardActionArea>
         <CardMedia
         
@@ -122,15 +128,17 @@ export default class CategoriesList extends Component {
         <CardContent>
         <div className="icons"> 
 
-        <span class="fa-stack fa-3x ">
- 
-  <i class="fas fa-brain fa-stack-1x icon-color-cate"></i>
+        <span class="fa-stack fa-3x">
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-brain fa-stack-1x"></i>
 </span>
 <p> AI</p>
 </div>
         </CardContent>
       </CardActionArea>
-     
+      <CardActions>
+       
+      </CardActions>
     </Card>
     </Link>
     </Col>
@@ -138,7 +146,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="ecommerce"> 
-    <Card className="cate-box">
+    <Card >
       <CardActionArea>
         <CardMedia
         
@@ -149,14 +157,16 @@ export default class CategoriesList extends Component {
         <div className="icons"> 
 
         <span class="fa-stack fa-3x">
- 
-  <i class="fas fa-cart-plus fa-stack-1x icon-color-cate"></i>
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-cart-plus fa-stack-1x"></i>
 </span>
 <p> E-Commerce </p>
 </div>
         </CardContent>
       </CardActionArea>
+      <CardActions>
       
+      </CardActions>
     </Card>
     </Link>
     </Col>
@@ -164,7 +174,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="internetofthings"> 
-    <Card className="cate-box" >
+    <Card >
       <CardActionArea>
         <CardMedia
         
@@ -175,15 +185,16 @@ export default class CategoriesList extends Component {
         <div className="icons"> 
 
         <span class="fa-stack fa-3x">
- 
-  <i class="fas fa-code-branch fa-stack-1x icon-color-cate"></i>
+  <i class="fa fa-circle fa-stack-2x icon-background"></i>
+  <i class="fas fa-code-branch fa-stack-1x"></i>
 </span>
 <p> IOT </p>
 </div>
 
         </CardContent>
       </CardActionArea>
-     
+      <CardActions>
+      </CardActions>
     </Card>
     </Link>
     </Col>
