@@ -578,4 +578,8 @@ margin: 1em;
 }
 
 
+.react-slideshow-fade-wrapper{
+  height: 600px !important;
+  width: 100%;
+}
 

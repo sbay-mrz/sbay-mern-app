@@ -37,17 +37,16 @@ axios.get(`https://sbay-mrz.herokuapp.com/products/vrar`)
       <div className="cardAllign">
         {this.state.vrar.map((obj)=>{
           return(
-        <Card style={{width: '300px', height: '250px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
-        <div> 
-        <img src={obj.screenShot} alt="vrar" weight="100%" height="150px"/>
-
-              <p> {obj.pname} </p>
-              <p> {obj.category} </p>  
-              <p> {obj.cost} </p>  
-              <Link to={`/productDescription/${obj._id}`}>  Description </Link>  
- 
-        </div>
-            </Card>
+            <Card style={{textAlign: 'center', width: '300px', height: '350px',marginLeft: '15px'}}>
+            <div> 
+           
+            <img src={obj.screenShot} alt="ai" width="100%" height="200px"/>
+                  <p> {obj.pname} </p>
+                  <p> {obj.category} </p>  
+                  <p> {obj.cost} </p>   
+                  <Link to={`/productDescription/${obj._id}`}>  Description </Link>  
+                </div>
+                </Card>
           )
         })}
       </div>

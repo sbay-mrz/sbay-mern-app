@@ -36,10 +36,10 @@ axios.get(`https://sbay-mrz.herokuapp.com/products/ai`)
         
         {this.state.ai.map((obj)=>{
           return(
-        <Card style={{textAlign: 'center', width: '300px', height: '250px',paddingLeft: '20px',marginLeft: '20px',marginRight:'20px',marginBottom: '20px'}}>
+        <Card style={{textAlign: 'center', width: '300px', height: '350px'}}>
         <div> 
        
-        <img src={obj.screenShot} alt="ai" width="300px" height="100px"/>
+        <img src={obj.screenShot} alt="ai" width="100%" height="200px"/>
               <p> {obj.pname} </p>
               <p> {obj.category} </p>  
               <p> {obj.cost} </p>   

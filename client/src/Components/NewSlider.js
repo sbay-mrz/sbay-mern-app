@@ -24,7 +24,7 @@ const zoomOutProperties = {
 class NewSlider extends Component {
     render() {
         return (
-            <Fade {...zoomOutProperties}>
+            <Fade className="slide-images" {...zoomOutProperties}>
               {
                 images.map((each, index) => <img key={index} style={{width: "100%",height: "100%"}} src={each} />)
               }

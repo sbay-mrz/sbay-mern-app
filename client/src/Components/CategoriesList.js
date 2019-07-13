@@ -41,9 +41,7 @@ export default class CategoriesList extends Component {
 
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      
-      </CardActions>
+ 
     </Card>
     </Link>
 
@@ -70,9 +68,7 @@ export default class CategoriesList extends Component {
 </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-   
-      </CardActions>
+     
     </Card>
     </Link>
     </Col>
@@ -99,9 +95,7 @@ export default class CategoriesList extends Component {
 </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-       
-      </CardActions>
+    
     </Card>
     </Link>
     </Col>
@@ -136,9 +130,7 @@ export default class CategoriesList extends Component {
 </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-       
-      </CardActions>
+   
     </Card>
     </Link>
     </Col>
@@ -164,9 +156,7 @@ export default class CategoriesList extends Component {
 </div>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      
-      </CardActions>
+
     </Card>
     </Link>
     </Col>
@@ -193,8 +183,7 @@ export default class CategoriesList extends Component {
 
         </CardContent>
       </CardActionArea>
-      <CardActions>
-      </CardActions>
+
     </Card>
     </Link>
     </Col>
