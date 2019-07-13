@@ -36,7 +36,7 @@ export default class CategoriesList extends Component {
   
   <i class="fa fa-mobile-alt fa-stack-1x cate-icon-color"></i>
 </span>
-<p> Mobile App </p>
+<p className="cate-para"> MOBILE APP </p>
 </div > 
 
         </CardContent>
@@ -64,7 +64,7 @@ export default class CategoriesList extends Component {
   
   <i class="fab fa-chrome fa-stack-1x cate-icon-color"></i>
 </span>
-<p> Web Apps</p>
+<p className="cate-para"> WEB APPS</p>
 </div>
         </CardContent>
       </CardActionArea>
@@ -90,7 +90,7 @@ export default class CategoriesList extends Component {
         <span class="fa-stack fa-3x">
     <i class="fas fa-vr-cardboard fa-stack-1x cate-icon-color"></i>
 </span>
-<p> Ar/Vr </p>
+<p className="cate-para"> AR/VR </p>
 </div>
         </CardContent>
       </CardActionArea>
@@ -125,7 +125,7 @@ export default class CategoriesList extends Component {
   
   <i class="fas fa-brain fa-stack-1x cate-icon-color"></i>
 </span>
-<p> AI</p>
+<p className="cate-para"> AI</p>
 </div>
         </CardContent>
       </CardActionArea>
@@ -151,7 +151,7 @@ export default class CategoriesList extends Component {
   
   <i class="fas fa-cart-plus fa-stack-1x cate-icon-color"></i>
 </span>
-<p> E-Commerce </p>
+<p className="cate-para"> E-COMMERCE </p>
 </div>
         </CardContent>
       </CardActionArea>
@@ -177,7 +177,7 @@ export default class CategoriesList extends Component {
   
   <i class="fas fa-code-branch fa-stack-1x cate-icon-color"></i>
 </span>
-<p> IOT </p>
+<p className="cate-para"> IOT </p>
 </div>
 
         </CardContent>
