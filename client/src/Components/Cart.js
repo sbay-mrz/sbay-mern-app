@@ -295,10 +295,11 @@ this.handleChange = this.handleChange.bind(this)
 
 
   render() {
-    // var count = 0, temp = 0;
-    // const totalPrice = this.state.netAmountArray.map(elm=>(
-    //   temp+=elm
-    // ));
+   if(this.props.cart==0){
+     alert('cart empty');
+     this.props.history.push('/');
+   }
+
     console.log("hello" ,this.props.cart)
     return (
       <div>

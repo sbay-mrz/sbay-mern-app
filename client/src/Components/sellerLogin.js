@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Header from './Header';
 import {setUserToken} from './../actions/PostActions';
 import {connect} from 'react-redux';
+import Slider3 from './slider3';
 
 
 class Login extends Component {
@@ -77,6 +78,7 @@ componentDidMount() {
         console.log(this.state.users)
         return (
             <div >
+            <Slider3/>
             <div class="login-logo">
       <i class="fas fa-globe"></i>
       <p>sBay</p>

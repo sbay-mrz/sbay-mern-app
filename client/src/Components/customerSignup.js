@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
+import Slider3 from './slider3';
 
 
 class customerSignup extends Component {
@@ -88,6 +89,9 @@ componentWillMount() {
     render() {
         console.log(this.state.users)
         return (
+          <div> 
+                          <Slider3/>
+
             <div class="SignUpParent ">
             <section class="SignUpOne">
               <h1>Welcome To <span class="SignUpFont">S</span>bay</h1>
@@ -130,12 +134,13 @@ componentWillMount() {
             </section>
             </form>
              <section class="SignUpThree">
-               <button onClick={this.Postdata} class="btn btn-primary btn-lg btn-block"> sighnUp </button>
+               <button onClick={this.Postdata} class="btn btn-primary btn-lg btn-block"> Sign Up </button>
              
               <Link to="/customerLogin"> <p class="secondpara">already have an account <span>login?</span> here</p>  </Link>
             
              </section>
         </div>
+        </div> 
         );
     }
 }

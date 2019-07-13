@@ -94,7 +94,7 @@ componentWillMount() {
         console.log(this.state.users)
         return (
             <div >
-          {  /*<Slider3/>*/}
+          <Slider3/>
             
                 {/* <h1> Seller Registration Form </h1> <hr/> */}
                 <div class="SignUpParent ">
@@ -143,7 +143,7 @@ componentWillMount() {
   </section>
 </form>
 <section class="SignUpThree">
-              <button onClick={this.Postdata} type="button" class="btn btn-primary btn-lg btn-block">Signup</button>
+              <button onClick={this.Postdata} type="button" class="btn btn-primary btn-lg btn-block">Sign Up</button>
              
               <Link to="/sellerLogin"> <p class="secondpara">already have an account <span>login?</span> here</p>  </Link>
             
