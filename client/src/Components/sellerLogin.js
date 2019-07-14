@@ -81,7 +81,7 @@ componentDidMount() {
             <div >
             
             <Slider3/>
-          
+           
             <div class="login-logo">
             <ParticleComponent />
       <i class="fas fa-globe"></i>
