@@ -56,7 +56,7 @@ class NewFolder extends React.Component {
         <div className="secOne">
             <Link to="/" className="secP">Terms & conditions</Link>
             <Link to="/" className="secP">Privacy Policy</Link>
-            <Link to="/" className="secP">Terms & conditions</Link>
+            <Link to="/" className="secP">& conditions</Link>
             
         </div>
         <div className="secTwo">
