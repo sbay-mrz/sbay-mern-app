@@ -3,7 +3,6 @@ body{
   color:black;
   font-family: 'serif';
  background-color: #FCFFFD; */
- font-family: 'Literata', serif;
   
 }
 
@@ -206,9 +205,6 @@ width: 50% !important;
 .c-profile-div-one,.c-profile-div-two{
   width: 100% !important;
 }
-.newFP{
-  display: none !important;
-}
 
 }
 /* slider styles */
@@ -267,14 +263,14 @@ bg-img,.bg-img2{
  
  .card-heading{
    text-align: center;
-   font-family: 'Literata', serif;
+   font-family: 'Lato', sans-serif;
    margin-bottom: 2rem;
  }
  .icons-size-cart{
    font-size: 1.2rem;
  }
  .productFontsize{
-  font-size: 0.9rem;
+  font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -289,7 +285,7 @@ bg-img,.bg-img2{
  
 }
 .icons{
-  font-family: 'Literata', serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
   text-align: center;
 }
@@ -305,7 +301,7 @@ bg-img,.bg-img2{
   justify-content: center;
   align-items: center;
   margin-top: 7rem;
-  
+  margin-bottom: 7rem;
 }
 .extra-one>.input-group{
   width: 64% !important;
