@@ -15,15 +15,18 @@ import CardTwo from './Components/CardTwo';
 import ExtraContent from './Components/ExtraContent';
 import NewSlider from './Components/NewSlider';
 import NewFooter from './Components/newFooter';
+import ParticlesComponent from './Components/ParticlesComponent';
 
 class App extends Component {
   render() {
     return (
       <div className="maindiv">
+      
         <Slider3/>
         <NewSlider/>
 
         {/* <Slider/>  */}
+        
          <CategoriesList/>
          {/* <CardTwo/> */}
          {/* {/* <Categories2/> */}
@@ -32,6 +35,7 @@ class App extends Component {
          <Products/>
          <ExtraContent/>
         <NewFooter/>
+        
       </div>
     );
   }
