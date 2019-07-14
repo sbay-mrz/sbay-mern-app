@@ -613,7 +613,6 @@ box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.5) !important;
   text-transform: uppercase;
 }
 /*  products end */
-<<<<<<< HEAD
 
 .forgot-password{
 display: flex;
@@ -622,7 +621,6 @@ align-items: center;
 background-color: #176d94;
 height: 640px;
 }
-=======
 /* new footer style */
 .newFP{
   color: white;
@@ -733,4 +731,3 @@ color: #00ccff !important;
   font-size: 2rem !important;
 }
 /* end */
->>>>>>> 1731dd45baecd26063477ad811bde96023d56d1c
