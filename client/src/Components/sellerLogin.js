@@ -7,7 +7,7 @@ import Header from './Header';
 import {setUserToken} from './../actions/PostActions';
 import {connect} from 'react-redux';
 import Slider3 from './slider3';
-import ParticleComponent from "./ParticlesComponent";
+
 
 class Login extends Component {
 constructor(){
@@ -25,7 +25,6 @@ constructor(){
 }
 
 componentDidMount() {
- 
   var user= JSON.parse(localStorage.getItem('userProfile'));
   if(localStorage.getItem('userProfile')){
     this.props.history.push(`sellerProfile/${user._id}`)
@@ -79,11 +78,9 @@ componentDidMount() {
         console.log(this.state.users)
         return (
             <div >
-            
             <Slider3/>
            
             <div class="login-logo">
-            <ParticleComponent />
       <i class="fas fa-globe"></i>
       <p>sBay</p>
   </div>
@@ -117,6 +114,7 @@ componentDidMount() {
           </section>
         </form>
     </div> 
+    
             </div>
         );
     }

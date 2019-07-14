@@ -4,12 +4,11 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 
-
 export default class CategoriesList extends Component {
   render() {
     return (
       <div className="main-category-head">
-      
+
      
       <div className="card-heading"><h1> Product Categories</h1></div>
      
