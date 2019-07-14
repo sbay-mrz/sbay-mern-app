@@ -609,3 +609,11 @@ box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.5) !important;
   text-transform: uppercase;
 }
 /*  products end */
+
+.forgot-password{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #176d94;
+height: 640px;
+}

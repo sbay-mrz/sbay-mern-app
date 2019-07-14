@@ -2,7 +2,11 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
-import { Button } from '@material-ui/core';
+import { Button, CardContent } from '@material-ui/core';
+import pass from './../assets/forgotpassword.jpg';
+import Card from '@material-ui/core/Card';
+import Particles from 'react-particles-js';
+
 
 class ForgotPassword extends Component {
   constructor() {
@@ -15,6 +19,12 @@ class ForgotPassword extends Component {
       showNullError: false,
     };
   }
+
+
+
+componentDidMount(){
+  document.body.backgroundColor = 'red';
+}
 
   handleChange = name => (event) => {
     this.setState({
@@ -70,8 +80,30 @@ class ForgotPassword extends Component {
 } = this.state;
 
     return (
-      <div>
-        <form className="profile-form" onSubmit={this.sendEmail}>
+      <div  className="forgot-password">
+
+<Card style={{width: '300px'}} > 
+<CardContent style={{backgroundColor: (255, 255, 255)}}> 
+
+<Particles
+   params={{
+    particles: {
+      line_linked: {
+        shadow: {
+          enable: true,
+          color: "#176d94",
+          blur: 1
+        }
+      }
+    }
+  }}
+  style={{
+    width: '900px',
+    height: '1100px'
+  }}
+  />
+</CardContent>
+ <form className="profile-form" onSubmit={this.sendEmail}>
           <TextField
             // style={inputStyle}
             id="email"
@@ -84,8 +116,14 @@ class ForgotPassword extends Component {
             buttonStyle={forgotButton}
             buttonText="Send Password Reset Email"
           /> */}
+          <br/>
+          <hr/>
+
           <Button type="submit"> send password reset email </Button>
         </form>
+<br/>
+<hr/>
+      
         {showNullError && (
           <div>
             <p>The email address cannot be null.</p>
@@ -105,6 +143,9 @@ class ForgotPassword extends Component {
             <h3>Password Reset Email Successfully Sent!</h3>
           </div>
         )}
+        </Card>
+        <br/><br/>
+       
       </div>
     );
   }
