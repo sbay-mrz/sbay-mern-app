@@ -3,6 +3,7 @@ body{
   color:black;
   font-family: 'serif';
  background-color: #FCFFFD; */
+ font-family: 'Literata', serif;
   
 }
 
@@ -205,6 +206,9 @@ width: 50% !important;
 .c-profile-div-one,.c-profile-div-two{
   width: 100% !important;
 }
+.newFP{
+  display: none !important;
+}
 
 }
 /* slider styles */
@@ -263,14 +267,14 @@ bg-img,.bg-img2{
  
  .card-heading{
    text-align: center;
-   font-family: 'Lato', sans-serif;
+   font-family: 'Literata', serif;
    margin-bottom: 2rem;
  }
  .icons-size-cart{
    font-size: 1.2rem;
  }
  .productFontsize{
-  font-size: 1rem;
+  font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -285,7 +289,7 @@ bg-img,.bg-img2{
  
 }
 .icons{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Literata', serif;
   color: black;
   text-align: center;
 }
@@ -301,7 +305,7 @@ bg-img,.bg-img2{
   justify-content: center;
   align-items: center;
   margin-top: 7rem;
-  margin-bottom: 7rem;
+  
 }
 .extra-one>.input-group{
   width: 64% !important;
@@ -609,6 +613,7 @@ box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.5) !important;
   text-transform: uppercase;
 }
 /*  products end */
+<<<<<<< HEAD
 
 .forgot-password{
 display: flex;
@@ -617,3 +622,115 @@ align-items: center;
 background-color: #176d94;
 height: 640px;
 }
+=======
+/* new footer style */
+.newFP{
+  color: white;
+  width: 100%;
+  height: 350px;
+  background-color:#333;
+
+}
+.mainOne{
+  display: flex;
+  width: 100%;
+  height: 250px;
+
+}
+.mainTwo{
+  border-top:1px dotted #e1e1e1; 
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100px;
+
+}
+.oneChild{
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 250px;
+
+}
+.twoChild{
+width: 40%;
+height: 250px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+.firstChild{
+  align-items: center;
+  padding-left: 4rem;
+  display: flex;
+  justify-content: flex-start; 
+  width: 100%;
+  height: 100px;
+  
+}
+.secondChild{
+ display: flex;
+ justify-content: space-evenly;
+ 
+  width: 100%;
+  height: 150px;
+
+}
+.secondChild >Link,.secP{
+  color: white !important;
+}
+.twoChild>.input-group{
+  width: 80% !important;
+  background-color: transparent !important;
+}
+.twoChild>.input-group>.form-control{
+  background-color: transparent !important;
+  border-color: #00ccff !important;
+  color: #00ccff !important;
+}
+.secondchildOne{
+ width: 70%;
+ height: 75px;
+ padding-left: 4.5rem;
+
+}
+.secOne{
+display: flex;
+justify-content: space-between;
+height: 36.5px;
+
+}
+.secTwo{
+
+height: 36.5px;
+}
+.secondchildTwo{
+width: 30%;
+height: 75px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+
+}
+.newfoo > button{
+background-color: transparent !important;
+border-color: #00ccff !important;
+color: #00ccff !important;
+
+
+}
+.twoChild>.input-group>.input-group-append{
+  background-color: transparent !important;
+}
+.firstChild >h2{
+  font-weight: 900 !important;
+}
+.fooicon{
+  font-size: 2rem !important;
+}
+/* end */
+>>>>>>> 1731dd45baecd26063477ad811bde96023d56d1c

@@ -14,6 +14,7 @@ import Categories2 from './Components/Categories2';
 import CardTwo from './Components/CardTwo';
 import ExtraContent from './Components/ExtraContent';
 import NewSlider from './Components/NewSlider';
+import NewFooter from './Components/newFooter';
 
 
 class App extends Component {
@@ -31,7 +32,7 @@ class App extends Component {
          {/* <Categories/> */}
          <Products/>
          <ExtraContent/>
-        <Footers/>
+        <NewFooter/>
       </div>
     );
   }
