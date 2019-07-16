@@ -135,33 +135,29 @@ deleteProduct(id){
 render(){
     const {sellerProducts,index} = this.state;
     return(
-        <div>
+        <div >
             <Slider3/>
-       <Grid>
+       
        {!this.state.editable &&
-  <Row>
-
-    <Col xs={12} sm ={6} md={4} lg={12}>
-    <Card>
-      <CardActionArea>
-        <CardContent>
+  <div className="sellerproducts">
        {sellerProducts.map((obj,index)=>{
            return(
-            <div className="icons">
+            <div className="sellerim">
             <p>   <img src={obj.screenShot} width="30%" height="10%"/> </p> 
-            <p>     {obj.pname} </p> 
-            <p>     {obj.cost} </p> 
-            <p>     {obj.category} </p> 
-            <p> <Button onClick={this.editProduct.bind(this,obj._id,index)}> edit </Button> </p>
-            <p> <Button onClick={this.deleteProduct.bind(this,obj._id)}> delete product </Button></p>
+           <div className="sellerim2">
+           <p>     {obj.pname} </p> 
+           <p>     {obj.cost} </p> 
+           <p>     {obj.category} </p> 
+           <p>     {obj.exeUrl} </p>
+           <p>     {obj.demoVideoUrl} </p>
+           <p> {obj.pdescription}</p>  
+           </div>
+            <p> <Button class="btn btn-primary" onClick={this.editProduct.bind(this,obj._id,index)}> EDIT PRODUCT </Button> </p>
+            <p> <Button class="btn btn-primary" onClick={this.deleteProduct.bind(this,obj._id)}> DELETE PRODUCT </Button></p>
             </div>
            )
        })}
-        </CardContent>
-      </CardActionArea>
-    </Card>
-    </Col>  
-    </Row>
+      </div>
        }
 
     
@@ -233,7 +229,7 @@ render(){
 </form>
 </div>
     }
-</Grid>
+
         </div> 
     )
 }
