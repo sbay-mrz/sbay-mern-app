@@ -79,6 +79,7 @@ componentDidMount() {
         return (
             <div >
             <Slider3/>
+           
             <div class="login-logo">
       <i class="fas fa-globe"></i>
       <p>sBay</p>
