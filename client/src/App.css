@@ -3,6 +3,7 @@ body{
   color:black;
   font-family: 'serif';
  background-color: #FCFFFD; */
+ font-family: 'Literata', serif;
   
 }
 
@@ -203,6 +204,12 @@ width: 50% !important;
 }
 /* customer-profile */
 .c-profile-div-one,.c-profile-div-two{
+  width: 100% !important;
+}
+
+.formInPostProduct>div{
+ flex-direction: column;
+align-items: center;
   width: 100% !important;
 }
 
@@ -725,5 +732,78 @@ color: #00ccff !important;
 }
 .fooicon{
   font-size: 2rem !important;
+
+}
+/* end */
+/* post product */
+.formInPostProduct{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.formInPostProduct>div{
+  display: flex !important;
+  width: 70%;
+  justify-content:center;
+
+  margin-right: 0px !important;
+  
+  
+}
+.formInPostProduct>.form-group>input,textarea,select{
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  
+}
+
+.one{
+  width: 28%;
+  font-weight: bold;
+  
+}
+.cate{
+  display: flex;
+  justify-content: flex-start !important;
+}
+.cate>.form-control{
+  padding: 0rem 0em !important;
+
+}
+.post-product{
+  text-align: center;
+  margin-top: 1rem;
+
+}
+/* sellr product */
+.sellerproducts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sellerim{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+margin-top: 1rem;
+}
+.sellerim > button{
+  padding: 0px !important;
+}
+.sellerim>p>img{
+  height: 150px;
+  width: 150px;
+}
+.sellerim2{
+  display: flex;
+  flex-direction: column;
 }
 /* end */
