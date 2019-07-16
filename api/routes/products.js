@@ -205,7 +205,8 @@ router.patch('/:productid', (req, res, next) => {
                 "hostUrl": req.body.hostUrl,
                 "demoVideoUrl": req.body.demoVideoUrl,
                 "screenShot": req.body.screenShot,
-                "cost": req.body.cost
+                "cost": req.body.cost,
+                "status": req.body.status
             }
         }).then(function (user) {
             res.send(user);
