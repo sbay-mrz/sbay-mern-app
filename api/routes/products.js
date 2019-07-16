@@ -182,7 +182,8 @@ router.patch('/updateProduct', (req, res, next) => {
                 "demoVideoUrl": req.body.demoVideoUrl,
                 "screenShot": req.body.screenShot,
                 "cost": req.body.cost,
-                "screenShotPublicId": req.body.screenShotPublicId
+                "screenShotPublicId": req.body.screenShotPublicId,
+                "status": req.body.status
             }
 
         }).then(function (user) {
