@@ -18,6 +18,20 @@ router.get('/getproducts', (req, res, next) => {
 
 })
 
+
+router.get('/getAllproducts', (req, res, next) => {
+    let i = 0;
+
+    Product.find({}, function (err, users) {
+        var userMap = [];
+        users.forEach(function (user) {  
+                userMap[i++] = user;
+        });
+        res.send(userMap);
+    });
+
+})
+
 router.get('/webproducts', (req, res, next) => {
     let i = 0;
     Product.find({}, function (err, users) {
