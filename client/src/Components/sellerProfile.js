@@ -138,7 +138,6 @@ getName(e){
       })  
       this.setState({updateSeller : !this.state.updateSeller})
       window.location.reload();
-
   }
 
 render(){

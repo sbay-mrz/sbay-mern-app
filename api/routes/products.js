@@ -18,6 +18,20 @@ router.get('/getproducts', (req, res, next) => {
 
 })
 
+
+router.get('/getAllproducts', (req, res, next) => {
+    let i = 0;
+
+    Product.find({}, function (err, users) {
+        var userMap = [];
+        users.forEach(function (user) {  
+                userMap[i++] = user;
+        });
+        res.send(userMap);
+    });
+
+})
+
 router.get('/webproducts', (req, res, next) => {
     let i = 0;
     Product.find({}, function (err, users) {
@@ -182,7 +196,8 @@ router.patch('/updateProduct', (req, res, next) => {
                 "demoVideoUrl": req.body.demoVideoUrl,
                 "screenShot": req.body.screenShot,
                 "cost": req.body.cost,
-                "screenShotPublicId": req.body.screenShotPublicId
+                "screenShotPublicId": req.body.screenShotPublicId,
+                "status": req.body.status
             }
 
         }).then(function (user) {
@@ -204,7 +219,8 @@ router.patch('/:productid', (req, res, next) => {
                 "hostUrl": req.body.hostUrl,
                 "demoVideoUrl": req.body.demoVideoUrl,
                 "screenShot": req.body.screenShot,
-                "cost": req.body.cost
+                "cost": req.body.cost,
+                "status": req.body.status
             }
         }).then(function (user) {
             res.send(user);
