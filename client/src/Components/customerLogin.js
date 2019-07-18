@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Slider3 from "./slider3";
 import ForgotPasswordCustomer from './ForgotPasswordCustomer';
+import Particles from "./Particles";
 class customerLogin extends Component {
   constructor() {
     super();
@@ -81,6 +82,9 @@ class customerLogin extends Component {
     return (
       <div>
         <Slider3 />
+        <div>
+        <Particles/>
+        <section className="backgroundParticle" >
         <div class="login-logo">
           <i class="fas fa-globe" />
           <p>sBay</p>
@@ -138,6 +142,8 @@ class customerLogin extends Component {
               <Link to="/forgotPasswordCustomer">forget password </Link>
             </section>
           </form>
+        </div>
+        </section>
         </div>
       </div>
     );

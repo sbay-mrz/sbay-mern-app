@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import Slider3 from './slider3';
+import Particles from "./Particles"
 
 
 class customerSignup extends Component {
@@ -91,8 +92,9 @@ componentWillMount() {
         return (
           <div> 
                           <Slider3/>
-
-            <div class="SignUpParent ">
+<section>
+<Particles />
+            <div class="SignUpParent backgroundParticle ">
             <section class="SignUpOne">
               <h1>Welcome To <span class="SignUpFont">S</span>bay</h1>
             <p>fill out the form to get the started</p>
@@ -139,6 +141,7 @@ componentWillMount() {
             
              </section>
         </div>
+        </section>
         </div> 
         );
     }
