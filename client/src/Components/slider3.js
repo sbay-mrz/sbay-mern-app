@@ -19,7 +19,10 @@ import { Button } from '@material-ui/core';
         const one = document.querySelector('#one');
         one.addEventListener('click', (e)=>{
             one.parentElement.classList.toggle('active');
+            
+            
         })
+      
     }
 
 
@@ -47,7 +50,7 @@ import { Button } from '@material-ui/core';
     // console.log(usertype)
     return (
       <div>
-          <div className="myNavbar">
+          <div className="myNavbar" >
        
         
             <span className="toggle" id="one">

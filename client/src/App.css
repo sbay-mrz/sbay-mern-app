@@ -222,6 +222,21 @@ align-items: center;
   text-align: center;
 
 }
+canvas{
+  display: none;
+  /* height: 3px !important;
+  width: 100% !important; */
+ 
+}
+.backgroundParticle{
+  top: 0px !important; 
+  width: auto !important;
+  position: relative !important;
+ 
+}
+.hide{
+  display: none;
+}
 }
 /* slider styles */
 .style-slide{
@@ -398,8 +413,8 @@ color: white;
   justify-content: center;
   align-items: center;
   height: 169px;
-  color: #057DB5;
-  background-color: #ffffff;
+  color:rgba(5, 125,181, 1);
+  background-color: rgba(255,255,255,0);
   font-size: 5.5rem;
   font-family: 'Lora', serif;
   
@@ -466,8 +481,8 @@ margin: 1em;
   margin: 0px;
 }
 .SignUpParent>section > button{
-  background-color: #00ccff;
-  border-color: #00ccff;
+  background-color: #057DB5;
+  border-color: #057DB5;
 }
 .SignUpTwo{
   width: 100%;
@@ -827,3 +842,12 @@ margin-top: 1rem;
   width: 250px;
 }
 /* end */
+/* particles */
+
+.backgroundParticle{
+  width: 100%;
+    position: absolute;
+    /* justify-content: center; */
+    top: 8rem;
+
+}
