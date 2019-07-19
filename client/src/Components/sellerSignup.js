@@ -32,7 +32,7 @@ constructor(props){
 }
 
 componentWillMount() {
-    axios.get('https://sbay-server.herokuapp.com/sellers/getsellers')
+    axios.get('https://sbay-mrz.herokuapp.com/sellers/getsellers')
       .then(res => {
         const users = res.data;
         console.log("users are : ",users)
