@@ -7,23 +7,25 @@ import productdescription from '../../src/assets/productdescription.jpg';
 import Header2 from './Header2';
 import '../App.css';
 import Slider3 from './slider3';
+import Loader from 'react-loader-spinner';
+
+
+
 export default class ProductDescription extends Component {
     constructor(){
         super();
         this.state = {
             products: [],
             sellerProfile: [],
-            showSeller: false
+            showSeller: false,
+            showLoader: true
         }
     }
 
     componentDidMount(){
     // var url = "http://localhost:7000/products/5bfbc91839d2532708fe0ecd";
-
-
         // var url = new URL("http://localhost:7000/products/5bfbc91839d2532708fe0ecd");
         // params ={param: this.props.match.params.myid};
-
 // fetch(url, {param: this.props.match.params.myid}).then(res => res.json())
 // .then(response => console.log('Success:', JSON.stringify(response)))
 // .catch(error => console.error('Error:', error));
@@ -33,6 +35,9 @@ export default class ProductDescription extends Component {
           console.log(products);
           this.setState({ products });
         })
+        if(this.state.products){
+          this.setState({showLoader: !this.state.showLoader})
+        }
     }
 
     getSeller(){        
@@ -61,11 +66,22 @@ customize(){
   
 }
 
+
+
+
     render(){
         const {products,sellerProfile} = this.state;
+
+
         return(
+            
+            this.state.showLoader ? <Loader/> :
             <div>
                 <Slider3/>
+
+
+
+
                <Grid>
   <Row style={{marginTop: '2em'}}>
 
@@ -127,7 +143,7 @@ customize(){
 
 </Grid>
 
-
+  
             </div> 
         )
     }

@@ -18,7 +18,7 @@ class EmailVerification extends Component {
           }
 
         console.log(userObject.address)
-        axios.post(`https://sbay-mrz.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}&name=${userObject.name}&address=${userObject.address}&contact=${userObject.contact}`,userObject)
+        axios.post(`https://sbay-server.herokuapp.com/sellers/emailVerification?email=${userObject.email}&password=${userObject.password}&name=${userObject.name}&address=${userObject.address}&contact=${userObject.contact}`,userObject)
           .then(res => {
             console.log("users are : ",res.data);
           })

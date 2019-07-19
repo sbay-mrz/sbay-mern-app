@@ -47,7 +47,7 @@ componentWillMount() {
       password: this.state.password,
       contact: this.state.contact,
       address: this.state.address,
-      image: this.state.image
+      // image: this.state.image
     }
 
     axios.post('https://sbay-mrz.herokuapp.com/sellers/postseller', userObject)

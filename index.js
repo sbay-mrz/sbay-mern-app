@@ -45,7 +45,7 @@ app.use(bodyparser.json());
 app.use(allowCrossDomain);
 
 app.use(cors({
-    methods: ['GET','POST','PUT','PATCH'],
+    methods: ['GET','POST','PUT','PATCH','DELETE'],
     credentials: true, origin: true,
 }))
 app.use((req,res,next)=>{

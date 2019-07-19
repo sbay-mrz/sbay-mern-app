@@ -59,11 +59,8 @@ componentWillMount() {
   
   }
   
-
-
       console.log(userObject);
   }
-
 
     getEmail(e){
         this.setState({ email: e.target.value})
