@@ -7,7 +7,19 @@ import Header from './Header';
 import {setUserToken} from './../actions/PostActions';
 import {connect} from 'react-redux';
 import Slider3 from './slider3';
-
+import Particles from "./Particles"
+// const styles = {
+//   root: {
+//     fontFamily: "sans-serif",
+   
+//     height: "100%",
+//     background: "white",
+//     display: "flex",
+//     flexDirection:"column",
+//     justifyContent: "center",
+//     alignItems: "center"
+//   }
+// };
 
 class Login extends Component {
 constructor(){
@@ -77,44 +89,51 @@ componentDidMount() {
     render() {
         console.log(this.state.users)
         return (
-            <div >
+            <div  >
             <Slider3/>
-           
-            <div class="login-logo">
-      <i class="fas fa-globe"></i>
-      <p>sBay</p>
-  </div>
-    <div class="LogInParent ">
-       <section  class="login-screen-section1">
-        <h1>Good to see you again!</h1>
-        <p>Login to manage your Account</p>
-       </section>
-       <form  onSubmit={this.gotoLogin}>
-         <section  class="login-screen-section2"> 
+           <div >
+           <Particles className="hide"/>
+          <section className="backgroundParticle" id="myDiv">
+          <div class="login-logo" >
+          <i class="fas fa-globe"></i>
+          <p>sBay</p>
+      </div>
+      
+        <div class="LogInParent ">
+           <section  class="login-screen-section1">
+            <h1>Good to see you again!</h1>
+            <p>Login to manage your Account</p>
+           </section>
+           <form  onSubmit={this.gotoLogin}>
+             <section  class="login-screen-section2"> 
+              
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail}/>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon3"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3" onChange={this.getPassword}/>
+                  </div>
+             </section>
+            
+              
+              <section  class="login-screen-section3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                <Link to="/sellerSighnup">  <p class="secondpara">Don't have an account <span>SignUp?</span> here</p></Link>
+                <Link to="/forgotPassword"> forgotPassword</Link>
+              </section>
+            </form>
           
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
-                </div>
-                <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail}/>
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon3"><i class="fas fa-lock"></i></span>
-                </div>
-                <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3" onChange={this.getPassword}/>
-              </div>
-         </section>
-        
-          
-          <section  class="login-screen-section3">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-            <Link to="/sellerSighnup">  <p class="secondpara">Don't have an account <span>SignUp?</span> here</p></Link>
-            <Link to="/forgotPassword"> forgotPassword</Link>
+        </div> 
           </section>
-        </form>
-    </div> 
     
+   </div>
+  
             </div>
         );
     }

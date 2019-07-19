@@ -135,85 +135,83 @@ deleteProduct(id){
 render(){
     const {sellerProducts,index} = this.state;
     return(
-        <div>
+        <div >
             <Slider3/>
-       <Grid>
+       
        {!this.state.editable &&
-  <Row>
-
-    <Col xs={12} sm ={6} md={4} lg={12}>
-    <Card>
-      <CardActionArea>
-        <CardContent>
+  <div className="sellerproducts">
        {sellerProducts.map((obj,index)=>{
            return(
-            <div className="icons">
+            <div className="sellerim">
             <p>   <img src={obj.screenShot} width="30%" height="10%"/> </p> 
-            <p>     {obj.pname} </p> 
-            <p>     {obj.cost} </p> 
-            <p>     {obj.category} </p> 
-            <p> <Button onClick={this.editProduct.bind(this,obj._id,index)}> edit </Button> </p>
-            <p> <Button onClick={this.deleteProduct.bind(this,obj._id)}> delete product </Button></p>
+           <div className="sellerim2">
+           <p>     {obj.pname} </p> 
+           <p>     {obj.cost} </p> 
+           <p>     {obj.category} </p> 
+           <p>     {obj.exeUrl} </p>
+           <p>     {obj.demoVideoUrl} </p>
+           <p> {obj.pdescription}</p>  
+           </div>
+            <p> <Button class="btn btn-primary" onClick={this.editProduct.bind(this,obj._id,index)}> EDIT PRODUCT </Button> </p>
+            <p> <Button class="btn btn-primary" onClick={this.deleteProduct.bind(this,obj._id)}> DELETE PRODUCT </Button></p>
             </div>
            )
        })}
-        </CardContent>
-      </CardActionArea>
-    </Card>
-    </Col>  
-    </Row>
+      </div>
        }
 
     
     {this.state.editable &&
     <div>
+    <Card className="post-product">
                 <h2> Edit product </h2>
-              <form method="post" onSubmit={this.postProduct}>
-              <Row> 
+              <form method="post" onSubmit={this.postProduct}  className="formInPostProduct">
+            
 
-          <Col> 
-
+         <div class="form-img">
+         <p>   <img src={this.state.sellerProducts[index].screenShot} width="80%" height="60%"/> </p> 
+         </div>
         
           <div class="form-group">
-          <p>   <img src={this.state.sellerProducts[index].screenShot} width="80%" height="60%"/> </p> 
+        
 
-    <label for="name">product name:</label>
+    <label for="name" className="one">product name:</label>
     <input type="name" class="form-control" id="name" value={this.state.pname} onChange={this.getName.bind(this)}/>
   </div>
  
   <div class="form-group">
-    <label for="exeUrl">exeUrl:</label>
+    <label for="exeUrl" className="one">exeUrl:</label>
     <input type="text" class="form-control" id="exeUrl" value={this.state.exeUrl} onChange={this.getExeUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="demovideourl">demovideourl:</label>
+    <label for="demovideourl" className="one">demovideourl:</label>
     <input type="text" class="form-control" id="demovideourl" value={this.state.demoVideoUrl} onChange={this.getDemoVideoUrl.bind(this)}/>
   </div>
-          </Col>
+         
 
           
-          <Col> 
+         
           <div class="form-group">
-    <label for="hostUrl">hostUrl:</label>
+    <label for="hostUrl" className="one">hostUrl:</label>
     <input type="text" class="form-control" id="hostUrl" value={this.state.hostUrl} onChange={this.getHostUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="cost">cost:</label>
+    <label for="cost" className="one">cost:</label>
     <input type="text" class="form-control" id="cost" value={this.state.cost} onChange={this.getCost.bind(this)}/>
   </div>
 
   <div class="form-group">
-    <label for="pdescription">pdescription:</label>
+    <label for="pdescription" className="one">pdescription:</label>
     <input type="text" class="form-control" id="pdescription" value={this.state.pdescription} onChange={this.getDescription.bind(this)}/>
   </div>
-          </Col>
+         
 
-              </Row>
+            
 
  
-              <div class="form-group">
-    <label for="category">category:</label> <br/>
-    <select value={this.state.category} onChange={this.getCategory.bind(this)}> 
+              <div class="form-group cate">
+    <label for="category" className="one">category:</label> <br/>
+    <select class="form-control"  value={this.state.category} onChange={this.getCategory.bind(this)}> 
     <option value=""> Select a Category </option>
         <option value="Web App"> web app </option>
         <option value="Android App"> Android App </option>
@@ -227,13 +225,14 @@ render(){
         </select>
   </div>
 
-  <p> <Button onClick={this.updatePro.bind(this)}> update </Button> </p>
+  <p> <Button  class="btn btn-primary btn-lg btn-block" onClick={this.updatePro.bind(this)}> Update Product </Button> </p>
 
  
 </form>
+</Card>
 </div>
     }
-</Grid>
+
         </div> 
     )
 }

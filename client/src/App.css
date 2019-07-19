@@ -3,6 +3,7 @@ body{
   color:black;
   font-family: 'serif';
  background-color: #FCFFFD; */
+ font-family: 'Literata', serif;
   
 }
 
@@ -206,6 +207,38 @@ width: 50% !important;
   width: 100% !important;
 }
 
+.formInPostProduct>div{
+ flex-direction: column;
+align-items: center;
+  width: 100% !important;
+}
+.sellerproducts{
+  display: block !important;
+}
+.sellerim{
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: center;
+
+}
+canvas{
+  display: none;
+  /* height: 3px !important;
+  width: 100% !important; */
+ 
+}
+.backgroundParticle{
+ 
+  top: 0px !important; 
+ 
+  width: auto !important;
+  position: relative !important;
+ 
+}
+.hide{
+  display: none;
+}
 }
 /* slider styles */
 .style-slide{
@@ -263,14 +296,14 @@ bg-img,.bg-img2{
  
  .card-heading{
    text-align: center;
-   font-family: 'Lato', sans-serif;
+   
    margin-bottom: 2rem;
  }
  .icons-size-cart{
    font-size: 1.2rem;
  }
  .productFontsize{
-  font-size: 1rem;
+  font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -382,8 +415,8 @@ color: white;
   justify-content: center;
   align-items: center;
   height: 169px;
-  color: #057DB5;
-  background-color: #ffffff;
+  color:rgba(5, 125,181, 1);
+  background-color: rgba(255,255,255,0);
   font-size: 5.5rem;
   font-family: 'Lora', serif;
   
@@ -434,7 +467,8 @@ color: white;
   color: #495057;
 }
 .LogInParent > form {
-  width: 100%;
+  width: 90%;
+  margin-left: 1rem;
 }
 /* loin-end */
 /* signup seller*/
@@ -450,8 +484,8 @@ margin: 1em;
   margin: 0px;
 }
 .SignUpParent>section > button{
-  background-color: #00ccff;
-  border-color: #00ccff;
+  background-color: #057DB5;
+  border-color: #057DB5;
 }
 .SignUpTwo{
   width: 100%;
@@ -725,5 +759,98 @@ color: #00ccff !important;
 }
 .fooicon{
   font-size: 2rem !important;
+
 }
 /* end */
+/* post product */
+.formInPostProduct{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.formInPostProduct>div{
+  display: flex !important;
+  width: 70%;
+  justify-content:center;
+
+  margin-right: 0px !important;
+  
+  
+}
+.formInPostProduct>.form-group>input,textarea,select{
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  
+}
+
+.one{
+  width: 28%;
+  font-weight: bold;
+  
+}
+.cate{
+  display: flex;
+  justify-content: flex-start !important;
+}
+.cate>.form-control{
+  padding: 0rem 0em !important;
+
+}
+.post-product{
+  text-align: center;
+  margin-top: 1rem;
+
+}
+/* sellr product */
+.sellerproducts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sellerim{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
+margin-top: 1rem;
+}
+.sellerim > button{
+  padding: 0px !important;
+}
+.sellerim>p>img{
+  height: 150px;
+  width: 150px;
+}
+.sellerim2{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.form-img{
+  margin-bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+
+}
+.form-img>p>img{
+  height: 150px;
+  width: 250px;
+}
+/* end */
+/* particles */
+
+.backgroundParticle{
+  width: 100%;
+    position: absolute;
+    /* justify-content: center; */
+    top: 8rem;
+
+}

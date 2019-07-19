@@ -172,43 +172,48 @@ getPic(){
             <div>
               <Slider3/>
                 <Card className="post-product">
-                <h2> Post Your product </h2>
+                <h2> Post Your Product </h2>
               <form method="post" onSubmit={this.postProduct} className="formInPostProduct">
   <div class="form-group">
-    <label for="name">Product Name:</label>
-    <input type="name" class="form-control" id="name" onChange={this.getName.bind(this)}/>
+    <label for="name" className="one">Product Name:</label>
+    <input type="name" class="form-control" id="name" onChange={this.getName.bind(this)} required/>
   </div>
  
   <div class="form-group">
-    <label for="exeUrl">Exe Url:</label>
+    <label for="exeUrl"  className="one">Exe Url:</label>
     <input type="text" class="form-control" id="exeUrl" onChange={this.getExeUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="demovideourl">Demo Video Url:</label>
+    <label for="demovideourl"  className="one">Demo Video Url:</label>
     <input type="text" class="form-control" id="demovideourl" onChange={this.getDemoVideoUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="hostUrl">Host Url:</label>
+    <label for="hostUrl"  className="one">Host Url:</label>
     <input type="text" class="form-control" id="hostUrl" onChange={this.getHostUrl.bind(this)}/>
   </div>
   <div class="form-group">
-    <label for="cost">Cost:</label>
+    <label for="cost"  className="one">Cost:</label>
     <input type="number" class="form-control" id="cost" onChange={this.getCost.bind(this)}/>
   </div>
-
+{/*
   <div class="form-group">
-    <label for="pdescription">Product Description:</label>
+    <label for="pdescription"  className="one">Product Description:</label>
     <input type="text" class="form-control" id="pdescription"onChange={this.getDescription.bind(this)}/>
   </div>
+  */}
   <div class="form-group">
-    <label for="screenShot">ScreenShot:</label>
+    <label for="pdescription"  className="one">Product Description:</label>
+    <textarea class="form-control" id="pdescription" rows="3" onChange={this.getDescription.bind(this)}></textarea>
+  </div>
+  <div class="form-group">
+    <label for="screenShot"  className="one">ScreenShot:</label>
     <input type="file" class="form-control"  onChange={this.getScreenShot.bind(this)}/>
 
     {/* <Button onClick={this.getPic.bind(this)}> get pic  </Button> */}
   </div>
-  <div class="form-group">
-    <label for="category">category:</label> <br/>
-    <select onChange={this.getCategory.bind(this)}> 
+  <div class="form-group cate" >
+    <label for="category" className="one">category:</label> <br/>
+    <select  class="form-control"  onChange={this.getCategory.bind(this)}> 
     <option value=""> Select a Category </option>
         <option value="Web App"> web app </option>
         <option value="Android App"> Android App </option>
@@ -221,10 +226,11 @@ getPic(){
         <option value="IOT"> IOT </option>
         </select>
   </div>
+  {/*
   <div class="checkbox form-group">
     <label><input type="checkbox"/> Remember me</label>
   </div>
-
+*/}
 {this.state.screenShot!= '' && <button type="submit" class="btn btn-primary ">Submit</button>}
 </form>
 </Card>

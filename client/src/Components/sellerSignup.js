@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Header from './Header';
 import Slider3 from './slider3';
 import auth from "./Auth";
+import Particles from "./Particles"
 
 class sellerSignup extends Component {
 constructor(props){
@@ -97,7 +98,9 @@ componentWillMount() {
           <Slider3/>
             
                 {/* <h1> Seller Registration Form </h1> <hr/> */}
-                <div class="SignUpParent ">
+                <section >
+                <Particles />
+                <div class="SignUpParent backgroundParticle ">
                 <div class="login-logo">
                 <i class="fas fa-globe"></i>
                 <p>sBay</p>
@@ -149,7 +152,7 @@ componentWillMount() {
             
              </section>
 </div>
-
+</section>
         
             </div>
         );
