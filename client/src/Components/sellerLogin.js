@@ -111,13 +111,13 @@ componentDidMount() {
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail}/>
+                    <input type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
                   </div>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon3"><i class="fas fa-lock"></i></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3" onChange={this.getPassword}/>
+                    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3" onChange={this.getPassword} required/>
                   </div>
              </section>
             

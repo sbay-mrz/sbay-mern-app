@@ -65,17 +65,17 @@ console.log(CustomizeCustomizeRequest);
  
     render(){
         return(
-            <div>
+            <div className="cusP">
 
              <div className="container"> 
  <h3> Customize Product </h3>
  <Card>
                 <form onSubmit={this.CustomizeProductRequest} method="post">
-  <div class="form-group form-elements">
+  <div class="form-group form-elements custom">
   
-    <i class="fas fa-file-alt fa-3x"></i>
+    <i class="fas fa-file-alt fa-2x"></i>
     <textarea 
-    class="form-control"
+    class="form-control texNe1"
      id="exampleInput"
       aria-describedby="emailHelp"
        placeholder="Enter description"
@@ -87,7 +87,7 @@ console.log(CustomizeCustomizeRequest);
 </form>
 
 </Card>
-<button class="btn btn-primary" type="submit"> submit </button>
+<div className="cus"> <button class="btn btn-primary" type="submit"> submit </button></div>
 
 </div>
 

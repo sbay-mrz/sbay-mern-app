@@ -25,12 +25,15 @@ router.get('/getAllproducts', (req, res, next) => {
     Product.find({}, function (err, users) {
         var userMap = [];
         users.forEach(function (user) {  
+            if (user.status == "unapproved"){
                 userMap[i++] = user;
+            }
         });
         res.send(userMap);
     });
 
 })
+
 
 router.get('/webproducts', (req, res, next) => {
     let i = 0;

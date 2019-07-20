@@ -50,17 +50,17 @@ var customerNewRequest = {
         <div className="newpro">
 <Slider3/>
 
-<h3> What Service Are You Looking For? </h3>
+<h3 className="NHeadI"> What Service Are You Looking For? </h3>
 <hr/>
 <div className="container"> 
  <Card>
- <p>  Describe the service you're looking to purchase - please be as detailed as possible:</p>
+ <p className="NHead">  Describe the service you're looking to purchase - please be as detailed as possible:</p>
                 <form onSubmit={this.gotoNewProductRequest} method="post">
-  <div class="form-group form-elements">
+  <div class="form-group form-elements newreq">
   
-    <i class="fas fa-file-alt fa-3x"></i>
+   <span className="newIcon" > <i class="fas fa-file-alt fa-2x"></i></span>
     <textarea 
-    class="form-control"
+    class="form-control texNe"
      id="exampleInput"
       aria-describedby="emailHelp"
        placeholder="Enter description"
@@ -68,11 +68,12 @@ var customerNewRequest = {
         />
   </div>
 <hr/>
-  <div class="form-group form-elements">
- <p>  Choose a Catgeory:</p>
+<p className="NHead">  Choose a Catgeory:</p>
+  <div class="form-group form-elements newreq op">
+ 
 
-  <i class="fas fa-folder-open fa-3x"></i>
-    <select onChange={this.getCategory}> 
+  <span className="newIcon"><i class="fas fa-folder-open fa-2x"></i></span>
+    <select class="form-control" onChange={this.getCategory}> 
         <option value=""> select category </option>
         <option value="Android"> Android app</option>
         <option value="Ar/Vr">  AR/VR </option>
@@ -86,16 +87,19 @@ var customerNewRequest = {
 <hr/>
       </div>
 
-
-      <div className="form-group form-elements"> 
-            <p> What is the budget for this service ? </p>
-  <i class="fas fa-hand-holding-usd fa-3x"></i>
-        <input type="number"/> 
+      <p className="NHead"> What is the budget for this service ? </p>
+      <div className="form-group form-elements newreq"> 
+          
+  <span className="newIcon"><i class="fas fa-hand-holding-usd fa-2x"></i></span>
+  <div class="form-group">
+  
+  <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+</div>
 
       </div>
 
 
-  <button class="btn btn-primary"> submit </button>
+ <div className="btnN"> <button class="btn btn-primary"> submit </button></div>
   <span>
 
   </span>
