@@ -15,6 +15,7 @@ letter-spacing: 2px;
 font-size: 1.2em;
 }
 
+
 .myNavbar div {
   display: none;
 }
@@ -930,7 +931,6 @@ margin-top: 1rem;
 .cart-responsive{
 margin-left: 100px !important;
 /* product description */}
-
 .productdescript{
   width: 60%;
   display: flex;

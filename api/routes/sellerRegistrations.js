@@ -338,10 +338,10 @@ router.patch('/:sellersId', (req, res, next) => {
 // });
 
 router.delete('/:id', (req, res, next) => {
-  res.status(200).json({
-    message: "delted json"
-  })
-});
 
+  Seller.deleteOne({ "_id": req.params.id.toString() }).then(function (user) {
+      res.send("sussessfull deleted");
+  }).catch(next);
+});
 
 module.exports = router;

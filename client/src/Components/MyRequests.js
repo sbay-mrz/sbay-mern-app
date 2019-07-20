@@ -33,6 +33,8 @@ axios(`https://sbay-mrz.herokuapp.com/newRequest/getnew/${custReqid}`)
             this.setState({ customercustomization: user });
             console.log("",user)
         })
+
+
 }
 
 

@@ -321,11 +321,17 @@ router.patch('/:productid', (req, res, next) => {
   })
 });
 
-router.delete('/:productid', (req, res, next) => {
-  res.status(200).json({
-    message: "delted json"
-  })
-});
+// router.delete('/:productid', (req, res, next) => {
+//   res.status(200).json({
+//     message: "delted json"
+//   })
+// });
 
+router.delete('/:id', (req, res, next) => {
+
+  Customer.deleteOne({ "_id": req.params.id.toString() }).then(function (user) {
+      res.send("sussessfull deleted");
+  }).catch(next);
+});
 
 module.exports = router;

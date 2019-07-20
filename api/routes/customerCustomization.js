@@ -13,8 +13,6 @@ router.post('/postcustom',(req,res,next)=>{
     customerCustomizationRequest.create(userObject).then(function (user) {
         
          console.log(user);
-        //  userObject.add(user._id);
-        //  console.log(userObject)
          res.send(user)
     }).catch(next)
 })
