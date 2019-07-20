@@ -7,6 +7,7 @@ import productdescription from '../../src/assets/productdescription.jpg';
 import Header2 from './Header2';
 import '../App.css';
 import Slider3 from './slider3';
+import {Link} from 'react-router-dom';
 export default class ProductDescription extends Component {
     constructor(){
         super();
@@ -18,6 +19,7 @@ export default class ProductDescription extends Component {
     }
 
     componentDidMount(){
+      console.log("props",this.props.match.params.myid);
     // var url = "http://localhost:7000/products/5bfbc91839d2532708fe0ecd";
 
 
@@ -63,41 +65,20 @@ customize(){
 
     render(){
         const {products,sellerProfile} = this.state;
+        console.log("products",products)
+
         return(
             <div>
                 <Slider3/>
-               <Grid>
-  <Row style={{marginTop: '2em'}}>
+              
+  
 
-    <Col xs={4} sm ={12} md={4} lg={8}>
-    <Card >
-    <img src={products.screenShot} alt="description" width="800px" height="215px"/>
- 
-    </Card>
-    </Col>
-    
-    
-    <Col xs={4} sm ={12} md={4} lg={4}> 
-    
-    <Card >
-      <CardActionArea>
-        <CardContent >
-              <div className="icons">
-            
-              <p> {products.cost} </p> 
-            <p> name    :   {products.pname} </p> 
-            <p> category :   {products.category} </p>             
-            <div className="centerCart"> 
-            <br/><br/>
-    
-</div>
-            </div>
-        </CardContent>
-      </CardActionArea>
-      <CardActions> 
-      </CardActions>
-    </Card>
-
+    <section className="productdescriptP">
+    <div className="ParentP">
+    <div className="productdescript"><img src={products.screenShot} alt="description" width="100%" height="100%" />
+    </div>
+   
+ <div className="button-pro">
  <Button onClick={this.getSeller.bind(this)}> seller info </Button>
  <Button onClick={this.customize.bind(this)}> apply for customization </Button>
 
@@ -114,18 +95,56 @@ customize(){
             <div className="centerCart"> 
             <br/><br/>
 
-</div>
+            </div>
             </div>
         </CardContent>
       </CardActionArea>
-      <CardActions> 
-      </CardActions>
+     
     </Card>
 }
-</Col>
-    </Row>
+ </div>
 
-</Grid>
+ </div>
+    
+    
+    
+    
+    
+             <div className="productdescriptoneP">
+             <div className="productdescriptone">
+             <div>
+             <p>Cost:  </p> 
+           <p> Name    :    </p> 
+           <p> Category :   </p>
+          
+           <p> Description :    </p>
+          </div>
+          <div>
+          <p> {products.cost} </p> 
+          <p>     {products.pname} </p> 
+          <p>    {products.category} </p>
+        
+          <p>   {products.pdescription} </p>
+          </div>
+           <div className="centerCart"> 
+           <br/><br/>
+   
+           </div>
+           </div>
+           <div className="productdescripttwo">
+           <p>Exe URL :<Link to="/"> {products.exeUrl}   </Link></p>
+           <p> Demo Video : <Link to="/">  {products.demoVideoUrl} </Link></p>             
+         <p> Host URL : <Link to="/">  {products.hostUrl}  </Link></p>
+          
+           </div>
+             </div>
+      </section>
+
+
+
+    
+
+
 
 
             </div> 

@@ -110,33 +110,30 @@ render(){
                  <Link to={`/newProductRequest/${customerProfile._id}`} > <button type="button" class="btn btn-primary btn-lg abc">Request For New Product </button> </Link>
             </div>
             <div className="c-profile-div-one-2">
-               {/**/} <div>
-                    <span><i class="fas fa-address-card"></i></span>
-                    <span><i class="fas fa-envelope"></i></span>
-                    <span><i class="fas fa-mobile-alt"></i></span>
-                </div>
-                 <div>
-                 <p> Address </p> 
-            
-                    <p> email </p> 
-                     <p> contact </p> 
-                 </div>
+               {/**/} 
+                
              </div>
             <div className="c-profile-div-one-3">
-              <p> {customerProfile.address} </p> 
-              <p> {customerProfile.email} </p> 
-                 <p> {customerProfile.contact} </p> 
-                <p> <Link to={`/Myrequests/${customerProfile._id}`}> my requests </Link> </p>
-                <Button onClick={this.updateCustomer.bind(this)}>  edit profile </Button>
+             
+              
+                <Button  class="btn btn-outline-primary" onClick={this.updateCustomer.bind(this)}>  edit profile </Button>
                 
-                <Button onClick={this.logout.bind(this)}>  logout </Button>
+                <Button  class="btn btn-outline-primary" onClick={this.logout.bind(this)}>  logout </Button>
 
             </div>
          </div>
          <br/>
          <div className="c-profile-div-two">
-            <div><h1>Your Products</h1></div>
-             <Products/>
+            <h1>Details</h1>
+            
+            <div className="c-pro">
+
+            <p> <span><i class="fas fa-address-card"></i></span>Address  {customerProfile.address} </p> 
+       
+               <p> <span><i class="fas fa-envelope"></i></span> email{customerProfile.email} </p> 
+                <p> <span><i class="fas fa-mobile-alt"></i></span> contact{customerProfile.contact} </p> 
+            </div>
+           <button class="btn btn-primary btn-lg btn-block lgl"><Link className="l" to={`/Myrequests/${customerProfile._id}`}> my requests </Link> </button>
          </div>
      </div>
     }
@@ -186,7 +183,7 @@ render(){
 
 {this.state.updateCustomer && 
 
-    <div>
+    <div className="cP">
     <h2> Edit customer </h2>
   <form method="post" >
   <Row> 
