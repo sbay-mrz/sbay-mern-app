@@ -4,6 +4,23 @@ const Customer = require('../models/customerRegistration');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
+function encrypt(pass){
+  let mykey = crypto.createCipher('aes-128-cbc', 'djmakku');
+  let encryptedPass = mykey.update(pass, 'utf8', 'hex');
+  encryptedPass += mykey.final('hex');
+  return encryptedPass
+}
+
+
+function decrypt(pass){
+  let mydkey = crypto.createDecipher('aes-128-cbc', 'djmakku');
+  let decryptedPass = mydkey.update(pass, 'hex', 'utf8')
+  decryptedPass += mydkey.final('utf8');
+  return decryptedPass
+}
+
+
+
 router.post('/forgotPassword', (req, res) => {
   if (req.body.email === '') {
     res.send('email required');
@@ -85,12 +102,13 @@ router.post('/postcustomer',(req,res,next)=>{
           }
       });
       if(flg==false){
+
           let userObject = {
             name: encodeURIComponent(req.body.name),
             email: encodeURIComponent(req.body.email),
             contact: encodeURIComponent(req.body.contact),
             address: encodeURIComponent(req.body.address),
-            password: encodeURIComponent(req.body.password),
+            password: encodeURIComponent(encrypt(req.body.password)),
           }
       
           const transporter = nodemailer.createTransport({
@@ -165,13 +183,15 @@ router.post('/getcustomer', (req, res, next) => {
   Customer.find({}, function (err, users) {
     let flg = false;
     users.forEach(function (user) {
-      if (user.email === req.query.email && user.password === req.query.password) {
-        console.log(user)
-        res.send({
-          user,
-          userStatus: ' exist'
-        })
-        flg = true;
+      if (user.email === req.query.email) {
+
+        if (decrypt(user.password) === req.query.password) {
+          res.send({
+            user,
+            userStatus: ' exist'
+          })
+          flg = true;
+        }
       }
     });
     if (flg == false) {
@@ -185,14 +205,16 @@ router.get('/:email&:password', (req, res, next) => {
   Customer.find({}, function (err, users) {
     let flg = false;
     users.forEach(function (user) {
-      if (user.email === req.params.email && user.password === req.params.password) {
-        console.log(user)
+      if (user.email === req.params.email) {
+
+        if (decrypt(user.password) === req.params.password) {
         res.send({
           user,
           userStatus: 'exist'
         })
         flg = true;
       }
+    }
     });
     if (flg == false) {
       res.send({ userStatus: " not exist" })

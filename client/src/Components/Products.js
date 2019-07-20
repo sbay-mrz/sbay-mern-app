@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchproducts,addToCart } from '../actions/PostActions';
 import TextField from '@material-ui/core/TextField';
+import Loader from 'react-loader-spinner';
+
 
  class Products extends Component {
   
@@ -16,7 +18,8 @@ import TextField from '@material-ui/core/TextField';
 
             search: '',
             mysearches: false,
-            filteredItmes: []
+            filteredItmes: [],
+            showLoader: true
         }
      
     }
@@ -24,6 +27,7 @@ import TextField from '@material-ui/core/TextField';
 
     componentDidMount(){
       this.props.fetchproducts();
+        this.setState({ showLoader: !this.state.showLoader})
   }
 
 
@@ -86,6 +90,7 @@ searchData(e){
     console.log(this.props.products)
         return (
 
+          this.state.showLoader ? <Loader/> :
 
 //           <div> 
 

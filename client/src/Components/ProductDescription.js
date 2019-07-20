@@ -14,18 +14,16 @@ export default class ProductDescription extends Component {
         this.state = {
             products: [],
             sellerProfile: [],
-            showSeller: false
+            showSeller: false,
+            showLoader: true
         }
     }
 
     componentDidMount(){
       console.log("props",this.props.match.params.myid);
     // var url = "http://localhost:7000/products/5bfbc91839d2532708fe0ecd";
-
-
         // var url = new URL("http://localhost:7000/products/5bfbc91839d2532708fe0ecd");
         // params ={param: this.props.match.params.myid};
-
 // fetch(url, {param: this.props.match.params.myid}).then(res => res.json())
 // .then(response => console.log('Success:', JSON.stringify(response)))
 // .catch(error => console.error('Error:', error));
@@ -35,6 +33,9 @@ export default class ProductDescription extends Component {
           console.log(products);
           this.setState({ products });
         })
+        if(this.state.products){
+          this.setState({showLoader: !this.state.showLoader})
+        }
     }
 
     getSeller(){        
@@ -63,11 +64,16 @@ customize(){
   
 }
 
+
+
+
     render(){
         const {products,sellerProfile} = this.state;
         console.log("products",products)
 
         return(
+            
+            this.state.showLoader ? <Loader/> :
             <div>
                 <Slider3/>
               
@@ -146,7 +152,7 @@ customize(){
 
 
 
-
+  
             </div> 
         )
     }
