@@ -6,7 +6,7 @@ import { removeFromCart } from '../actions/PostActions';
 import { number, func } from 'prop-types';
 import Slider3 from './slider3';
 import {withRouter} from 'react-router-dom';
-import {Grid,Row,Col} from 'react-bootstrap';
+import {GriCol} from 'react-bootstrap';
 
 
 
@@ -94,20 +94,19 @@ this.handleChange = this.handleChange.bind(this)
     </tr>
   </thead>
   <tbody>
-  <Col className="cart-responsive"> 
    {this.props.cart.map((obj,index)=>{
      return(
        
        <tr >
 
-       <Row> <td><img  src= {obj.screenShot} width="200" height="100px"/> </td> </Row>
-       <Row>  <td> {obj.pname} </td> </Row>
-       <Row><td> {obj.cost} </td>  </Row>
-       <Row> <td> {obj.category} </td> </Row>
-       <Row>  <td> {this.state.quantity} </td></Row>
+       <td><img  src= {obj.screenShot} width="200" height="100px"/> </td> 
+        <td> {obj.pname} </td> 
+      <td> {obj.cost} </td>  
+       <td> {obj.category} </td> 
+        <td> {this.state.quantity} </td>
          {/* <td> {this.state.netAmountArray[index]}</td>  */}
-       <Row>  <td> {obj.cost*this.state.quantity} </td></Row>
-       <Row> <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> </Row>
+        <td> {obj.cost*this.state.quantity} </td>
+       <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> 
        </tr> 
    
      )
@@ -119,7 +118,7 @@ this.handleChange = this.handleChange.bind(this)
          {this.state.sum}
           </h5>
      </div>
-     </Col>
+  
   </tbody>
 </Table>
       </div>

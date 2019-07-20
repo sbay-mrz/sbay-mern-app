@@ -83,6 +83,8 @@ class ForgotPasswordCustomer extends Component {
           <div className="forgot-parent">
 <Card className="forgot-password"  > 
         <form className="profile-form" onSubmit={this.sendEmail}>
+        <p> Enter your email for password recovery </p>
+
         <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
