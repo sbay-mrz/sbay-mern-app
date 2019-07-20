@@ -42,7 +42,6 @@ import Loader from 'react-loader-spinner';
   //   })
   // }
 
-
   //before redux
 //   getDescription(obj,id){
 //     console.log(obj);

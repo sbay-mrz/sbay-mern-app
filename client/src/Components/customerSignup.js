@@ -39,6 +39,7 @@ componentWillMount() {
   }
 
   Postdata() {
+    let {users} = this.state;
     console.log("post data")
     let userObject = {
         name: this.state.name,
@@ -48,10 +49,18 @@ componentWillMount() {
       address: this.state.address
     }
 
-    if(this.state.name === "" && this.state.email === "" && this.state.contact === "" && this.state.address === "" && this.state.password === "" ){
-      alert('fields missing')
-  }
+    if(this.state.name === "" || this.state.email === "" || this.state.contact === "" || this.state.address === "" || this.state.password === "" ){
+      alert('fields missing');  
+
+      users.map((obj)=>{
+        if( (userObject.name !== "" && userObject.email !== "" && userObject.contact !== "" && userObject.address !== "" && userObject.password !== "") && (obj.email === userObject.email)){
+          alert("user already registerd with this email");
+        }
+      })
+    }
+  
   else{
+
     axios.post('https://sbay-mrz.herokuapp.com/customers/postcustomer', userObject)
     .then(res => {
       console.log(res.data);
@@ -103,31 +112,31 @@ componentWillMount() {
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"  onChange={this.getName}/>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"  onChange={this.getName} required/>
              </div>
              <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
                 </div>
-                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail}/>
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon3"><i class="fas fa-lock"></i></span>
                 </div>
-                <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3"  onChange={this.getPassword}/>
+                <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon3"  onChange={this.getPassword} required/>
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon4"><i class="far fa-caret-square-up"></i></span>
                 </div>
-                <input type="number" class="form-control" placeholder="contact" aria-label="contact" aria-describedby="basic-addon4" onChange={this.getContact}/>
+                <input type="number" class="form-control" placeholder="contact" aria-label="contact" aria-describedby="basic-addon4" onChange={this.getContact} required />
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon5"><i class="far fa-address-book"></i></span>
                 </div>
-                <input type="text" class="form-control" placeholder="address" aria-label="address" aria-describedby="basic-addon5" onChange={this.getAddress}/>
+                <input type="text" class="form-control" placeholder="address" aria-label="address" aria-describedby="basic-addon5" onChange={this.getAddress} required/>
               </div>
              
             </section>

@@ -5,7 +5,8 @@ import axios from 'axios';
 import { Button, CardContent } from '@material-ui/core';
 import pass from './../assets/forgotpassword.jpg';
 import Card from '@material-ui/core/Card';
-import Particles from 'react-particles-js';
+import Slider3 from './slider3';
+import Particles from "./Particles";
 
 
 class ForgotPassword extends Component {
@@ -62,7 +63,6 @@ componentDidMount(){
         })
         .catch((error) => {
           console.error(error.response.data);
-
           if (error.response.data === 'email not in db') {
             this.setState({
               showError: true,
@@ -80,50 +80,28 @@ componentDidMount(){
 } = this.state;
 
     return (
-      <div  className="forgot-password">
+<div>
+<Slider3/>
+ <div>
+ <div >
+           <Particles className="hide"/>
+          <section className="backgroundParticle" id="myDiv">
+            <div className="forgot-parent">
+<Card className="forgot-password"  > 
 
-<Card style={{width: '300px'}} > 
-<CardContent style={{backgroundColor: (255, 255, 255)}}> 
+ <form onSubmit={this.sendEmail}>
+ <p> Enter your email for password recovery </p>
+ <div class="input-group mb-3">
+ 
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
+              </div>
 
-<Particles
-   params={{
-    particles: {
-      line_linked: {
-        shadow: {
-          enable: true,
-          color: "#176d94",
-          blur: 1
-        }
-      }
-    }
-  }}
-  style={{
-    width: '900px',
-    height: '1100px'
-  }}
-  />
-</CardContent>
- <form className="profile-form" onSubmit={this.sendEmail}>
-          <TextField
-            // style={inputStyle}
-            id="email"
-            label="email"
-            value={email}
-            onChange={this.handleChange('email')}
-            placeholder="Email Address"
-          />
-          {/* <SubmitButtons
-            buttonStyle={forgotButton}
-            buttonText="Send Password Reset Email"
-          /> */}
-          <br/>
-          <hr/>
-
-          <Button type="submit"> send password reset email </Button>
+          <Button type="submit" color="primary" variant="contained"> send password reset email </Button>
         </form>
-<br/>
-<hr/>
-      
+
         {showNullError && (
           <div>
             <p>The email address cannot be null.</p>
@@ -144,11 +122,19 @@ componentDidMount(){
           </div>
         )}
         </Card>
-        <br/><br/>
-       
+        </div>
+        </section>
+      </div>
+
+
+</div>
       </div>
     );
   }
 }
 
 export default ForgotPassword;
+
+
+
+
