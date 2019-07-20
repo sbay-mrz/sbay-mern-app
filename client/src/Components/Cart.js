@@ -305,49 +305,49 @@ this.handleChange = this.handleChange.bind(this)
       <div>
         <Slider3/>
         <h2 style={{textAlign: 'center'}}> Cart Component </h2> 
-        <Table responsive>
-  <thead>
-    <tr>
-    <th>image</th>
+      <section>
+  
+    <div className="cartS">
+    <p>image</p>
     
-      <th>Name</th>
-      <th>Cost</th>
-      <th>Category</th>
-      <th>quantity</th>
-      <th>total cost</th>
-      <th>Remove</th>
+      <p>Name</p>
+      <p>Cost</p>
+      <p>Category</p>
+     
+      <p>total cost</p>
+      <p>Remove</p>
       
-    </tr>
-  </thead>
-  <tbody>
+   </div>
+  
+  <div>
    
    {this.props.cart.map((obj,index)=>{
      return(
        
-       <tr>
+      <div className="cartD">
         
-       <td><img  src= {obj.screenShot} width="200" height="100px"/> </td> 
-         <td> {obj.pname} </td> 
-         <td> {obj.cost} </td>  
-         <td> {obj.category} </td> 
+       <p><img  src= {obj.screenShot} width="150" height="100px"/> </p> 
+         <p> {obj.pname} </p> 
+         <p> {obj.cost} </p>  
+         <p> {obj.category} </p> 
          {/* <td> <input type="number" id={index} onChange={this.handleChange} /> </td>  */}
-          <td> {this.state.quantity} </td>
+        {/* <p> {this.state.quantity} </p>*/} 
          {/* <td> {this.state.netAmountArray[index]}</td>  */}
-          <td> {obj.cost*this.state.quantity} </td>
-         <td> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </td> 
-       </tr> 
+          <p> {obj.cost*this.state.quantity} </p>
+         <p> <Button bsStyle="danger" id={obj._id} onClick={this.handleDelete.bind(this,index)}>  Delete </Button> </p> 
+     </div>
      )
    })}
   
-     <div style={{textAlign: 'center'}}>
+     <div className="cartP">
        <h3> Total Price </h3>
        <h5> 
          {this.state.sum}
           </h5>
      </div>
   
-  </tbody>
-</Table>
+  </div>
+</section>
       </div>
                        
     )
