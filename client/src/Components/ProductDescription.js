@@ -73,7 +73,7 @@ customize(){
 
         return(
             
-            this.state.showLoader ? <Loader/> :
+          
             <div>
                 <Slider3/>
               
