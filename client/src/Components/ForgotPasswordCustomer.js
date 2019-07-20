@@ -4,6 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { Button } from '@material-ui/core';
 import {Card,CardActions,CardMedia,CardActionArea,CardContent,Typography} from '@material-ui/core';
+import Slider3 from './slider3';
+import Particles from "./Particles";
 
 
 class ForgotPasswordCustomer extends Component {
@@ -72,23 +74,25 @@ class ForgotPasswordCustomer extends Component {
 } = this.state;
 
     return (
-      <div className="forgot-password-customer">
-        <Card>
+<div>
+<Slider3/>
+ <div>
+ <div >
+           <Particles className="hide"/>
+          <section className="backgroundParticle" id="myDiv">
+          <div className="forgot-parent">
+<Card className="forgot-password"  > 
         <form className="profile-form" onSubmit={this.sendEmail}>
-          <TextField
-            // style={inputStyle}
-            id="email"
-            label="email"
-            value={email}
-            onChange={this.handleChange('email')}
-            placeholder="Email Address"
-          />
-          {/* <SubmitButtons
-            buttonStyle={forgotButton}
-            buttonText="Send Password Reset Email"
-          /> */}
-          <br/ >
-          <Button type="submit"> send password reset email </Button>
+        <p> Enter your email for password recovery </p>
+
+        <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
+              </div>
+ 
+          <Button type="submit" color="primary" variant="contained"> send password reset email </Button>
         </form>
         {showNullError && (
           <div>
@@ -110,6 +114,10 @@ class ForgotPasswordCustomer extends Component {
           </div>
         )}
         </Card>
+        </div>
+        </section>
+        </div>
+        </div>
       </div>
     );
   }

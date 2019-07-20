@@ -12,24 +12,12 @@ function encrypt(pass){
   return encryptedPass
 }
 
-
 function decrypt(pass){
   let mydkey = crypto.createDecipher('aes-128-cbc', 'djmakku');
   let decryptedPass = mydkey.update(pass, 'hex', 'utf8')
   decryptedPass += mydkey.final('utf8');
   return decryptedPass
 }
-
-
-// function encrypt(pass) {
-//   let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(key), iv);
-//   let encrypted = cipher.update(pass);
-//   encrypted = Buffer.concat([encrypted, cipher.final()]);
-//   console.log("helllloooooo",iv.toString('hex'),encrypted.toString('hex'));
-//   return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
-
-//  }
-
 
 router.post('/forgotPassword', (req, res) => {
   if (req.body.email === '') {
@@ -66,14 +54,14 @@ router.post('/forgotPassword', (req, res) => {
           service: 'gmail',
 
           auth: {
-            user: 'muddabir22@gmail.com',
-            pass: 'neduniversity'
+            user: 'sbay.mrz@gmail.com',
+            pass: 'sbay@mrz56'
           },
 
         });
 
         const mailOptions = {
-          from: 'muddabir22@gmail.com',
+          from: 'sbay.mrz@gmail.com',
           to: `${user.email}`,
           // to: 'muddabir22@gmail.com',
           subject: 'Link To Reset Password',
@@ -126,14 +114,14 @@ router.post('/postseller', (req, res, next) => {
         service: 'gmail',
 
         auth: {
-          user: 'muddabir22@gmail.com',
-          pass: 'neduniversity'
+          user: 'sbay.mrz@gmail.com',
+          pass:  'sbay@mrz56'
         },
 
       });
 
       const mailOptions = {
-        from: 'muddabir22@gmail.com',
+        from: 'sbay.mrz@gmail.com',
         to: decodeURIComponent(`${userObject.email}`),
         subject: 'Link To verify account',
         text:
@@ -144,7 +132,6 @@ router.post('/postseller', (req, res, next) => {
       };
 
       console.log('sending mail');
-
       transporter.sendMail(mailOptions, (err, response) => {
         if (err) {
           console.error('there was an error: ', err);
@@ -283,6 +270,7 @@ router.get('/reset', (req, res) => {
 router.get('/reset/:token', (req, res, next) => {
   Seller.find({}, function (err, users) {
     users.forEach(function (user) {
+
       if (user.resetPasswordToken === req.params.token) {
         res.send({
           userId: user._id,
@@ -338,15 +326,16 @@ router.patch('/:sellersId', (req, res, next) => {
         "address": req.body.address
       }
     }).then(function (user) {
-      res.send(user);
+      res.send({user,
+      userMessage: 'agaya'});
     })
 });
 
-router.patch('/:id', (req, res, next) => {
-  res.status(200).json({
-    message: "updated json"
-  })
-});
+// router.patch('/:id', (req, res, next) => {
+//   res.status(200).json({
+//     message: "updated json"
+//   })
+// });
 
 router.delete('/:id', (req, res, next) => {
   res.status(200).json({

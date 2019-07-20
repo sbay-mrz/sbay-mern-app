@@ -109,6 +109,7 @@ class customerLogin extends Component {
                   aria-label="email"
                   aria-describedby="basic-addon2"
                   onChange={this.getEmail}
+                  required
                 />
               </div>
               <div class="input-group mb-3">
@@ -124,6 +125,7 @@ class customerLogin extends Component {
                   aria-label="password"
                   aria-describedby="basic-addon3"
                   onChange={this.getPassword}
+                  required
                 />
               </div>
             </section>

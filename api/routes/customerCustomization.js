@@ -8,7 +8,7 @@ router.post('/postcustom',(req,res,next)=>{
         cusCuzReqId: req.body.cusCuzReqId,
         cuzDescription: req.body.cuzDescription,
         productId:req.body.productId
-        // invoice_No: invoiceNum()
+       // invoice_No: invoiceNum()
     }
     customerCustomizationRequest.create(userObject).then(function (user) {
         
