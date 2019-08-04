@@ -176,7 +176,7 @@ render(){
         <CardContent >
             <div className="icons">
 
-            <h1> Wellcome {sellerProfile.name} </h1>
+            <h1> Welcome {sellerProfile.name} </h1>
             
             <Link to={`/postproduct/${sellerProfile._id}`}> Add post </Link> 
             <Button onClick={this.logout.bind(this)}>  logout </Button>

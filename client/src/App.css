@@ -731,7 +731,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 300px;
-width: 400px;
+width: 350px;
 }
 /* new footer style */
 .newFP{
@@ -1097,4 +1097,6 @@ margin-left: 100px !important;
   align-items: flex-end;
   padding-right: 5rem;
 }
+
+
 /* end */

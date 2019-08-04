@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchproducts,addToCart } from '../actions/PostActions';
 import TextField from '@material-ui/core/TextField';
+import Loader from 'react-loader-spinner';
+
+
 
  class Products extends Component {
   
@@ -76,6 +79,16 @@ searchData(e){
   // }
     render() {
     console.log(this.props.products)
+    if(this.props.products === undefined || this.props.products.length == 0){
+      return (
+  
+          <div style={{display: 'flex',justifyContent: 'center',marginTop: '200px'}}>
+<Loader type="ThreeDots" color="#057DB5" height={150} width={80} />
+              </div>
+              )
+  }
+  else
+
         return (
 
     <section>

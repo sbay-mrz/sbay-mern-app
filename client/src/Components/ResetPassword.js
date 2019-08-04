@@ -3,7 +3,9 @@ import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import {Link} from 'react-router-dom';
-
+import Card from '@material-ui/core/Card';
+import Slider3 from './slider3';
+import Particles from "./Particles";
 
 
 const loading = {
@@ -115,9 +117,20 @@ console.log("dekho dekho",this.state.password)
     //   );
     // }
     return (
+
+      <div> 
+        <Slider3/>
+
+   
+
       <div>
+             <Particles className="hide"/>
+          <section className="backgroundParticle" id="myDiv">
+            <div className="forgot-parent">
+<Card className="forgot-password"  > 
         {/* <HeaderBar title={title} /> */}
         <form className="password-form" onSubmit={this.updatePassword}>
+          <p> Enter New Password:  </p>
           <input
             id="password"
             label="password"
@@ -125,20 +138,26 @@ console.log("dekho dekho",this.state.password)
             value={password}
             type="password"
           />
+          <br/>
           <Button type="submit"> send </Button>
           
         </form>
-
+        <br/>
         {updated && (
           <div>
             <p>
               Your password has been successfully reset, please try logging in
               again.
             </p>
+            <br/>   <br/>
            <Link to="/sellerLogin"> seller login </Link>
           </div>
         )}
         <Link to="/"> home  </Link> 
+        </Card>
+        </div>
+        </section>
+      </div>
       </div>
     );
   }
