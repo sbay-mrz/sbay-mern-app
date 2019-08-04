@@ -11,6 +11,7 @@ import Slider3 from './slider3';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions/PostActions';
+import Slider3 from './slider3.js'
 
 
 
@@ -65,6 +66,8 @@ console.log(CustomizeCustomizeRequest);
  
     render(){
         return(
+            <section>
+            <Slider3/>
             <div className="cusP">
 
              <div className="container"> 
@@ -94,6 +97,7 @@ console.log(CustomizeCustomizeRequest);
 
 
             </div> 
+            </section>
         )
     }
 }
