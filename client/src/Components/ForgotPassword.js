@@ -71,6 +71,7 @@ this.setState({email: e.target.value});
         })
         .catch((error) => {
           console.error(error.response.data);
+          alert(error.response.data)
           if (error.response.data === 'email not in db') {
             this.setState({
               showError: true,
