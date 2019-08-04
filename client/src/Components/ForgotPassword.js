@@ -104,7 +104,7 @@ this.setState({email: e.target.value});
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
                 </div>
-                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail.bind(this)} required/>
               </div>
 
           <Button type="submit" color="primary" variant="contained"> send password reset email </Button>
