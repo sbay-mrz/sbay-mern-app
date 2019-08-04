@@ -5,14 +5,14 @@ const Product = require('../models/product');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
-function encrypt(pass){
+function encrypt(pass) {
   let mykey = crypto.createCipher('aes-128-cbc', 'djmakku');
   let encryptedPass = mykey.update(pass, 'utf8', 'hex');
   encryptedPass += mykey.final('hex');
   return encryptedPass
 }
 
-function decrypt(pass){
+function decrypt(pass) {
   let mydkey = crypto.createDecipher('aes-128-cbc', 'djmakku');
   let decryptedPass = mydkey.update(pass, 'hex', 'utf8')
   decryptedPass += mydkey.final('utf8');
@@ -55,7 +55,7 @@ router.post('/forgotPassword', (req, res) => {
 
           auth: {
             user: 'sbay.mrz@gmail.com',
-            pass:  'rqctitqmlfmondct'
+            pass: 'rqctitqmlfmondct'
           },
 
         });
@@ -116,7 +116,7 @@ router.post('/postseller', (req, res, next) => {
 
         auth: {
           user: 'sbay.mrz@gmail.com',
-          pass:  'rqctitqmlfmondct'
+          pass: 'rqctitqmlfmondct'
         },
 
       });
@@ -158,14 +158,26 @@ router.post('/emailVerification', (req, res, next) => {
     address: decodeURIComponent(req.query.address),
     password: decodeURIComponent(req.query.password),
   }
-  Seller.create(userObject).then(function (user) {
+  Seller.find({}, function (err, users) {
+    let flg = false;
+    users.forEach(function (user) {
+      if (user.email === userObject.email) {
+        console.log(user)
+        res.send({ userStatus: ' exist' })
+        flg = true;
+      }
+    });
+    if (flg == false) {
+      Seller.create(userObject).then(function (user) {
 
-    console.log(user)
-    res.send({
-      user,
-      userStatus: "account created"
-    })
-  }).catch(next)
+        console.log(user)
+        res.send({
+          user,
+          userStatus: "account created"
+        })
+      }).catch(next)
+    }
+  })
 })
 
 router.get('/getsellers', (req, res, next) => {
@@ -327,8 +339,10 @@ router.patch('/:sellersId', (req, res, next) => {
         "address": req.body.address
       }
     }).then(function (user) {
-      res.send({user,
-      userMessage: 'agaya'});
+      res.send({
+        user,
+        userMessage: 'agaya'
+      });
     })
 });
 
@@ -341,7 +355,7 @@ router.patch('/:sellersId', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
 
   Seller.deleteOne({ "_id": req.params.id.toString() }).then(function (user) {
-      res.send("sussessfull deleted");
+    res.send("sussessfull deleted");
   }).catch(next);
 });
 
