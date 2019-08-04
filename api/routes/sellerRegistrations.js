@@ -54,14 +54,14 @@ router.post('/forgotPassword', (req, res) => {
           service: 'gmail',
 
           auth: {
-            user: 'muddabir22@gmail.com',
-            pass: 'neduniversity'
+            user: 'sbay.mrz@gmail.com',
+            pass: 'sbay@mrz56'
           },
 
         });
 
         const mailOptions = {
-          from: 'muddabir22@gmail.com',
+          from: 'sbay.mrz@gmail.com',
           to: `${user.email}`,
           // to: 'muddabir22@gmail.com',
           subject: 'Link To Reset Password',
