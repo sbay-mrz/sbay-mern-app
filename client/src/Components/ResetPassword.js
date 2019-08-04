@@ -45,7 +45,7 @@ export default class ResetPassword extends Component {
         }
       })
       .catch((error) => {
-        console.log(error.response.data);
+        // console.log(error.response.data);
         this.setState({
           updated: false,
           isLoading: false,

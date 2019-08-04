@@ -300,6 +300,9 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   width: 100% !important;
   height: 130px !important;
 }
+.react-slideshow-fade-wrapper {
+  height: 266px !important;
+}
 }
 /* slider styles */
 .style-slide{
