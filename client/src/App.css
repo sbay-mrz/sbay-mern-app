@@ -303,7 +303,29 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 .react-slideshow-fade-wrapper {
   height: 266px !important;
 }
+.twoChild{
+  display: none !important;
 }
+.oneChild{
+  width: 100% !important
+}
+.secondChild{
+  width: 91% !important;
+  justify-content: flex-start !important;
+}
+.firstChild{
+  padding-left: 4rem !important;
+}
+.newFP{
+  height: 380px !important;
+}
+.secondchildOne{
+  padding-left: 0rem !important;
+}
+.mainTwo{
+  flex-direction: column !important;
+}
+} 
 /* slider styles */
 .style-slide{
   width: 100%;
