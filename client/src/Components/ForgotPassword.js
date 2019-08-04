@@ -33,6 +33,14 @@ componentDidMount(){
     });
   };
 
+
+  getEmail(e){
+this.setState({email: e.target.value});
+  }
+
+
+
+
   sendEmail = (e) => {
     e.preventDefault();
     const { email } = this.state;
