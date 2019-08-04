@@ -3,6 +3,9 @@ import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 import {Link} from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import Slider3 from './slider3';
+import Particles from "./Particles";
 
 
 
@@ -108,6 +111,13 @@ console.log("dekho dekho",this.state.password)
  
     return (
       <div>
+          <Slider3/>
+        <div> 
+
+<Particles className="hide"/>
+          <section className="backgroundParticle" id="myDiv">
+            <div className="forgot-parent">
+<Card className="forgot-password"  > 
         {/* <HeaderBar title={title} /> */}
         <form className="password-form" onSubmit={this.updatePassword}>
           <input
@@ -131,6 +141,10 @@ console.log("dekho dekho",this.state.password)
           </div>
         )}
         <Link to="/"> home  </Link> 
+        </Card>
+        </div>
+        </section>
+        </div>
       </div>
     );
   }

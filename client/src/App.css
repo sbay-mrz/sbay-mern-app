@@ -15,6 +15,7 @@ letter-spacing: 2px;
 font-size: 1.2em;
 }
 
+
 .myNavbar div {
   display: none;
 }
@@ -298,6 +299,9 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 .cartD>p>img{
   width: 100% !important;
   height: 130px !important;
+}
+.react-slideshow-fade-wrapper {
+  height: 266px !important;
 }
 }
 /* slider styles */
@@ -730,7 +734,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 300px;
-width: 400px;
+width: 350px;
 }
 /* new footer style */
 .newFP{
@@ -953,7 +957,6 @@ margin-top: 1rem;
 .cart-responsive{
 margin-left: 100px !important;
 /* product description */}
-
 .productdescript{
   width: 60%;
   display: flex;
@@ -1097,4 +1100,6 @@ margin-left: 100px !important;
   align-items: flex-end;
   padding-right: 5rem;
 }
+
+
 /* end */

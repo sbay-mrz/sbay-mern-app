@@ -46,7 +46,14 @@ import Slider3 from './slider3';
         cost: this.state.cost,
         category: this.state.category,
       }
-      
+      var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+      var regex = new RegExp(expression);
+    
+      if(!userObject.exeUrl.match(regex) || !userObject.demoVideoUrl.match(regex) || !userObject.hostUrl.match(regex)){
+        alert('Please use a valid URL , Url must contain https:// or http://');
+        return false;
+      }
+    else 
       axios.post('https://sbay-mrz.herokuapp.com/products/postproduct',userObject)
       .then(res => {
         console.log("posted product",res.data);
@@ -93,6 +100,7 @@ import Slider3 from './slider3';
 
   
   getExeUrl(e){
+
     this.setState({exeUrl: e.target.value});
   }
 
@@ -107,8 +115,8 @@ import Slider3 from './slider3';
 
  getScreenShot(event){
 
-  var CLOUDINARY_URL ="https://api.cloudinary.com/v1_1/chohan/upload";
-  var CLOUDINARY_UPLOAD_PRESET="bhorijjp";
+  var CLOUDINARY_URL ="	https://api.cloudinary.com/v1_1/djza2z6yc/upload";
+  var CLOUDINARY_UPLOAD_PRESET="jrzq3ejg";
 
 var file = event.target.files[0];
 var formData = new FormData();
@@ -195,19 +203,19 @@ getPic(){
  
   <div class="form-group">
     <label for="exeUrl"  className="one">Exe Url:</label>
-    <input type="text" class="form-control" id="exeUrl" onChange={this.getExeUrl.bind(this)}/>
+    <input type="text" class="form-control" id="exeUrl" onChange={this.getExeUrl.bind(this)} required/>
   </div>
   <div class="form-group">
     <label for="demovideourl"  className="one">Demo Video Url:</label>
-    <input type="text" class="form-control" id="demovideourl" onChange={this.getDemoVideoUrl.bind(this)}/>
+    <input type="text" class="form-control" id="demovideourl" onChange={this.getDemoVideoUrl.bind(this)} required/>
   </div>
   <div class="form-group">
     <label for="hostUrl"  className="one">Host Url:</label>
-    <input type="text" class="form-control" id="hostUrl" onChange={this.getHostUrl.bind(this)}/>
+    <input type="text" class="form-control" id="hostUrl" onChange={this.getHostUrl.bind(this)} required/>
   </div>
   <div class="form-group">
     <label for="cost"  className="one">Cost:</label>
-    <input type="number" class="form-control" id="cost" onChange={this.getCost.bind(this)}/>
+    <input type="number" class="form-control" id="cost" onChange={this.getCost.bind(this)} required/>
   </div>
 {/*
   <div class="form-group">
@@ -217,17 +225,17 @@ getPic(){
   */}
   <div class="form-group">
     <label for="pdescription"  className="one">Product Description:</label>
-    <textarea class="form-control" id="pdescription" rows="3" onChange={this.getDescription.bind(this)}></textarea>
+    <textarea class="form-control" id="pdescription" rows="3" onChange={this.getDescription.bind(this)} required></textarea>
   </div>
   <div class="form-group">
     <label for="screenShot"  className="one">ScreenShot:</label>
-    <input type="file" class="form-control"  onChange={this.getScreenShot.bind(this)}/>
+    <input type="file" class="form-control"  onChange={this.getScreenShot.bind(this)} required/>
 
     {/* <Button onClick={this.getPic.bind(this)}> get pic  </Button> */}
   </div>
   <div class="form-group cate" >
     <label for="category" className="one">category:</label> <br/>
-    <select  class="form-control"  onChange={this.getCategory.bind(this)}> 
+    <select  class="form-control"  onChange={this.getCategory.bind(this)} required> 
     <option value=""> Select a Category </option>
         <option value="Web App"> web app </option>
         <option value="Android App"> Android App </option>

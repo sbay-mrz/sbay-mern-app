@@ -33,6 +33,14 @@ componentDidMount(){
     });
   };
 
+
+  getEmail(e){
+this.setState({email: e.target.value});
+  }
+
+
+
+
   sendEmail = (e) => {
     e.preventDefault();
     const { email } = this.state;
@@ -63,6 +71,7 @@ componentDidMount(){
         })
         .catch((error) => {
           console.error(error.response.data);
+          alert(error.response.data)
           if (error.response.data === 'email not in db') {
             this.setState({
               showError: true,
@@ -96,7 +105,7 @@ componentDidMount(){
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon2"><i class="far fa-envelope"></i></span>
                 </div>
-                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail} required/>
+                <input type="email" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon2" onChange={this.getEmail.bind(this)} required/>
               </div>
 
           <Button type="submit" color="primary" variant="contained"> send password reset email </Button>

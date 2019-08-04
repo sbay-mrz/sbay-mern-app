@@ -83,11 +83,11 @@ console.log(CustomizeCustomizeRequest);
         />
   </div>
 <hr/>
+<div className="cus"> <button class="btn btn-primary" type="submit"> submit </button></div>
 
 </form>
 
 </Card>
-<div className="cus"> <button class="btn btn-primary" type="submit"> submit </button></div>
 
 </div>
 

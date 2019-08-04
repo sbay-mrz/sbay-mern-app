@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Card } from '@material-ui/core';
 import Slider3 from './slider3';
+import Loader from 'react-loader-spinner';
+
+
 
 
 class MyRequests extends Component {
@@ -33,15 +36,30 @@ axios(`https://sbay-mrz.herokuapp.com/newRequest/getnew/${custReqid}`)
             this.setState({ customercustomization: user });
             console.log("",user)
         })
+
+
 }
 
 
     render() {
-        let {customerRequests,customercustomization} = this.state
+        let {customerRequests,customercustomization} = this.state;
+       
+        if(customercustomization === undefined || customercustomization.length == 0){
+            return (
+        
+                <div style={{display: 'flex',justifyContent: 'center',marginTop: '200px'}}>
+<Loader type="ThreeDots" color="#057DB5" height={150} width={80} />
+                    </div>
+                    )
+        }
+        else
+
         return (
+        
             <div>
+              
                 <Slider3/>
-                <h2> My New Requests</h2>
+                <h2>  New Requests</h2>
                 {
                     customerRequests.map((obj)=>{
                     return(
@@ -49,7 +67,6 @@ axios(`https://sbay-mrz.herokuapp.com/newRequest/getnew/${custReqid}`)
                             <Card style={{width: '250px',height: '120px', marginBottom: '100px',marginLeft: '200px'}}> 
                             <p>Description : {obj.newSoftwareDescription} </p>
                             <p>Category:  {obj.category} </p>   
-                            <p>Budget: {obj.budget} </p>   
 
                             </Card>
                         
@@ -58,13 +75,16 @@ axios(`https://sbay-mrz.herokuapp.com/newRequest/getnew/${custReqid}`)
                 })
                 }
 
-<h2> My Customization Requests</h2>
+<h2> Customization Requests</h2>
 
                 {customercustomization.map((obj)=>{
                     return(
                         <div> 
-                            <Card style={{width: '250px',height: '120px', marginBottom: '100px',marginLeft: '200px'}}> 
+                            <Card style={{width: '300px',height: '150px', marginBottom: '100px',marginLeft: '200px'}}> 
                             <p>Description : {obj.cuzDescription} </p>
+                            <p>Nmae : {obj.productName} </p>
+                            <p>Category : {obj.productCategory} </p>
+                            
                             </Card>
                         
                         </div>

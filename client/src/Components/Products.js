@@ -5,16 +5,15 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchproducts,addToCart } from '../actions/PostActions';
 import TextField from '@material-ui/core/TextField';
+import Loader from 'react-loader-spinner';
+
 
 
  class Products extends Component {
   
-
        constructor(){
         super();
         this.state = {
-            
-
             search: '',
             mysearches: false,
             filteredItmes: [],
@@ -23,16 +22,13 @@ import TextField from '@material-ui/core/TextField';
      
     }
 
-
     componentDidMount(){
       this.props.fetchproducts();
         this.setState({ showLoader: !this.state.showLoader})
   }
 
-
   //before redux
   // componentDidMount(){
-
   //   axios.get(`http://localhost:7000/products/getproducts`)
   //   .then(res => {
   //     const products = res.data;
@@ -40,7 +36,6 @@ import TextField from '@material-ui/core/TextField';
   //     this.setState({ products });
   //   })
   // }
-
   //before redux
 //   getDescription(obj,id){
 //     console.log(obj);
@@ -49,10 +44,8 @@ import TextField from '@material-ui/core/TextField';
 //   pd.push(obj);
 //    this.setState({ productDescription: pd})
 //   }
-
-
-
 // from redux store
+
 addCart(obj, _id){
   let {addedIds, addToCart} = this.props;
    if(addedIds.includes(_id)){
@@ -86,45 +79,17 @@ searchData(e){
   // }
     render() {
     console.log(this.props.products)
-        return (
-
-       
-
-//           <div> 
-
-
- 
-//           {this.props.products.map((obj)=>{
-//             return(
-//               <div className="main-column">
-//               <div>
-//               <img class="card-img-top" src="" alt="Cardcap"/>
-//               <div class="card-body" className="mid-col">
-//               {obj.pname}
-//               </div>
-
-// <div className="sidebar-one">
-// 1
-//   </div> 
-
-
-// <div className="sidebar-two">
-// 2
-//   </div> 
-
-
-// <div className="sidebar-three">
-// 3
-//   </div> 
-
-//               <a href="works" class="btn btn-primary">Go somewhere</a>
-//               </div>
-//               </div>
-//             )
-//           })}
+    if(this.props.products === undefined || this.props.products.length == 0){
+      return (
   
+          <div style={{display: 'flex',justifyContent: 'center',marginTop: '200px'}}>
+<Loader type="ThreeDots" color="#057DB5" height={150} width={80} />
+              </div>
+              )
+  }
+  else
 
-//           </div>
+        return (
 
     <section>
     <div className="card-heading"><h1> Ready To Sell Products</h1></div>
@@ -187,11 +152,8 @@ return(
     <div>
     <img src={obj.screenShot} alt="profile" width="100%" height="150"/>
   <p className="productFontsize">   {obj.pname} </p>
-  
-  
-  <div className="card-button-style">
+    <div className="card-button-style">
   <Button variant="contained" color="primary" onClick={()=> this.addCart(obj,obj._id)}> <span className="icons-size-cart"><i class="fas fa-cart-plus"></i></span> </Button> 
-  
   <Link to={`/productDescription/${obj._id}`}>  Description </Link>
   </div>
   </div>
@@ -208,8 +170,6 @@ return(
     )
   }
 }
-
-
 
 const mapStateToProps = (state,dispatch) => ({
   products: state.posts.items,

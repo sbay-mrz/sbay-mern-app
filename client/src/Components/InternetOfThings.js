@@ -5,6 +5,7 @@ import Header2 from './Header2';
 import iot from '../../src/assets/iot.png';
 import Slider3 from './slider3';
 import {Link} from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 
 
@@ -29,6 +30,17 @@ axios.get(`https://sbay-mrz.herokuapp.com/products/iot`)
 
 }
   render() {
+ 
+    let {iot} = this.state;
+    if(iot === undefined || iot == 0){
+      return (
+  
+          <div style={{display: 'flex',justifyContent: 'center',marginTop: '200px'}}>
+<Loader type="ThreeDots" color="#057DB5" height={150} width={80} />
+              </div>
+              )
+  }
+  else
     return (
       <div> 
         <Slider3/>

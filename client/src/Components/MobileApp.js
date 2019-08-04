@@ -5,6 +5,7 @@ import Header2 from './Header2';
 import mobileapp from '../../src/assets/mobileapp.png';
 import Slider3 from './slider3';
 import {Link} from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 
 
@@ -29,6 +30,16 @@ axios.get(`https://sbay-mrz.herokuapp.com/products/androidproducts`)
 
 }
   render() {
+    let {androidproducts} = this.state;
+    if(androidproducts === undefined || androidproducts == 0){
+      return (
+  
+          <div style={{display: 'flex',justifyContent: 'center',marginTop: '200px'}}>
+<Loader type="ThreeDots" color="#057DB5" height={150} width={80} />
+              </div>
+              )
+  }
+  else
     return (
 
       <div>
