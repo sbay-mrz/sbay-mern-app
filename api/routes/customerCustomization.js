@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const customerCustomizationRequest = require('../models/customerCustomizationRequest');
 const invoiceNum  = require('uuid/v1');
+const Product = require('../models/product');
+const fetch = require("node-fetch");
+
 
 router.post('/postcustom',(req,res,next)=>{
     let userObject = {
@@ -19,16 +22,57 @@ router.post('/postcustom',(req,res,next)=>{
 
 
 router.get('/getcustom/:myid',(req,res,next)=>{
-  let i=0;
+  
   customerCustomizationRequest.find({}, function (err,products) {
+     var i=0;
       var productMap = [];
+      var pro = {
+                  cuzDescription : "", 
+                  productName : "",
+                  productCategory : ""
+                }
+      
       products.forEach( function (request) { 
           if( request.cusCuzReqId.equals(req.params.myid)){
-              productMap[i++] = request
-          }
-      });
-      console.log(productMap);
-      res.send(productMap);
+            // fetch(`http://localhost:7000/products/${request.productId}`)
+             Product.findById(request.productId)
+            // .then(res => res.json()) 
+            // .then(function(data){
+            //   // pro.cuzDescription = request.cuzDescription, 
+            //   // pro.productName = data.pname,
+            //   // pro.productCategory = data.category
+            //   var pro = {
+            //     cuzDescription : request.cuzDescription, 
+            //     productName : data.pname,
+            //     productCategory : data.category
+            //   }
+            //   productMap[i++] = pro;
+              
+            // })    
+
+           .then(docs =>{
+            var pro = {
+                        cuzDescription : request.cuzDescription, 
+                        productName : docs.pname,
+                        productCategory : docs.category
+                      }
+                return pro;      
+              }).then(out => {
+                productMap[i++] = out;
+                // return productMap;
+              })
+              
+      //         console.log("hello baby",productMap)
+          
+            }
+      //       //console.log("hello honey",productMap)
+          })
+
+      //console.log(productMap);
+      setTimeout(function(){
+        res.send(productMap)
+      },5000);
+     
   })
   .catch(err => next(err));
 })
