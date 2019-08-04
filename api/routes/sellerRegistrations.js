@@ -116,7 +116,7 @@ router.post('/postseller', (req, res, next) => {
 
         auth: {
           user: 'sbay.mrz@gmail.com',
-          pass:  'sbay@mrz56'
+          pass:  'rqctitqmlfmondct'
         },
 
       });

@@ -270,7 +270,7 @@ router.get('/reset/:token', (req, res, next) => {
 router.patch('/customerupdate/:updatedCustomersId',(req,res,next)=>{
   Customer.updateOne({ "_id": req.params.updatedCustomersId.toString()},
   {
-      $set: {"password": req.body.password}
+      $set: {"password": encodeURIComponent(encrypt(req.body.password))}
       
   }).then(function (user) {
       res.send({
