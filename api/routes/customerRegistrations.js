@@ -57,13 +57,13 @@ router.post('/forgotPassword', (req, res) => {
 
           auth: {
             user: 'sbay.mrz@gmail.com',
-            pass: 'sbay@mrz56'
+            pass: 'rqctitqmlfmondct'
           },
 
         });
 
         const mailOptions = {
-          from: 'sbay.mrz@gmail.com',
+          from: 'Sbay <sbay.mrz@gmail.com>',
           to: `${user.email}`,
           // to: 'muddabir22@gmail.com',
           subject: 'Link To Reset Password',
@@ -115,14 +115,14 @@ router.post('/postcustomer',(req,res,next)=>{
             service: 'gmail',
          
               auth: {
-                user: 'muddabir22@gmail.com',
-                pass: 'neduniversity'
+                user: 'sbay.mrz@gmail.com',
+                pass: 'rqctitqmlfmondct'
               },
       
           });
 
           const mailOptions = {
-             from: 'sbay.mrz@gmail.com',
+             from: 'Sbay <sbay.mrz@gmail.com>',
              to: decodeURIComponent(`${userObject.email}`),
             subject: 'Link To verify account',
             text:
