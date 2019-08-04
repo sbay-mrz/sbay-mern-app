@@ -40,8 +40,9 @@ componentWillMount() {
       })
   }
 
-  Postdata() {
+  Postdata(e) {
 
+    e.preventDefault();
     let userObject = {
       name: this.state.name,
       email: this.state.email,
@@ -56,7 +57,7 @@ componentWillMount() {
         console.log(res.data);
       });
 
-      if(this.state.name === "" && this.state.email === "" && this.state.contact === "" && this.state.address === "" && this.state.password === "" ){
+      if(this.state.name === "" || this.state.email === "" || this.state.contact === "" || this.state.address === "" || this.state.password === "" ){
           alert('fields missing')
       }
       else{
