@@ -159,12 +159,25 @@ let userObject = {
   address: decodeURIComponent(req.query.address),
   password: decodeURIComponent(req.query.password),
 }
- Customer.create(userObject).then(function (user) {
+Customer.find({}, function (err, users) {
+  let flg = false;
+  users.forEach(function (user) {
+      if(user.email === userObject.email){
+          console.log(user)
+          res.send({userStatus: ' exist'})
+          flg =true;
+      }
+  });
+  if(flg==false){
+    Customer.create(userObject).then(function (user) {
 
-               console.log(user)
-              res.send({user,
-                  userStatus: "account created"})
-          }).catch(next)
+      console.log(user)
+     res.send({user,
+         userStatus: "account created"})
+ }).catch(next)
+  }
+})
+ 
 })
 
 router.get('/getcustomers', (req, res, next) => {
