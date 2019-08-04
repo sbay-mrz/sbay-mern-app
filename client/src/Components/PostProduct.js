@@ -93,8 +93,8 @@ import Slider3 from './slider3';
 
  getScreenShot(event){
 
-  var CLOUDINARY_URL ="https://api.cloudinary.com/v1_1/chohan/upload";
-  var CLOUDINARY_UPLOAD_PRESET="bhorijjp";
+  var CLOUDINARY_URL ="	https://api.cloudinary.com/v1_1/djza2z6yc/upload";
+  var CLOUDINARY_UPLOAD_PRESET="jrzq3ejg";
 
 var file = event.target.files[0];
 var formData = new FormData();
