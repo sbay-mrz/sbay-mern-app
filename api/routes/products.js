@@ -56,7 +56,7 @@ router.get('/androidproducts', (req, res, next) => {
         var userMap = [];
         users.forEach(function (user) {
 
-            if (user.category === "Android App" || user.category === "Ios App" || user.category === "Android/Ios App" && user.status != "unapproved") {
+            if ((user.category === "Android App" || user.category === "Ios App" || user.category === "Android/Ios App") && user.status != "unapproved") {
                 userMap[i++] = user
             }
         });
@@ -71,7 +71,7 @@ router.get('/vrar', (req, res, next) => {
     Product.find({}, function (err, users) {
         var userMap = [];
         users.forEach(function (user) {
-            if (user.category === "VR" || user.category === "AR" && user.status != "unapproved") {
+            if ((user.category === "VR" || user.category === "AR") && user.status != "unapproved") {
                 userMap[i++] = user
             }
         });
