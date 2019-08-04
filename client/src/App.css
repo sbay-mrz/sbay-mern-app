@@ -188,7 +188,7 @@ width: 50% !important;
   font-size: 2em;
 }
 .SignUpParent > h1>span{
-  font-family: 'Monoton', cursive;
+  /* font-family: 'Monoton', cursive; */
 }
 .input-group-text{
   background-color: transparent;

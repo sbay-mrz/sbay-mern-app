@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import ned from './../assets/nedlogo.jpg';
+import ned from './../assets/logo1.jpeg';
 import cart from './../assets/cart.png';
 import {connect} from 'react-redux';
 
@@ -58,7 +58,7 @@ import { Button } from '@material-ui/core';
             </span>
            
         <Link to="" className="brand">
-            Sbay
+           
             <img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>
             
         </Link>
@@ -66,7 +66,7 @@ import { Button } from '@material-ui/core';
           
     <div className="left" style={{paddingTop: '10px'}}>
         <Link to="/" className="link">Home</Link>
-       {usertypecust === 'default' && <Link to="/customerLogin" className="link"><span ><i class="fas fa-user"></i></span>Customer</Link>
+       {usertypecust === 'default' && <Link to="/customerLogin" className="link"><span  ><i class="fas fa-user"></i></span>Customer</Link>
        }
     </div>
 
@@ -77,7 +77,7 @@ import { Button } from '@material-ui/core';
          {/* <Button onClick={this.postproduct} className="link"><span>SELL</span></Button> */}
      
         <Link to="/cart" className="link" > <span className="nav-icon"><i class="fas fa-shopping-cart"></i></span>{this.props.cartCounter}  </Link>
-        { usertypeseller === 'default' && <Link to="/sellerlogin" className="link"><span className="nav-icon"><i class="fas fa-user"></i></span></Link>
+        { usertypeseller === 'default' && <Link to="/sellerlogin" className="link"><span className="nav-icon"><i class="fas fa-user"></i></span> Seller</Link>
        } 
     </div>
 
