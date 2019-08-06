@@ -202,7 +202,11 @@ render(){
 
 {this.state.updateSeller && 
 
-  <div> 
+<div> 
+<Slider3/>
+
+  <div className="selleredit"> 
+ 
         <h2> Edit Seller </h2>
 
     <div className="Edit-Seller">
@@ -233,6 +237,7 @@ render(){
 
 
 </form>
+</div>
 </div>
 </div>
 }
