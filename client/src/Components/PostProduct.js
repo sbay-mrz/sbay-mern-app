@@ -15,7 +15,7 @@ import Slider3 from './slider3';
         pname: '',
         category: '',
         pdescription: '',
-        demovideourl: '',
+        demovideoUrl: '',
         exeUrl: '',
         hostUrl: '',
         cost: '',
