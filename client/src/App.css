@@ -263,7 +263,8 @@ width: 90% !important;
   margin-left: 1rem !important;
 }
 .abc{
-  width: 128% !important;
+  width: 119% !important;
+  justify-content: center;
 }
 .newreq{
   padding-left: 1rem  !important;
@@ -327,6 +328,12 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .secondchildTwo{
   width: 88% !important;
+}
+.c-profile-div-two {
+  width: 95% !important;
+}
+.c-profile-div-one{
+  width: 95% !important;
 }
 } 
 /* slider styles */
@@ -615,11 +622,13 @@ margin: 1em;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
+  margin-top: 1rem !important;
   flex-wrap: wrap;
   background-color: white;
   border-radius: 5px;
-
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
  
 }
 .l{
@@ -638,6 +647,9 @@ margin: 1em;
   flex-wrap: wrap;
   border-radius: 5px;
   background-color: white;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
 }
 .c-pro{
   margin-top: 2rem;
