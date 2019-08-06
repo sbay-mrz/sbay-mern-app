@@ -46,14 +46,14 @@ import Slider3 from './slider3';
         cost: this.state.cost,
         category: this.state.category,
       }
-      var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-      var regex = new RegExp(expression);
+    //   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    //   var regex = new RegExp(expression);
     
-      if(!userObject.exeUrl.match(regex) || !userObject.demoVideoUrl.match(regex) || !userObject.hostUrl.match(regex)){
-        alert('Please use a valid URL , Url must contain https:// or http://');
-        return false;
-      }
-    else 
+    //   if(!userObject.exeUrl.match(regex) || !userObject.demoVideoUrl.match(regex) || !userObject.hostUrl.match(regex)){
+    //     alert('Please use a valid URL , Url must contain https:// or http://');
+    //     return false;
+    //   }
+    // else 
       axios.post('https://sbay-mrz.herokuapp.com/products/postproduct',userObject)
       .then(res => {
         console.log("posted product",res.data);
