@@ -144,7 +144,7 @@ customize(){
           <p>  Name:   {products.pname} </p> 
           <p>   Category :{products.category} </p>
         
-          <p>  <b>Description:</b> {products.pdescription} </p>
+          <p>  Description: {products.pdescription} </p>
           </div>
            <div className="centerCart"> 
            <br/><br/>

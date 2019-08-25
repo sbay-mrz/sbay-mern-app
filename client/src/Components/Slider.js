@@ -5,7 +5,7 @@ import firstSliderImg from '../assets/mainslide6.jpg';
 import secondSliderImg from '../assets/mainslide5.jpg';
 import thirdSliderImg from '../assets/mainsilde3.jpg';
 import masjidapp from '../assets/masjidapp.JPG';
-import engine from '../assets/Engine.png'
+
 
 export default class Slider extends Component {
   render() {
