@@ -15,7 +15,7 @@ import Slider3 from './slider3';
         pname: '',
         category: '',
         pdescription: '',
-        demovideourl: '',
+        demovideoUrl: '',
         exeUrl: '',
         hostUrl: '',
         cost: '',
@@ -46,14 +46,14 @@ import Slider3 from './slider3';
         cost: this.state.cost,
         category: this.state.category,
       }
-      var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-      var regex = new RegExp(expression);
+    //   var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+    //   var regex = new RegExp(expression);
     
-      if(!userObject.exeUrl.match(regex) || !userObject.demoVideoUrl.match(regex) || !userObject.hostUrl.match(regex)){
-        alert('Please use a valid URL , Url must contain https:// or http://');
-        return false;
-      }
-    else 
+    //   if(!userObject.exeUrl.match(regex) || !userObject.demoVideoUrl.match(regex) || !userObject.hostUrl.match(regex)){
+    //     alert('Please use a valid URL , Url must contain https:// or http://');
+    //     return false;
+    //   }
+    // else 
       axios.post('https://sbay-mrz.herokuapp.com/products/postproduct',userObject)
       .then(res => {
         console.log("posted product",res.data);
@@ -83,19 +83,7 @@ import Slider3 from './slider3';
   }
 
   getDemoVideoUrl(e){
-
-    let regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-    if (regexp.test(e))
-    {
-      return true;
-      this.setState({demoVideoUrl: e.target.value});
-    }
-    else
-    {
-      return false;
-      alert("insert a valid url")
-    }
-   
+    this.setState({demoVideoUrl: e.target.value});   
   }
 
   

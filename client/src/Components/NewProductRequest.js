@@ -93,7 +93,7 @@ var customerNewRequest = {
   <span className="newIcon"><i class="fas fa-hand-holding-usd fa-2x"></i></span>
   <div class="form-group">
   
-  <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+  <input type="number" class="form-control" id="exampleFormControlInput1"/>
 </div>
 
       </div>
