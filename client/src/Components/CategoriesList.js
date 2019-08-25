@@ -22,7 +22,7 @@ export default class CategoriesList extends Component {
     <Col xs={4} sm ={4} md={4} lg={4}>
     
     <Link to="/mobileapp"> 
-    <Card className="cate-box">
+    <Card className="cate-box cate-two">
       <CardActionArea>
         <CardMedia
         
@@ -51,7 +51,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="webapp"> 
-    <Card className="cate-box">
+    <Card className="cate-box cate-three">
       <CardActionArea>
         <CardMedia
         
@@ -77,7 +77,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="vrar"> 
-    <Card className="cate-box">
+    <Card className="cate-box cate-four">
       <CardActionArea>
         <CardMedia
         
@@ -111,7 +111,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="artificialintelligence"> 
-    <Card className="cate-box">
+    <Card className="cate-box cate-five">
       <CardActionArea>
         <CardMedia
         
@@ -137,7 +137,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="ecommerce"> 
-    <Card className="cate-box">
+    <Card className="cate-box cate-six">
       <CardActionArea>
         <CardMedia
         
@@ -163,7 +163,7 @@ export default class CategoriesList extends Component {
 
     <Col xs={4} sm ={4} md={4} lg={4}>
     <Link to="internetofthings"> 
-    <Card className="cate-box" >
+    <Card className="cate-box cate-one" >
       <CardActionArea>
         <CardMedia
         

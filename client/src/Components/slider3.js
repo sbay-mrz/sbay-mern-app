@@ -57,9 +57,9 @@ import { Button } from '@material-ui/core';
             <i className="fas fa-bars"></i>
             </span>
            
-        <Link to="" className="brand">
+        <Link to="" className="brand"><span className="bra">Sbay</span>
            
-            <img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>
+            {/*<img src={ned} alt="ned" height="50" style={{borderRadius: '50%'}}/>*/}
             
         </Link>
           

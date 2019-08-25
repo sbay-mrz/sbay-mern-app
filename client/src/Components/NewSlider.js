@@ -4,12 +4,14 @@ import firstSliderImg from '../assets/mainslide6.jpg';
 import secondSliderImg from '../assets/mainslide5.jpg';
 import thirdSliderImg from '../assets/mainsilde3.jpg';
 import masjidapp from '../assets/masjidapp.JPG'; 
+import engine from '../assets/Engine.png';
 
 const images = [
-    firstSliderImg,
-    secondSliderImg,
+    engine,
+   
     thirdSliderImg,
-    masjidapp
+    masjidapp,
+    secondSliderImg,
 ];
  
 const zoomOutProperties = {
@@ -26,7 +28,7 @@ class NewSlider extends Component {
         return (
             <Fade className="slide-images" {...zoomOutProperties}>
               {
-                images.map((each, index) => <img key={index} style={{width: "100%",height: "100%"}} src={each} />)
+                images.map((each, index) => <img key={index} style={{width: "100%",height: "95%"}} src={each} />)
               }
             </Fade>
           )

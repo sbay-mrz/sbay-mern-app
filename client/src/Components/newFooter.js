@@ -60,7 +60,7 @@ class NewFolder extends React.Component {
             
         </div>
         <div className="secTwo">
-        <p>2019 Sbay,LLC.All Rights Reseerved</p>
+        <p>2019 Sbay,LLC.All Rights Reserved by CSRD NEDUET</p>
         </div>
     </div>
     <div className="secondchildTwo">
