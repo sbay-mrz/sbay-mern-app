@@ -155,10 +155,10 @@ render(){
     {/* <input id="file-upload" type="file" /> */}
       <CardActionArea>
         <CardContent>
-            <div className="icons">
+            <div className="sell">
             {/* <input type="file" class="form-control" onChange={this.getSellerImage.bind(this)}/> */}
             <img src={profile} alt="user" id='image-preview' />
-            <p> name    :   {sellerProfile.name} </p> 
+            <p> Name    :   {sellerProfile.name} </p> 
             <p> Address :   {sellerProfile.address} </p> 
             <p> Email   :   {sellerProfile.email} </p> 
             <p> Contact :   {sellerProfile.contact} </p> 
@@ -174,13 +174,14 @@ render(){
     <Card >
       <CardActionArea>
         <CardContent >
-            <div className="icons">
+            <div className="sell">
 
             <h1> Welcome {sellerProfile.name} </h1>
             
+            <span className="sellOne">
             <Link to={`/postproduct/${sellerProfile._id}`}> Add post </Link> 
             <Button onClick={this.logout.bind(this)}>  logout </Button>
-            <Button onClick={this.updateSeller.bind(this)}>  edit profile </Button>
+            <Button onClick={this.updateSeller.bind(this)}>  edit profile </Button></span>
             
             </div>
         </CardContent>

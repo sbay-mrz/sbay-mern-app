@@ -107,11 +107,11 @@ customize(){
       <Card >
       <CardActionArea>
         <CardContent >
-              <div className="icons">
+              <div className="sell">
             <h2> Seller Profile</h2>
             <p> name      :  {sellerProfile.name} </p> 
             <p> contact   :   {sellerProfile.contact} </p> 
-            <p> address   : {sellerProfile.address}  </p>
+           {/*<p> address   : {sellerProfile.address}  </p>*/} 
             <div className="centerCart"> 
             <br/><br/>
 
@@ -132,19 +132,19 @@ customize(){
     
              <div className="productdescriptoneP">
              <div className="productdescriptone">
-             <div>
+           {/*  <div>
              <p>Cost:  </p> 
            <p> Name    :    </p> 
            <p> Category :   </p>
           
            <p> Description :    </p>
-          </div>
+          </div>*/}
           <div>
-          <p> {products.cost} </p> 
-          <p>     {products.pname} </p> 
-          <p>    {products.category} </p>
+         {/* <p> Cost:{products.cost} </p> */}
+          <p>  Name:   {products.pname} </p> 
+          <p>   Category :{products.category} </p>
         
-          <p>   {products.pdescription} </p>
+          <p>  <b>Description:</b> {products.pdescription} </p>
           </div>
            <div className="centerCart"> 
            <br/><br/>

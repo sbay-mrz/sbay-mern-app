@@ -1,12 +1,19 @@
 body{
-  /* margin:0px;
-  color:black;
+   margin:0px;
+  color:black !important;
   font-family: 'serif';
- background-color: #FCFFFD; */
+ background-color: #FCFFFD; 
  font-family: 'Literata', serif;
   
 }
-
+.sell{
+  color: black;
+}
+.sellOne{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .bra{
   color: white;
   font-family: 'Bangers', cursive;
@@ -971,7 +978,7 @@ color: #00ccff !important;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 300px;
+  height: 100%;
   -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
 -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
 box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.44);
@@ -1050,6 +1057,7 @@ margin-left: 100px !important;
   -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   margin-left: 1rem;
+  padding:1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
