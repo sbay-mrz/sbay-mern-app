@@ -11,7 +11,7 @@ export default class CategoriesList extends Component {
 
      
       <div className="card-heading"><h1> Product Categories</h1></div>
-     
+     <section className="cate-grid">
        <Grid style={{paddingBottom: '1em'}}>
       
   <Row>
@@ -19,7 +19,7 @@ export default class CategoriesList extends Component {
   
 
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4} className="col">
     
     <Link to="/mobileapp"> 
     <Card className="cate-box cate-two">
@@ -49,7 +49,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}  className="col">
     <Link to="webapp"> 
     <Card className="cate-box cate-three">
       <CardActionArea>
@@ -75,7 +75,7 @@ export default class CategoriesList extends Component {
 
 
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}  className="col">
     <Link to="vrar"> 
     <Card className="cate-box cate-four">
       <CardActionArea>
@@ -109,7 +109,7 @@ export default class CategoriesList extends Component {
     
   
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}  className="col">
     <Link to="artificialintelligence"> 
     <Card className="cate-box cate-five">
       <CardActionArea>
@@ -135,7 +135,7 @@ export default class CategoriesList extends Component {
     </Col>
 
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}  className="col">
     <Link to="ecommerce"> 
     <Card className="cate-box cate-six">
       <CardActionArea>
@@ -161,7 +161,7 @@ export default class CategoriesList extends Component {
     </Col>
     
 
-    <Col xs={4} sm ={4} md={4} lg={4}>
+    <Col xs={4} sm ={4} md={4} lg={4}  className="col">
     <Link to="internetofthings"> 
     <Card className="cate-box cate-one" >
       <CardActionArea>
@@ -189,6 +189,7 @@ export default class CategoriesList extends Component {
    
   </Row>
   </Grid>
+  </section>
   </div>
      
       

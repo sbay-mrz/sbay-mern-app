@@ -64,13 +64,13 @@ import { Button } from '@material-ui/core';
         </Link>
           
           
-    <div className="left" style={{paddingTop: '10px'}}>
-        <Link to="/" className="link">Home</Link>
-       {usertypecust === 'default' && <Link to="/customerLogin" className="link"><span  ><i class="fas fa-user"></i></span>Customer</Link>
+    <div className="left" >
+        <Link to="/" className="link "><span className="nav-icon" >Home</span></Link>
+       {usertypecust === 'default' && <Link to="/customerLogin" className="link"><span className="nav-icon" ><i class="fas fa-user"></i></span> Customer</Link>
        }
     </div>
 
-    <div className="right" style={{paddingTop: '10px'}}>
+    <div className="right">
     {/* <Link to="/cart" className="toggle"> <img src={cart} width="100px" height="50px" alt="cart"/></Link>  */}
      
          

@@ -17,17 +17,18 @@ body{
 .bra{
   color: white;
   font-family: 'Bangers', cursive;
- 
+  letter-spacing: 4px;
   font-size: 2rem;
   
 
 }
 .myNavbar{
   background-color: #057DB5;
-  border-bottom: 0.5px solid #FCFFFD;
+  /* border-bottom: 0.5px solid #FCFFFD;
   font-family: 'Staatliches', cursive;
 letter-spacing: 2px;
-font-size: 1.2em;
+font-size: 1.2em; */
+text-transform: uppercase;
 }
 
 
@@ -42,6 +43,7 @@ font-size: 1.2em;
   display: block;
   text-align: center;
   padding: 1em;
+  font-size: 1.1rem;
   text-decoration: none;
   background-color: #057DB5;
   color: #FCFFFD;
@@ -52,9 +54,10 @@ font-size: 1.2em;
 }
 .myNavbar .brand{
   width: 10em;
-  text-align: center;
-  padding-top: 25px;
-  color: #FCFFFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FCFFFD;
 }
 .myNavbar a{
   text-decoration: none;
@@ -64,7 +67,7 @@ font-size: 1.2em;
   color: #FCFFFD;
 }
 .nav-icon{
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .nav-icon>span{
   font-size: 1rem;
@@ -112,7 +115,7 @@ font-size: 1.2em;
   .myNavbar .left,.myNavbar .right{
       display: flex;
       flex: 1;
-      padding-top: 1rem !important;
+      /* padding-top: 1rem !important; */
   }
   .myNavbar .link{
       width: auto;
@@ -169,6 +172,7 @@ width: 50% !important;
   }
   .myNavbar .brand{
       text-align: left;
+      display: inline-block !important;
   }
   .myNavbar.active div{
       display: block;
@@ -327,13 +331,17 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .secondChild{
   width: 91% !important;
-  justify-content: flex-start !important;
+  justify-content: space-evenly !important;
+}
+.secondChild>a{
+  padding-left: 5px !important;
 }
 .firstChild{
-  padding-left: 4rem !important;
+  padding-left: 0rem !important;
+  justify-content: center !important;
 }
 .newFP{
-  height: 380px !important;
+  height: 350px !important;
 }
 .secondchildOne{
   padding-left: 0rem !important;
@@ -343,12 +351,42 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .secondchildTwo{
   width: 88% !important;
+  margin-top: 1.2rem;
 }
 .c-profile-div-two {
   width: 95% !important;
 }
 .c-profile-div-one{
   width: 95% !important;
+}
+/* .MuiPaper-rounded-3{
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 0.6rem;
+} */
+.cate-grid{
+  padding-left: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.container{
+  padding-bottom: 0px !important;
+}
+.col{
+  margin-bottom: 5px !important;
+}
+.fa-stack{
+  width:4rem !important;
+}
+.cate-box{
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 0.55rem;
+  font-weight: 100;
+}
+.extra-one-text{
+  font-size: 1rem !important;
+  padding-left: 3rem;
 }
 } 
 /* slider styles */
@@ -429,7 +467,7 @@ bg-img,.bg-img2{
  
 }
 .icons{
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   color: white;
   text-align: center;
 }
@@ -789,14 +827,28 @@ a{
   border-radius: 50%;
   width: 6rem ;
 }
-
+.container{
+  display: flex !important;
+    /* background-color: red; */
+    justify-content: center !important;
+    align-items: center !important;
+}
+.fa-stack{
+  width: 5rem ;
+}
+.fa-3x{
+ font-size: 2rem !important;
+}
 
 .react-slideshow-fade-wrapper{
-  height: 550px;
+  height: 400px;
 }
 .cate-para{
   font-weight: bold;
   
+}
+.MuiPaper-rounded-3{
+  width: 300px;
 }
 /* product */
 .product-des{
@@ -815,16 +867,17 @@ width: 350px;
 }
 /* new footer style */
 .newFP{
-  color: white;
-  width: 100%;
-  height: 350px;
-  background-color:#333;
+  margin-bottom: 0px;
+    color: white;
+    width: 100%;
+    height: 280px;
+    background-color: #333;
 
 }
 .mainOne{
   display: flex;
   width: 100%;
-  height: 250px;
+  height: 190px;
 
 }
 .mainTwo{
@@ -832,7 +885,7 @@ width: 350px;
   align-items: center;
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 80px;
 
 }
 .oneChild{
@@ -840,7 +893,7 @@ width: 350px;
   display: flex;
   flex-direction: column;
   width: 60%;
-  height: 250px;
+  
 
 }
 .twoChild{
@@ -883,7 +936,7 @@ flex-direction: column;
   color: #00ccff !important;
 }
 .secondchildOne{
- width: 70%;
+ width: 85%;
  height: 75px;
  padding-left: 4.5rem;
 
